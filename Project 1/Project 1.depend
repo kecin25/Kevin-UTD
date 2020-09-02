@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1598996702 source:c:\users\kevin\desktop\cosc projects\fall 2020 - cs1337\projects\project 1\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
