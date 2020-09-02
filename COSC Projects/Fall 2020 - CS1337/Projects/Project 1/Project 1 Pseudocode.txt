@@ -1,0 +1,72 @@
+bool check Down/UP (string for the file line)
+int Check Direction (string for the file line)
+int Check Distance (string for the file line)
+bool check Bold (string for the file line)
+bool check Print (string for the file line)
+
+
+
+*main
+
+Open the input file
+
+open output file
+
+make two arrays that will be 50x50
+
+these arrays will be linked to the output file
+
+
+
+make a loop that does two things
+1)gets the cmds line by line and runs it through part 2
+2)checks Direction, Distance, if the pen is up or down, if Bold, and if Print
+
+if the pen is down print out to the file the distance and direction and if bold, bold
+
+if print is true
+{ loop that prints out the grid and rows}
+
+close input file
+
+close output file
+
+if possible open output file for user to see
+
+*check Down/UP
+
+read up to the first comma and ignore the rest
+
+if 1 pen is up and do not print
+	return false
+
+if 2 pen is down and do print
+	return true
+
+
+*check direction (string for the file line)
+
+delete up to the first comma and read up to the 2nd comma
+
+series of if statments that check to see if the char is N,E,S,or W. then corosponds that to 1-4.
+
+returns the number 1-4
+
+
+*check distance (string for the file line)
+
+delete up to the 2nd comma and then read up the the potiental third.
+if there is a comma read up to that
+if no comma read till the null terminator
+
+looks to see how large the distance is and returns that number
+
+*Bold (string for the file line)
+check to see if there is a third comma if not return false, if there is check to see if Bold needs to be true
+
+
+*Print (string for the file line)
+check to see if there is a third comma, if yes then check to see if it is a B or a P, if B check for a fourth comma. if no fourth comma then return false,
+ if after third comma is a P then return true
+if true then print using X,Y cordnate system that corrosponds to the 50x50
+
