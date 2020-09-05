@@ -71,7 +71,7 @@ int main()
 
                 for(int i=0; i<Distance; i++)
                 {
-                  int pos=-53;
+                    int pos=-53;
                     Paintfile.seekp(pos, ios::cur);
                     Paintfile<<Ink;
                     Paintfile.flush();
@@ -101,7 +101,7 @@ int main()
             {
                 for(int i=0; i<Distance; i++)
                 {
-                   int pos=-2;
+                    int pos=-2;
                     Paintfile.seekp(pos, ios::cur);
                     Paintfile<<Ink;
                     Paintfile.flush();
@@ -136,17 +136,17 @@ int main()
         if(Print)
         {
 
-              long pos2=Paintfile.tellp();
-              Paintfile.seekp(ios_base::beg);
-              string PrintingToConsol;
-              while(getline(Paintfile,PrintingToConsol))
-              {
-                 if(PrintingToConsol!="")
-                 cout<<PrintingToConsol<<endl;
-              }
-              Paintfile.close();
-              Paintfile.open("paint.txt",ios::in | ios::out | ios::binary);
-               Paintfile.seekp(pos2);
+            long pos2=Paintfile.tellp();
+            Paintfile.seekp(ios_base::beg);
+            string PrintingToConsol;
+            while(getline(Paintfile,PrintingToConsol))
+            {
+                if(PrintingToConsol!="")
+                    cout<<PrintingToConsol<<endl;
+            }
+            Paintfile.close();
+            Paintfile.open("paint.txt",ios::in | ios::out | ios::binary);
+            Paintfile.seekp(pos2);
         }
     }
     Paintfile.close();
