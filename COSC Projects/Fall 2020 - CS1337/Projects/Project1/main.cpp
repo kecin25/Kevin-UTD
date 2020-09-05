@@ -50,22 +50,14 @@ int main()
 
     string CommandLine;
 
-    int pointer=0;
-
     //repeating code that will read the commands and update the info for each line
     while(getline(Commands,CommandLine))
     {
-        // PaintFile.open("paint.txt", ios::)
-//
         IsDown=CheckDown(CommandLine);
         Direction=CheckDirection(CommandLine);
         Distance=CheckDistance(CommandLine);
         Bold=CheckBold(CommandLine);
         Print=CheckPrint(CommandLine);
-
-
-        cout<<CommandLine.data()<<endl;
-        cout<<endl<<"Pen is: "<<IsDown<<" Direction is: "<<Direction<<" Distance is: "<<Distance<<" Bold is: "<<Bold<<" Print is: "<<Print<<endl;
 
         if(Bold)
             Ink='#';
@@ -76,47 +68,23 @@ int main()
         {
             if(Direction=='N')
             {
-                /*
-                  Paintfile.seekp(-53, ios::cur);
-                  pointer=pointer-53;
-                  cout<<Paintfile.tellp()<<" ";
-                  Paintfile<<Ink;
-                  Paintfile.flush();
-                  Paintfile.seekp(-1,ios::cur);
-                  pointer--;
-                  cout<<Paintfile.tellp()<<" "; */
+
                 for(int i=0; i<Distance; i++)
                 {
-                    //if(first)
-                    //-51                //change movement type for printing
-                    //else -52
-                     int pos=-53;
-                    if(i==0)
-                    {
-                       pos=-53;
-                    }
+                  int pos=-53;
                     Paintfile.seekp(pos, ios::cur);
-                    pointer=pointer+pos;
-                    cout<<Paintfile.tellp()<<" ";
                     Paintfile<<Ink;
                     Paintfile.flush();
                 }
-                //Paintfile.seekp(-1,ios::cur);
-               // pointer--;
-               // cout<<Paintfile.tellp()<<" ";
+
             }
             if(Direction=='E')
             {
                 for(int i=0; i<Distance; i++)
                 {
-                    cout<<Paintfile.tellp()<<" ";
                     Paintfile<<Ink;
                     Paintfile.flush();
-                    pointer=pointer+1;
                 }
-                //Paintfile.seekp(-1,ios::cur);
-                //pointer--;
-                //cout<<Paintfile.tellp()<<" ";
             }
             if(Direction=='S')
             {
@@ -125,29 +93,19 @@ int main()
                     int pos=51;
 
                     Paintfile.seekp(pos, ios::cur);
-                    pointer=pointer+pos;
-                    cout<<Paintfile.tellp()<<" ";
                     Paintfile<<Ink;
                     Paintfile.flush();
-                    pointer++;
-                    //Paintfile.seekp(0,ios::cur);pointer=pointer-0; cout<<Paintfile.tellp()<<" ";
-                }/*Paintfile.seekp(-1,ios::cur)*/;
-                cout<<Paintfile.tellp()<<" ";
+                }
             }
             if(Direction=='W')
             {
                 for(int i=0; i<Distance; i++)
                 {
-                    Paintfile.seekp(-2, ios::cur);
-                    pointer=pointer-2;
-                    cout<<Paintfile.tellp()<<" ";
+                   int pos=-2;
+                    Paintfile.seekp(pos, ios::cur);
                     Paintfile<<Ink;
                     Paintfile.flush();
-                    pointer++;
                 }
-               // Paintfile.seekp(-1,ios::cur);
-               //pointer--;
-                //cout<<Paintfile.tellp()<<" ";
             }
         }
         if(!IsDown)
@@ -157,51 +115,38 @@ int main()
                 for(int i=1; i<=Distance; i++)
                 {
                     Paintfile.seekp(-52, ios::cur);
-                    pointer=pointer-52;
-                    cout<<Paintfile.tellp()<<" ";
                 }
             }
             if(Direction=='E')
             {
-                cout<<Paintfile.tellp()<<" ";
                 Paintfile.seekp(+Distance, ios::cur);
-                pointer=pointer+Distance;
-                cout<<Paintfile.tellp()<<" ";
             }
             if(Direction=='S')
             {
                 for(int i=0; i<Distance; i++)
                 {
                     Paintfile.seekp(52, ios::cur);
-                    pointer=pointer+52;
-                    cout<<Paintfile.tellp()<<" ";
                 }
             }
             if(Direction=='W')
             {
                 Paintfile.seekp(-Distance, ios::cur);
-                pointer=pointer-Distance;
-                cout<<Paintfile.tellp()<<" ";
             }
         }
         if(Print)
         {
-            /*
-              Paintfile.close();
-              Paintfile.open("paint.txt",ios::in);
+
+              long pos2=Paintfile.tellp();
+              Paintfile.seekp(ios_base::beg);
               string PrintingToConsol;
               while(getline(Paintfile,PrintingToConsol))
               {
-                 cout<<PrintingToConsol;
+                 if(PrintingToConsol!="")
+                 cout<<PrintingToConsol<<endl;
               }
-
               Paintfile.close();
-              Paintfile.open("paint.txt",ios::in|ios::out|ios::app); //think its not saving when re opeing file *********************************************************************************
-              Paintfile.tellp();
-
-                                                     // make command file smaller to bug check for wrong command
-                           //getline for line to line for consol *****************************************************************
-            */
+              Paintfile.open("paint.txt",ios::in | ios::out | ios::binary);
+               Paintfile.seekp(pos2);
         }
     }
     Paintfile.close();
