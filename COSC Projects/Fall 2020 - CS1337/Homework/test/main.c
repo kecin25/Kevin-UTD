@@ -1,93 +1,69 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdbool.h>
+#include <fstream>
+#include <string>
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    name();
-    password();
-    return 0;
-}
-void name ()
-{
-    char firstname[21], middlename[21], lastname[21], fullname[63];
-    char space[2] = " ", comma[2] = ",";
-    printf("please enter your first, middle, and last name.\n");
-    scanf("%s %s %s", firstname, middlename, lastname);
-    strcpy(fullname, lastname);
-    strcat(fullname, ", ");
-    strcat(fullname, firstname);
-    strcat(fullname, " ");
-    strcat(fullname, middlename);
-    printf("%s", fullname);
-}
-void password()
-{
-    //initializing variables
-    bool up = false, down = false, hasNum = false, hasPunct = false, length = false;
-    char pass[100] = "";
+    ifstream input("file.txt");
+    string line, name, term;
+    float x_array[10], y_array[10];
+    int index, i=0;
 
-    //requesting a password
-    printf("\n**\n\n");
-    printf("Please enter a password\n");
-    scanf("%s", pass);
+    //sample line
+    //Greedo 4,0 4,7.5 7,7.5 7,3 9,0 7,0 4,0
 
-    //checks to make sure there is upper cases, lower cases, numbers, and punctuation
-    int size = strlen(pass);
-    int i = 0;
-    while(i < size)
+    while (getline(input,line))
     {
-        if(isupper(pass[i]))
-            up = true;
-        if(islower(pass[i]))
-            down = true;
-        if(isdigit(pass[i]))
-            hasNum = true;
-        if(ispunct(pass[i]))
-            hasPunct = true;
-        printf("%c ", pass[i]);
-        i++;
+        //if we had a C-string
+        //while(input.getline(char array,size))
+
+        if (line == "") //process file with a newline at end of last line
+            break;
+
+        //parse name
+        index = line.find(' '); //find the first space
+        name = line.substr(0,index); //copy everything in front of the space
+        line = line.substr(index+1); //break off the name and space from the string
+
+        //loop through number pairs
+        while (line.length() > 0) //length == 0 at end of string
+        {
+            //parse each pair
+            index = line.find(' ');  //find the space after the pair
+            // find function returns -1 if not found
+
+            if (index != -1)    // if not last pair
+            {
+                term = line.substr(0,index);    //copy pair from string
+                line = line.substr(index+1);    //break off pair
+            }
+            else    //if last pair
+            {
+                term = line;    //copy pair
+                line = "";      //empty string to break loop
+            }
+
+            //parse term into x and y values
+            index = term.find(','); //find comma
+
+            //convert characters before comma to numerical value and store in array
+            x_array[i] = stof(term.substr(0,index));
+
+            //convert characters after comma to numerical value and store in array
+            y_array[i] = stof(term.substr(index+1));
+
+            i++;    //increment subscript counter
+        }
+
+
+        //display arrays
+        cout << name << ' ';
+        for (int j = 0; j <= i; j++)
+            cout << x_array[j] << ',' << y_array[j] << ' ';
+        cout << endl;
+
+        i = 0;  //reset subscript counter
+
     }
-    printf("\n");
-
-    //checks to make sure the size is correct
-    if(strlen(pass) > 14)
-        printf("\nyour password is longer than 14 charachters\n");
-    else if(strlen(pass) < 6)
-        printf("\nyour password is shorter than 6 charachters\n");
-    else
-        length = true;
-
-    //tells you if there is errors, or perfect
-    if(up == false)
-        printf("You do not have an upper case letter\n");
-    if(down == false)
-        printf("You do not have a lower case letter\n");
-    if(hasNum == false)
-        printf("You do not have a number\n");
-    if(hasPunct == false)
-        printf("You do not have any punctuation\n");
-    if(up == true && down == true && hasNum == true && hasPunct == true && length == true)
-        printf("your password is perfect");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-fstream file("file.txt");
-//file.open("file.txt");
-~~~~~~~~~
-file.close("file.txt");
-file.open("file2.txt");
-~~~~~~~~~~~~~~
-file.close();
