@@ -2,21 +2,30 @@
 #include <iostream>
 using namespace std;
 
+int sumint(int);
 int main()
 {
-    ifstream in("stuff.txt", ios::binary);
-    in.seekg(9);
-    char letter;
-    int start = in.tellg();
-    for (int i = 1; i <=4; i++)
-    {
-        in.get(letter);
-        cout << letter;
-    }
-    int end = in.tellg();
-    in.seekg(start - end, ios::cur);
-    in.get(letter);
-    cout << endl<< letter << endl;
-
+  // cout<<"give a number to add all numbers under it:";
+   //cin>>total;
+   char c;
+  do{
+   cout<<"give a number that will add all other numbers below it starting at zero:"<<endl;
+   int num;
+   cin>>num;
+cout<<endl<<sumint(num);
+cout<<endl<<"want to go again? y or n"<<endl;
+cin>>c;
+    }while(c=='y');
     return 0;
 }
+
+int sumint(int i)
+{
+
+
+   if(i==1)
+      return 1;
+   /* total=*/return i+=sumint(i-1);
+   //return total;
+}
+
