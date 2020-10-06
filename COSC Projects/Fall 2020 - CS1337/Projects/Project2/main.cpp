@@ -139,7 +139,7 @@ int main()
         //<<"Option 4: Quit"<<endl;
         //cout<<"What Option do you want to do?"<<endl<<"Option: ";
         cin>>Option;
-        cout<<Option<<endl;
+        cout<<endl;
 
         switch(Option)
         {
@@ -152,7 +152,7 @@ int main()
 
             //cout<<"What is the first row you want to switch? ";
             cin>>row1;
-            cout<<row1<<endl;
+            cout<<endl;
 
 //          the loop below is used to make sure the user enters a valid input for the row numbers so the pointers do not go out of range
             if((row1-1)>num_equations||(row1-1)<0)
@@ -166,7 +166,7 @@ int main()
             }
             //cout<<endl<<"What is the second row you want to switch? ";
             cin>>row2;
-            cout<<row2<<endl;
+            cout<<endl;
 
 //          the loop below is used to make sure the user enters a valid input for the row numbers so the pointers do not go out of range
             if((row2-1)>num_equations||(row2-1)<0)
@@ -304,7 +304,7 @@ int main()
             int row=0;
             //cout<<"What row do you want to multiply? \nrow: ";
             cin>>row;
-            cout<<row<<endl;
+            cout<<endl;
             row--;
 //          the if do while loop below checks to see if the user entered a correct row number
             if(row>=num_equations||row<0)
@@ -320,7 +320,7 @@ int main()
             //cout<<endl<<"What number do you want to multiply row "<<row<<" by? \n";
             row--;
             cin>>multiple;
-            cout<<multiple<<endl;
+            cout<<endl;
 //          the if do while loop below checks to see if the user entered a number for the to multiply the row by, only zero is not allowed
             if(multiple==0)
             {
@@ -385,7 +385,7 @@ int main()
             int row1=0,row2=0;
             //cout<<"What row do you want to multiply? \nrow: ";
             cin>>row1;
-            cout<<row1<<endl;
+            cout<<endl;
 
 //          after grabbing the first row they want to use the code below checks to make sure its a valid row
             if(row1>num_equations)
@@ -400,7 +400,7 @@ int main()
             row1--;
             //cout<<"\nWhat do you want to multiply the row by? \n";
             cin>>multiple;
-            cout<<multiple<<endl;
+            cout<<endl;
 
 //          after getting the number they want to multiply by the code below makes sure it is a non-zero number
             if(multiple==0)
@@ -414,7 +414,7 @@ int main()
             }
             //cout<<"\nWhat row do you want add the first row to? \nrow: ";
             cin>>row2;
-            cout<<row2<<endl;
+            cout<<endl;
 
 //            after getting the 2nd row the user wants to use the code below makes sure it is a valid row
             if((row2-1)>num_equations||(row2-1)<0)
@@ -551,12 +551,12 @@ float *FindXValue(string *Eptr,int num_equations)
         string equation=*Eptr;
 
 //      for loop below is used to find the location of x and how many X's there are
-        for(int k=0; k<equation.length(); k++)
+        for(long unsigned int k=0; k<equation.length(); k++)
         {
             if(equation.at(k)=='X'||equation.at(k)=='x')
             {
                 numofX++;
-                locationX=k;
+                locationX=(int)k;
             }
         }
 //      if there are no found X's then we know that X's coefficient is zero
@@ -573,7 +573,8 @@ float *FindXValue(string *Eptr,int num_equations)
         else
             equation='X';
 //      the for loop below is used to find the location of the + or - (if there is one) and to see if the X coefficient is negative
-        for(int l=equation.length()-1; l>=0; l--)
+
+        for(int l=(int)equation.length()-1; l>=0; l--)
         {
             if(equation.length()==1)
             {
@@ -638,11 +639,12 @@ float *FindYValue(string *Eptr,int num_equations)
     {
 //      numofY is used to see if there is an Y value in the string, locationY gives the location of where Y was found, plusminusloco is used
 //      for finding if Y is positive or negative
-        int numofY=0,locationY,plusminusloco=0;
+        int numofY=0,plusminusloco=0;
+        long long unsigned int locationY;
         bool negative=false;
         string equation=*Eptr;
 //      for loop below is used to find the location of Y and how many Y's there are
-        for(int k=0; k<equation.length(); k++)
+        for(long long unsigned int k=0; k<equation.length(); k++)
         {
             if(equation.at(k)=='Y'||equation.at(k)=='y')
             {
@@ -664,7 +666,7 @@ float *FindYValue(string *Eptr,int num_equations)
         else
             equation='Y';
 //      the for loop below is used to find the location of the + or - (if there is one) and to see if the Y coefficient is negative
-        for(int l=equation.length()-1; l>=0; l--)
+        for(int l=(int)equation.length()-1; l>=0; l--)
         {
             if(equation.length()==1)
             {
@@ -732,12 +734,13 @@ float *FindZValue(string *Eptr,int num_equations)
     {
 //      numofZ is used to see if there is an Z value in the string, locationY gives the location of where Z was found, plusminusloco is used
 //      for finding if Z is positive or negative
-        int numofZ=0,locationZ,plusminusloco=0;
+        int numofZ=0,plusminusloco=0;
+        long long unsigned int locationZ;
         bool negative=false;
         string equation=*Eptr;
 
 //      for loop below is used to find the location of Z and how many Z's there are
-        for(int k=0; k<equation.length(); k++)
+        for(long long unsigned int k=0; k<equation.length(); k++)
         {
             if(equation.at(k)=='Z'||equation.at(k)=='z')
             {
@@ -759,7 +762,7 @@ float *FindZValue(string *Eptr,int num_equations)
             equation='Z';
 
 //      the for loop below is used to find the plus or minus location of the Z coefficient if there is one
-        for(int l=equation.length()-1; l>=0; l--)
+        for(int l=(int)equation.length()-1; l>=0; l--)
         {
             if(equation.length()==1)
             {
@@ -817,10 +820,10 @@ float *FindNumValue(string *Eptr,int num_equations)
     for(int i=1; i<=num_equations; i++)
     {
 //      equalfinder is used for finding the equal sign
-        int equalfinder=0;
+        long long unsigned int equalfinder=0;
         string equation=*Eptr;
 //      the for loop below finds the equal sign
-        for(int k=0; k<equation.length(); k++)
+        for(long long unsigned int k=0; k<equation.length(); k++)
         {
             if(equation.at(k)=='=')
             {
