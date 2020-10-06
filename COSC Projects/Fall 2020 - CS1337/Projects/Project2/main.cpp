@@ -26,7 +26,7 @@ int main()
     bool exit=false;
 //  Option is used to get the users input for what they want to do to the matrix
     int Option;
-    //cout<<"Enter the file name of the matrix: ";
+    cout<<"Enter the file name of the matrix: ";
     getline(cin,fileName);
 
 //  below is opening the file and if the file can not be opened there is a basic loop that will try to keep opening the filename that the user gives
@@ -65,7 +65,7 @@ int main()
 //  below is used to output the strings into the console so the user can confirm that they have the correct file and the equations were read correctly.
     for(int i=1; i<=num_equations; i++)
     {
-       //cout<<*Eptr<<endl;
+       cout<<*Eptr<<endl;
         Eptr++;
     }
 
@@ -135,9 +135,9 @@ int main()
             break;
         }
 
-        //cout<<"You have four options. \nOption 1: Switch two rows \nOption 2: Multiply a row by a non-zero number \nOption 3: Add Scalar Multiple of one row to another row \n"
-        //<<"Option 4: Quit"<<endl;
-        //cout<<"What Option do you want to do?"<<endl<<"Option: ";
+        cout<<"You have four options. \nOption 1: Switch two rows \nOption 2: Multiply a row by a non-zero number \nOption 3: Add Scalar Multiple of one row to another row \n"
+        <<"Option 4: Quit"<<endl;
+        cout<<"What Option do you want to do?"<<endl<<"Option: ";
         cin>>Option;
         cout<<endl;
 
@@ -150,7 +150,7 @@ int main()
             float *temp1=new float[num_equations];
             float *temp2=new float[num_equations];
 
-            //cout<<"What is the first row you want to switch? ";
+            cout<<"What is the first row you want to switch? ";
             cin>>row1;
             cout<<endl;
 
@@ -164,7 +164,7 @@ int main()
                 }
                 while((row1-1)>num_equations&&(row1-1)<0);
             }
-            //cout<<endl<<"What is the second row you want to switch? ";
+            cout<<endl<<"What is the second row you want to switch? ";
             cin>>row2;
             cout<<endl;
 
@@ -302,7 +302,7 @@ int main()
 //          multiple is used to get the number the user wants to multiply by and row is used to get what row the user wants to multuiply
             float multiple=0;
             int row=0;
-            //cout<<"What row do you want to multiply? \nrow: ";
+            cout<<"What row do you want to multiply? \nrow: ";
             cin>>row;
             cout<<endl;
             row--;
@@ -317,7 +317,7 @@ int main()
                 while((row-1)>num_equations&&(row-1)<0);
             }
             row++;
-            //cout<<endl<<"What number do you want to multiply row "<<row<<" by? \n";
+            cout<<endl<<"What number do you want to multiply row "<<row<<" by? \n";
             row--;
             cin>>multiple;
             cout<<endl;
@@ -383,7 +383,7 @@ int main()
             float multiple=0;
             float *temp=new float[num_equations];
             int row1=0,row2=0;
-            //cout<<"What row do you want to multiply? \nrow: ";
+            cout<<"What row do you want to multiply? \nrow: ";
             cin>>row1;
             cout<<endl;
 
@@ -398,7 +398,7 @@ int main()
                 while(row1>(num_equations-1)||row1<1);
             }
             row1--;
-            //cout<<"\nWhat do you want to multiply the row by? \n";
+            cout<<"\nWhat do you want to multiply the row by? \n";
             cin>>multiple;
             cout<<endl;
 
@@ -412,11 +412,11 @@ int main()
                 }
                 while(multiple==0);
             }
-            //cout<<"\nWhat row do you want add the first row to? \nrow: ";
+            cout<<"\nWhat row do you want add the first row to? \nrow: ";
             cin>>row2;
             cout<<endl;
 
-//            after getting the 2nd row the user wants to use the code below makes sure it is a valid row
+//          after getting the 2nd row the user wants to use the code below makes sure it is a valid row
             if((row2-1)>num_equations||(row2-1)<0)
             {
                 do
@@ -513,7 +513,7 @@ int main()
 //      default is used for if the user did not enter a valid input for the switch statement
         default:
         {
-            //cout<< "Input a 1, 2, 3, or 4"<<endl;
+            cout<< "Input a 1, 2, 3, or 4"<<endl;
             break;
         }
         }
