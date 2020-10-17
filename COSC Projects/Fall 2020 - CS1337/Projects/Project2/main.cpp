@@ -35,7 +35,7 @@ int main()
     if(!matrixFile)
         do
         {
-            cout<<endl<<"File not found. make sure it is in the same folder as the .exe and it is spelled the same as the input."<<endl;
+            cout<<endl<<"File not found. make sure it is in the same folder as the .exe and it is spelled correctly."<<endl;
             cout<<"Enter the file name of the matrix: ";
             getline(cin,fileName);
             matrixFile.open(fileName,ios::in);
@@ -99,7 +99,7 @@ int main()
 //  the for loop down below is used to ouput the coefficients from the equations, forming the matrix
     for(int i=1; i<=num_equations; i++)
     {
-        cout<<*Xptr<<" "<<*Yptr<<" "<<*Zptr<<" "<< /*" = "<<*/ *Numptr<<endl;
+        cout<<*Xptr<<" "<<*Yptr<<" "<<*Zptr<<" "<< " = "<< *Numptr<<endl;
         Xptr++;
         Yptr++;
         Zptr++;
