@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+//the structure below is used to hold a character and a structure pointer to the locations that are next to it in the grid
 struct node
 {
     char box=' ';
@@ -18,31 +19,63 @@ int CheckBold(string,int);
 int CheckPrint(string,int);
 int CommaCounter(string,int);
 bool PenChecker(string);
-int DirectionLength(char,int,int,int);
+int DirectionLength(char,int,int,node*);
 bool BoldAndPrintChecker(string,int,bool,bool);
 int CommaChecker(string,int,bool,bool,bool);
 bool BadCommaChecker(string,bool,bool,bool);
 int BadLengthFinder(string,int);
-void PrintMem (ostream &var,node *&head)
+
+//Recursive function that prints the memory that holds the grid
+void PrintMem (ostream &var,node *&head, int row=0)
 {
-    if(head!=NULL)
+    if(head)
     {
+//the first for loop prints the entire row and moves the pointer one right
         for(int i=0; i<50; i++)
         {
             var<<head->box;
-            head=head->east;
+            if(i!=49)
+                head=head->east;
         }
-        var<<endl;
+//After printing the whole row, if not on the last row it adds an endl
+        if(row!=49)
+            var<<endl;
+//this for loop goes back to the leftmost spot in the row
         for(int i=0; i<50; i++)
         {
-            head=head->west;
+            if(i!=49)
+                head=head->west;
         }
-        PrintMem(var,head->south);
+//move row one forward to keep track of which row the function is currently on
+        row++;
+//calls the function again with the pointer being one row lower, repeats until it does not exist
+        PrintMem(var,head->south,row);
+    }
+}
+//deletes the memory grid to free up the memory once the code is finished
+void DelMem(node *&head)
+{
+    node *temp1=head;
+    node *temp2=head;
+    node *temp3=head;
+//outside for loop deals with rows
+    for(int j=0; j<50; j++)
+    {
+//inner for loop goes throw the row, deleting the nodes and freeing up space
+        temp3=temp2->south;
+        for(int i=0; i<50; i++)
+        {
+            temp1=temp2->east;
+            delete temp2;
+            temp2=temp1;
+        }
+        delete temp2;
+        temp2=temp3;
     }
 }
 int main()
 {
-    fstream Paintfile("paint.txt",ios::in | ios::out | ios::binary);
+    ofstream Paintfile("paint.txt",ios::binary);
     //Below Command is opening Sample Commands so we can read from the file
     string FileName;
     cout<<endl<<"What is the name of the input file?"<<endl;
@@ -51,6 +84,7 @@ int main()
     ifstream Commands(FileName);
     cout<<endl<<endl;
 
+//if statement below checks to see if the input file is valid and if not ask for a valid input
     if(!Commands)
     {
         do
@@ -59,10 +93,9 @@ int main()
             cout<<endl<<"What is the name of the input file?"<<endl;
             getline(cin,FileName);
             Commands.open(FileName);
-        }while(!Commands);
+        }
+        while(!Commands);
     }
-
-
     //below is setting up all the data we will gather from the commands
     bool IsDown=false;
     char Direction='0';
@@ -71,34 +104,49 @@ int main()
     bool Print=false;
     char Ink='*';
     int counter=0;
-    int pos=static_cast<int>(Paintfile.tellp());
-
-
     node* body=new node;
     node* head=body;
     node* temp;
 
-    for(int i=0; i<51; i++)
+//for loop below creates memory spaces for the grid
+//outside for loop is used to deal with the rows
+    for(int i=0; i<50; i++)
     {
-        for(int j=0; j<51; j++)
+//for the first row we already have one of the 50 spaces needed so we run the 2nd command loop one less
+//in the inner for loops body->east makes a new pointer and temp moves to it, body and temp then point to eachother
+        if(i==0)
         {
-            body->east=new node;
-            temp=body->east;
-            temp->west=body;
-            body=body->east;
+            for(int j=0; j<49; j++)
+            {
+                body->east=new node;
+                temp=body->east;
+                temp->west=body;
+                body=body->east;
+            }
         }
-
+        else
+        {
+            for(int j=0; j<50; j++)
+            {
+                body->east=new node;
+                temp=body->east;
+                temp->west=body;
+                body=body->east;
+            }
+        }
     }
-
+//reseting body and temp so they can be used to deal with North and South pointers
     temp=head;
     body=head;
     int row=0;
-    for(int i=0; i<51; i++)
+//outer loop deals with rows
+    for(int i=0; i<50; i++)
     {
         row++;
-        for(int j=0; j<51; j++)
+        for(int j=0; j<50; j++)
         {
-
+//inner for loop deals with setting North and South to the correct nodes
+//the first run of the inner loop is used to move one pointer to the correct spot that is below another point
             if(row!=1)
             {
                 body->north=temp;
@@ -107,38 +155,41 @@ int main()
             }
             body=body->east;
         }
-
     }
-
+//reseting body and temp to deal with out of bound connections
     temp=head;
     body=head;
-    for(int i=0; i<50; i++)
+//goes down the left side of the grid and removes the west pointer
+    while(body)
     {
-        body->west=nullptr;
+        if(!(body->south))
+            break;
         body=body->south;
+        body->west=nullptr;
 
     }
-
-    for(int i=0; i<50; i++)
+//moves the pointer to the bottom right corner
+    for(int i=0; i<49; i++)
     {
         body=body->east;
     }
-
-    for(int i=0; i<50; i++)
+//once at the bottom right corner, the for loop goes up and removes the east pointing pointer
+    for(int i=0; i<49; i++)
     {
-        body->east=nullptr;
         body=body->north;
+        body->east=nullptr;
     }
+//reset body and temp to the starting position (top left corner)
     body=head;
     temp=head;
 
     string CommandLine;
-    //used to get in correct position in file for ZYbooks
+//used to get in correct position in file for ZYbooks
     Paintfile.seekp(1,ios::cur);
-
-    //repeating code that will read the commands and update the info for each line
+//repeating code that will read the commands and update the info for each line
     while(getline(Commands,CommandLine))
     {
+//first part of the while loop checks to make sure the input given is correct
         int ComLen=static_cast<int>(CommandLine.length());
         int BoldChecker=CheckBold(CommandLine,ComLen);
         int PrintChecker=CheckPrint(CommandLine,ComLen);
@@ -165,8 +216,6 @@ int main()
 
         }
 
-
-
         bool BadComma=BadCommaChecker(CommandLine,Bold,Print,BadLength);
         if(!BadComma)
         {
@@ -190,7 +239,7 @@ int main()
             errors++;
         }
 
-        errors = errors+static_cast<int> (DirectionLength(Direction,Distance,counter,pos));
+        errors = errors+static_cast<int> (DirectionLength(Direction,Distance,counter,temp));
 
         int CommaLocation=CommaChecker(CommandLine,ComLen,Bold,Print,BadLength);
 
@@ -251,6 +300,11 @@ int main()
         else if(CheckDown(CommandLine)==2)
             IsDown=true;
 
+        if(!IsDown&&Bold)
+        {
+            errors++;
+            cout<<endl<<"error on line: "<<counter<<endl<<"Bold can not be true when not printing.";
+        }
 
         if(errors!=0)
         {
@@ -264,104 +318,116 @@ int main()
             Ink='#';
         else
             Ink='*';
-
+//after checking to see if the input is correct, if the pen is down following code is run
         if(IsDown)
         {
+//checks direction of the command and then moves as far as the given distance and prints the Ink into the grid
             if(Direction=='N')
             {
                 for(int i=0; i<Distance; i++)
                 {
-                    pos=pos-52;
                     temp=temp->north;
-                    temp->box=Ink;
+                    if(temp->box!='#')
+                        temp->box=Ink;
                 }
-//                PrintMem(cout,head);
             }
+//checks direction of the command and then moves as far as the given distance and prints the Ink into the grid
             if(Direction=='E')
             {
                 for(int i=0; i<Distance; i++)
                 {
                     temp=temp->east;
-                    temp->box=Ink;
-                    pos=pos+1;
-
+                    if(temp->box!='#')
+                        temp->box=Ink;
                 }
-//                PrintMem(cout,head);
             }
+//checks direction of the command and then moves as far as the given distance and prints the Ink into the grid
             if(Direction=='S')
             {
                 for(int i=0; i<Distance; i++)
                 {
-                    pos=pos+50;
                     temp=temp->south;
-                    temp->box=Ink;
+                    if(temp->box!='#')
+                        temp->box=Ink;
                 }
-//                PrintMem(cout,head);
             }
+//checks direction of the command and then moves as far as the given distance and prints the Ink into the grid
             if(Direction=='W')
             {
                 for(int i=0; i<Distance; i++)
                 {
                     temp=temp->west;
-                    temp->box=Ink;
-                    pos=pos-2;
+                    if(temp->box!='#')
+                        temp->box=Ink;
                 }
-//                PrintMem(cout,head);
             }
         }
+//if the pen is not printing this part of the code will run
         if(!IsDown)
         {
+//checks direction of the command and then moves as far as the given distance without printing to the grid
             if(Direction=='N')
             {
                 for(int i=1; i<=Distance; i++)
                 {
                     temp=temp->north;
-                    pos=pos-51;
                 }
-//                PrintMem(cout,head);
             }
+//checks direction of the command and then moves as far as the given distance without printing to the grid
             if(Direction=='E')
             {
                 for(int i=0; i<Distance; i++)
                 {
                     temp=temp->east;
                 }
-                pos=pos+Distance;
             }
+//checks direction of the command and then moves as far as the given distance without printing to the grid
             if(Direction=='S')
             {
                 for(int i=0; i<Distance; i++)
                 {
                     temp=temp->south;
-                    pos=pos+51;
                 }
-//                PrintMem(cout,head);
 
             }
+//checks direction of the command and then moves as far as the given distance without printing to the grid
             if(Direction=='W')
             {
                 for(int i=0; i<Distance; i++)
                 {
                     temp=temp->west;
                 }
-                pos=pos-1;
             }
         }
+//if the command tells the code to print out the grid then the following part is ran
         if(Print)
         {
+//calls the Print memory function for cout and for the file
             PrintMem(cout,head);
+            head=body;
             Paintfile.seekp(ios_base::beg);
             PrintMem(Paintfile,head);
-            Paintfile.seekp(pos);
+            head=body;
+            cout<<endl;
         }
     }
+//once the final command is given, the function then prints out one last time to the file and command window
+    PrintMem(cout,head);
+    head=body;
+    Paintfile.seekp(ios_base::beg);
+    PrintMem(Paintfile,head);
+    head=body;
+    cout<<endl;
     Paintfile.close();
+    DelMem(head);
 
     return 0;
 }
 int CheckDown(string CommandLine)
 {
     //grabs the first character of the Command Line and checks to see if the pen is up or down
+    if(CommandLine.length()<1)
+        return 3;
     string checker = CommandLine.substr(0,1);
     if(checker[0]=='1')
         return 1;
@@ -385,13 +451,18 @@ int CheckDistance(string CommandLine,int ComLen,bool BadCommas)
     {
 
 
-
+        if(CommandLine.length()<4)
+            return 404;
         string checker=CommandLine.substr(4);
         long long unsigned int i=checker.length();
+        if(i==0)
+            return 1;
         while(!isdigit(checker[--i]))
         {
             --i;
         }
+        if(checker.length()<i+1)
+            return 404;
         checker=checker.substr(0,i+1);
         long long unsigned int str=checker.length();
         if(str>2)
@@ -404,8 +475,10 @@ char CheckDirection(string CommandLine,bool BadComma)
 {
     //removes pen up/down and looks for the direction
 
-    if(!BadComma)
+    if((!BadComma)||((CommandLine.length())<5))
         return '|';
+    if(CommandLine.length()<2)
+        return ' ';
     string checker = CommandLine.substr(2,1);
 
     if(checker[0]=='N')
@@ -463,39 +536,55 @@ bool PenChecker(string CommandLine)
     else
         return true;
 }
-int DirectionLength(char Direciton,int Distance,int counter,int pos)
+int DirectionLength(char Direciton,int Distance,int counter,node *body)
 {
+    node *temp=body;
     if(Direciton=='E')
     {
-        if(pos%51+Distance>50)
+        for(int i=0; i<Distance; i++)
         {
-            cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box.";
-            return 1;
+            temp=temp->east;
+            if(!temp)
+            {
+                cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box."<<endl;
+                return 1;
+            }
         }
     }
-    else if(Direciton=='W')
+    if(Direciton=='W')
     {
-        if(pos%51-Distance<0)
+        for(int i=0; i<Distance; i++)
         {
-            cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box.";
-            return 1;
+            temp=temp->west;
+            if(!temp)
+            {
+                cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box."<<endl;
+                return 1;
+            }
         }
     }
-    else if(Direciton=='S')
+    if(Direciton=='N')
     {
-        if(pos+(Distance*51)>2550)
+        for(int i=0; i<Distance; i++)
         {
-            cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box.";
-            return 1;
+            temp=temp->north;
+            if(!temp)
+            {
+                cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box."<<endl;
+                return 1;
+            }
         }
     }
-    else if(Direciton=='N')
+    if(Direciton=='S')
     {
-        if(pos-(Distance*51)<0)
+        for(int i=0; i<Distance; i++)
         {
-            cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box.";
-
-            return 1;
+            temp=temp->south;
+            if(!temp)
+            {
+                cout<<endl<<"error on line: "<<counter<<endl<<"Distance moved can not leave the 50x50 Painting box."<<endl;
+                return 1;
+            }
         }
     }
     return 0;

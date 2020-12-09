@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1605042336 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\homework\homework_8\src\llist.cpp
+	"LList.h"
+	<iostream>
+
+1605042336 c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\homework\homework_8\include\llist.h
+	"Node.h"
+
+1605041646 c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\homework\homework_8\include\node.h
+	<string>
+	<iostream>
+
+1605042232 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\homework\homework_8\src\node.cpp
+	"Node.h"
+	<iostream>
+	<cmath>
+
+1605041743 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\homework\homework_8\main.cpp
+	<iostream>
+	<string>
+	"LList.h"
+	<time.h>
+
+1605770879 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\projects\project 4\main.cpp
+	<iostream>
+	<string>
+	"LList.h"
+	<fstream>
+	<sstream>
+
+1605652929 c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\projects\project 4\include\llist.h
+	"Node.h"
+
+1605552863 c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\projects\project 4\include\node.h
+	<string>
+	<iostream>
+
+1605731614 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\projects\project 4\src\llist.cpp
+	"LList.h"
+	<iostream>
+
+1605732783 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\projects\project 4\src\node.cpp
+	"Node.h"
+	<iostream>
+	<cmath>
+

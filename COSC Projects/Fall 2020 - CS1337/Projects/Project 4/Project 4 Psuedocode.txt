@@ -1,0 +1,134 @@
+#include "LinkedList.h"
+#include "Node.h"
+
+
+int OuterCoeffiecentChecker(string);
+bool OutercoefficentNegative(string);
+int InnerCoeffiecentChecker(string);
+bool InnerCoeffiecentNegative(string);
+int exponentChecker(string);
+char trigCheck(string);
+bool Xchecker(string);
+string Derivative(string,bool,string,int,int,bool);
+
+int main()
+{
+	ask for name of the file
+	
+	while loop that grabs a line from the file
+	{
+		check how many +'s and -'s and make that many nodes
+		
+		move pointer back to start of list
+		
+		grab the different parts of the function and throw them into their respective nodes as strings
+		
+		for loop that runs for the number of nodes
+			{
+				call a function to see if there is an X in the equationPart
+				
+				if(x is found)
+				{
+					call a function that will check for the outer coefficent using the given string, throw it into the node Outer coefficent
+					call a function that will check to see if it is negative (coefiecent checker) multiply outer coefficent by -1 if true
+					call a function that will check for the exponent if there is one and check to see if its negative, throw into node exponent
+					call a function that checks to see if the string has a tan, sin, or cos and throw into node trig identifier
+					call a function to derive the part of the given equation
+				}
+				else 
+					replace the part of the equation in the node with ''
+				
+				call the nodelist and replace the old string with the new string
+			}
+		
+		
+		call the linkedlist class to sort the equation in desending order
+		
+		call the linkedlist class to print the equation into the given file and add an endl at the end.
+		(make sure linedlist checks for a + or - and that its correct)
+		
+		call the linked list class to delete the list
+	}
+	close all files
+
+}
+
+int OuterCoeffiecentChecker(string)
+{
+	parse through the given part of the equation and find the value of the outer coefficent and return it
+}
+
+bool OutercoefficentNegative(string)
+{
+check to see if there is a - sign in the given string, return true if there is one and return false if not
+}
+
+int exponentChecker(string);
+{
+look for the ^ and grab everything after and return that
+if there is no ^ return 1
+}
+
+string TrigCheck(string)
+{
+look for "tan" or "cos" or "sin" and if found one return "tan","cos",or "sin" repsectivly.
+if there is non return N (as in non)
+}
+
+bool Xchecker(string)
+{
+check to see if there is an X in the given string if so return true
+else return false
+}
+
+int InnerCoeffiecentChecker(string)
+{
+	parse throught the given part of the equation between the space after the trig part and before X and returns that
+}
+
+bool InnerCoeffiecentNegative(string)
+{
+	checks to see if the inner coefficent is negative or not if there is return true else return false
+}
+
+string Derivative(string,bool,string,int,int,bool)
+{
+	 uses the information from all the other functions to give derive
+	 
+	 if(x == false)
+		just return ''
+	 
+	 else if(exponent == 1 && trig == 'non')
+		return the outer coefficent with no x
+	 
+	 else if(exponent != 1 && trig =='non')
+		{
+			multiply the outer coefficent by the exponent then subtract 1 from the exponent
+			return (outer coefficent)x^(exponent)
+		}
+		
+	 else if(exponent != 1 && trig == "tan")
+		{
+			multiply the outer coefficent by the exponent then subtract 1 from the exponent
+			change trig = sec
+			multiply the exponent by 2
+			multiply the outer coefficent by the inner coefficent
+			
+			return (outer coefficent)sec^(exponent)(inner coefficent)
+		}
+	else if(exponent != 1 && trig =="cos")
+		{
+			multiply the outer coefficent by the exponent then subtract 1 from the exponent
+			change trig = sin
+			multiply the outer coefficent by the inner coefficent
+			multiply the outer coefficent by -1
+			return (outer coefficent)sin^(exponent)(inner coefficent)
+		}
+	else if (exponent != 1 &&trig =="sin")
+		{
+			multiply the outer coefficent by the exponent then subtract 1 from the exponent
+			change trig = cos
+			multiply the outer coefficent by the inner coefficent
+			return (outer coefficent)cos^(exponent)(inner coefficent)
+		}
+}
