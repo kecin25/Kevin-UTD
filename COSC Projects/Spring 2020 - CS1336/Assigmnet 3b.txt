@@ -1,0 +1,65 @@
+Programming 1 Code Assigment 3b
+Console Output
+
+If you give me some information, I will be able to predict your future!                                                                         
+                                                                                                                                                
+Give me a random number! 15                                                                                                                     
+                                                                                                                                                
+Now I need the name of a country. The United States of America                                                                                  
+                                                                                                                                                
+What is your favorite animal? Mongoose                                                                                                          
+                                                                                                                                                
+The last thing I need is a funny name! Been                                                                                                     
+                                                                                                                                                
+You are now ready to recieve your future!                                                                                                       
+In 15 years you will be visiting The United States of America.                                                                                  
+You will be givted a Mongoose that you decide to name Been!
+
+Source Code Section
+
+/****************
+Kevin Boudreaux
+Cosc-1336.S02 11:00-12:45
+1/13/2020
+This program is a madlib generator
+*****************/
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string
+        Country,
+        Animal,
+        Funny_Name,
+         Number;
+    
+    cout
+        <<"If you give me some information, I will be able to predict your future!"<<endl<<endl
+        <<"Give me a random number! ";
+    getline(cin, Number);
+    
+    cout
+        <<endl<<"Now I need the name of a country. ";
+        getline(cin, Country);
+    
+    cout
+        <<endl<<"What is your favorite animal? ";
+        getline(cin, Animal);
+    
+    cout
+        <<endl<<"The last thing I need is a funny name! ";
+        getline(cin,Funny_Name);
+
+
+    cout
+        <<endl <<"You are now ready to recieve your future!"<<endl
+        <<"In "<<Number<<" years you will be visiting "<<Country<<"."<<endl
+        <<"You will be givted a "<<Animal<<" that you decide to name "<<Funny_Name<<"!";
+    
+    
+    
+    
+    return 0;
+}
