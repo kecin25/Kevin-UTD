@@ -1,26 +1,32 @@
-import java.security.PrivateKey;
-
 abstract public class Creature
 {
     private
     
-    char Character;
+    char Character = ' ';
     int rowLoco;
     int colLoco;
-    int breedCounter;
+    int breedCounter=0;
+    boolean hasMoved;
+    boolean pastCheck=false;
 
-    void setBreedCounter(int x){breedCounter=x;}
+    void resetBreedCounter(){breedCounter= 0;}
     
     public
     
-    abstract char movement(char array[][]);
-    abstract boolean breedChecker(char array[][]);
+    //setters
+    abstract char movement(Character[][] array, Character ant, Character Beetle);
+    abstract boolean breedChecker();
     void setCharacter(char x){Character=x;}
     void setRowLoco(int x){rowLoco=x;}
     void setColLoco(int x){colLoco=x;}
-    char getCharacter(){return Character;}
+    void setHasMoved(){hasMoved=true;}
+    void resetHasMoved(){hasMoved=false;}
+    void setPastCheck(){pastCheck=true;}
+    
+    //getters
+    void resetPastCheck(){pastCheck=false;}
+    boolean getHasMoved(){return hasMoved;}
+    Character getCharacter(){return Character;}
     int getRowLoco(){return rowLoco;}
     int getColLoco(){return colLoco;}
-    int getBreedCounter(){return breedCounter;}
-    
 }
