@@ -1,0 +1,579 @@
+Classes:
+LinkedLit.java
+{
+	Node head;
+	
+	void setHead(Node node){head = node;}
+	Node getHead() {return head;}
+	
+	void print(Node ptr) 
+	{
+		system.println(ptr.getName() + "\t" + ptr.getAtBat() + "\t" + ptr.getHits() + "\t" + ptr.getWalks() + "\t" + ptr.StrikeOuts() + "\t" + ptr.getHBP() + "\t" + ptr.getSacrifice() + "\t" + ptr.getBA() + "\t" + ptr.getOBA());
+		print(ptr.getNext());
+	}
+	
+	Void sort()
+	{
+		int oldCounter=0;
+		int newCounter=0;
+		Node oldPtr=head;
+
+		while(oldPtr)
+		{
+			oldCounter++;
+			oldPtr=oldPtr.getNext();
+		}
+		oldPtr=head;
+
+		Node Current;
+		Node NewHead;
+
+		while(newCounter<oldCounter)
+		{
+			if(newCounter==0)
+			{
+				NewHead = oldPtr;
+				newCounter++;
+				oldPtr=oldPtr.getNext();
+			}
+
+			else if (newCounter ==1)
+			{
+				Current =oldPtr;
+				oldPtr=oldPtr.getNext();
+				Current.setNext(nullptr);
+				if(Current.getName() > NewHead.getName())
+				{
+					Node oldTemp = Current.getNext();
+					Current.setNext(NewHead);
+					NewHead.setNext(oldTemp);
+					NewHead=Current;
+				}
+				else
+				{
+					NewHead.setNext(Current);
+				}
+				newCounter++;
+			}
+
+			else
+			{
+				Current=oldPtr;
+				oldPtr=oldPtr.getNext();
+				Current.setNext(nullptr);
+				Node last = NewHead;
+				for(int i=0; i<newCounter-1; i++)
+				{
+					last=last.getNext();
+				}
+				if(Current.getName()>=NewHead.getName())
+				{
+					Current.setNext(NewHead);
+					NewHead=Current;
+				}
+				else if(Current.getName() <= last.getName())
+				{
+					last.setNext(Current);
+				}
+				else
+				{
+					Node ptr1=NewHead;
+					Node ptr2=NewHead.getNext();
+					bool solved=false;
+					while(solved!=true)
+					{
+						if(Current.getname() < ptr1.getName() && Current.getName() > ptr2.getName() )
+						{
+							ptr1.setNext(Current);
+							Current.setNext(ptr2);
+							solved = true;
+						}
+						else
+						{
+							ptr1=ptr1.getNext();
+							ptr2=ptr2.getNext();
+						}
+					}
+				}
+				newCounter++;
+			}
+		}
+		head=NewHead;
+	}
+	void setNextNode(Node newNode)
+	{
+		temp=head;
+		while(temp.getNext())
+			temp=temp.getNext();
+		temp.setNext(newNode);
+	}
+	void delete(int loco)
+	{
+		if(loco == 0)
+			head= head.getNext();
+		
+		else
+		{
+			Node current=head.getNext();
+			Node past=head;
+			for(int i=0; i<counter;i++)
+			{
+				current=current.getNext();
+				past=past.getNext();
+			}
+			past.setNext(current.getNext());
+			current.setNext(null);
+		}
+	}
+	
+}
+
+Node.java
+{
+	Node next;
+	String name;
+	int hit;
+	int out;
+	int strikeout;
+	int walk;
+	int HBP;
+	int sacrifice;
+	
+	
+	Node getNext(){return next;)
+	String getName(){return name;)
+	int getHits(){return hit;}
+	int getOut(){return out;}
+	int getStrikeOut(){return StrikeOut;}
+	int getWalks(){return walk;}
+	int getHBP(){return walk;}
+	int getSacrifice{return sacrifice;}
+	double getBA()
+	{
+		if((strikeout+out+hit) == 0)
+			return 0;
+		else
+			return (double)hits/(strikeout+out+hit);
+	}
+	double getOBA()
+	{
+		if((hit+out+strikeout+walk+HBP+sacrifice)==0)
+			return 0
+		else
+			return (double)(hit+walk+HBP)/(hit+out+strikeout+walk+HBP+sacrifice)
+	}
+
+	
+	void setNext(Node x){next=x;}
+	void setName(String x){name=x;}
+	void setHits(int x){hit=x;}
+	void setOut(int x){out=x;}
+	void setStrikeOut(int x){strikeout=x;}
+	void setWalks(int x){walk=x;}
+	void setHBP(int x){HBP=x;}
+	void setSacrifice(int x){sacrifice=x;}
+	
+}
+
+Main:
+
+Main()
+{
+	get file name
+	
+	get number of lines in the file
+	
+	LinkedList list;
+	
+	for loop (i<number of lines)
+	{
+	string = next line of file
+		
+		Node temp;
+		
+		temp.setName(string.substring(0,first space);
+		string=string.substring(0, first space + 1);
+		temp.setHits(findHits(string));
+		temp.setOut(findOuts(string));
+		temp.setStrikeOut(findStrikeOuts(string);
+		temp.setWalks(findWalks(string));
+		temp.setHBP(findHBP(string));
+		temp.setSacrifice(findSacrifice(string));
+		
+		Node listTemp=list.getHead();
+		boolean match = false;
+		while(listTemp && !match)
+		{
+			if(listTemp.getName() == temp.getName())
+			{
+				match=true;
+				listTemp.setHits(listTemp.getHits+temp.getHits);
+				listTemp.setOut(listTemp.getOut+temp.getOut);
+				listTemp.setStrikeOut(listTemp.getStrikeOut+temp.getStrikeOut);
+				listTemp.setWalks(listTemp.getWalks+temp.getWalks);
+				listTemp.setHBP(listTemp.getHBP+temp.getHBP);
+				listTemp.setSacrifice(listTemp.getSacrifice+temp.getSacrifice);
+			}
+			listTemp=listTemp.getNext();
+		}
+		
+		if(!match)
+		{
+			if List.getHead==null
+			{
+				List.setHead(temp);
+			}
+			else
+			{
+				List.setNextNode(temp);
+			}
+		}
+	}
+	List.sort();
+	List.print();
+	LinkedList BAList = findBALeader(List);
+	LinkedList OBPList = findOBPLeader(List);
+	LinkedList HitsList = findHitLeader(List);
+	LinkedList WalksList = findWalkLeader(List);
+	LinkedList StrikeOutList = findStrikeOutLeader(List);
+	LinkedList HBPList = findHBPLeader(List);
+
+	System.println();
+	System.println("BATTING AVERAGE");
+	BAList.print;
+	System.println();
+	System.println("ON-BASE PERCENTAGE");
+	OBPList.print;
+	System.println();
+	System.println("HITS");
+	HitsList.print;
+	System.println();
+	System.println("WALKS");
+	WalksList.print;
+	System.println();
+	System.println("STRIKEOUTS");
+	StrikeOutList.print;
+	System.println();
+	System.println("HIT BY PITCH");
+	HBPList.print;
+}
+
+
+Functions in Main:
+
+
+int findHits(string)
+{
+	int counter=0;
+	for(i<string.length)
+	{
+		if string.at(i) == H
+			counter++;
+	}
+	return counter
+}
+int findOuts(string)
+{
+	int counter=0;
+	for(i<string.length)
+	{
+		if string.at(i) == O
+			counter++;
+	}
+	return counter
+}
+int findStrikeOuts(string)
+{
+	int counter=0;
+	for(i<string.length)
+	{
+		if string.at(i) == K
+			counter++;
+	}
+	return counter
+}
+int findWalks(string)
+{
+	int counter=0;
+	for(i<string.length)
+	{
+		if string.at(i) == W
+			counter++;
+	}
+	return counter
+}
+int findHBP(string)
+{
+	int counter=0;
+	for(i<string.length)
+	{
+		if string.at(i) == P
+			counter++;
+	}
+	return counter
+}
+int findSacrifice(string)
+{
+	int counter=0;
+	for(i<string.length)
+	{
+		if string.at(i) == S
+			counter++;
+	}
+	return counter
+}
+
+LList findBALeader(List)
+{
+	Node Leader;
+	Node temp=List.getHead().getNext();
+	LList BALeader.setHead(Leader);
+	
+	double HighestBA=List.getHead().getBA();
+	for(int i=0; i<3; i++)
+	{
+		while(temp exists)
+		{
+			if(temp.getBA() > HighestBA)
+			{
+				Leader = temp;
+				HighestBA=temp.getBA();
+			}
+			else if(temp.getBA() == HighestBA)
+			{
+				Leader.setName(Leader.getName() + ", " + temp.getName());
+			}
+			temp=temp.getNext();
+		}
+		int counter=0;
+		Node spot=List.getHead();
+		while(spot)
+		{
+			if(spot.getBA() == HighestBA)
+			{
+				List.delete(counter);
+			}
+			counter++;
+			spot=spot.getNext();
+		}
+		
+		if(i!=3)
+		{
+			Leader.setNext(new Node);
+			Leader=Leader.getNext();
+		}
+	}
+	return BALeader;
+	
+}
+LList findOBPLeader(List)
+{
+	Node Leader;
+	Node temp=List.getHead().getNext();
+	LList OBPLeader.setHead(Leader);
+	
+	double HighestOBP=List.getHead().getOBP();
+	for(int i=0; i<3; i++)
+	{
+		while(temp exists)
+		{
+			if(temp.getOBP() > HighestOBP)
+			{
+				Leader = temp;
+				HighestOBP=temp.getOBP();
+			}
+			else if(temp.getOBP() == HighestOBP)
+			{
+				Leader.setName(Leader.getName() + ", " + temp.getName());
+			}
+			temp=temp.getNext();
+		}
+		int counter=0;
+		Node spot=List.getHead();
+		while(spot)
+		{
+			if(spot.getOBP() == HighestOBP)
+			{
+				List.delete(counter);
+			}
+			counter++;
+			spot=spot.getNext();
+		}
+		
+		if(i!=3)
+		{
+			Leader.setNext(new Node);
+			Leader=Leader.getNext();
+		}
+		return OBPLeader;
+	}
+}
+LList findHitLeader(List)
+{
+	Node Leader;
+	Node temp=List.getHead().getNext();
+	LList HitLeader.setHead(Leader);
+	
+	int HighestHit=List.getHead().getHit();
+	for(int i=0; i<3; i++)
+	{
+		while(temp exists)
+		{
+			if(temp.getHit() > HighestHit)
+			{
+				Leader = temp;
+				HighestHittemp.getHit();
+			}
+			else if(temp.getHit() == HighestHit)
+			{
+				Leader.setName(Leader.getName() + ", " + temp.getName());
+			}
+			temp=temp.getNext();
+		}
+		int counter=0;
+		Node spot=List.getHead();
+		while(spot)
+		{
+			if(spot.getHit() == HighestHit)
+			{
+				List.delete(counter);
+			}
+			counter++;
+			spot=spot.getNext();
+		}
+		
+		if(i!=3)
+		{
+			Leader.setNext(new Node);
+			Leader=Leader.getNext();
+		}
+		return OBPLeader;
+	}
+}
+LList findWalkLeader(List)
+{
+	Node Leader;
+	Node temp=List.getHead().getNext();
+	LList walkLeader.setHead(Leader);
+	
+	int Highestwalk=List.getHead().getWalks();
+	for(int i=0; i<3; i++)
+	{
+		while(temp exists)
+		{
+			if(temp.getWalks() > HighestWalk)
+			{
+				Leader = temp;
+				HighestWalk=temp.getWalks();
+			}
+			else if(temp.getWalks() == HighestWalk)
+			{
+				Leader.setName(Leader.getName() + ", " + temp.getName());
+			}
+			temp=temp.getNext();
+		}
+		int counter=0;
+		Node spot=List.getHead();
+		while(spot)
+		{
+			if(spot.getWalks() == HighestWalk)
+			{
+				List.delete(counter);
+			}
+			counter++;
+			spot=spot.getNext();
+		}
+		
+		if(i!=3)
+		{
+			Leader.setNext(new Node);
+			Leader=Leader.getNext();
+		}
+		return walkLeader;
+	}
+}
+LList findStrikeOutLeader(List)
+{
+	Node Leader;
+	Node temp=List.getHead().getNext();
+	LList StrikeOutLeader.setHead(Leader);
+	
+	int lowestStrikeOut=List.getHead().getStrikeOut();
+	for(int i=0; i<3; i++)
+	{
+		while(temp exists)
+		{
+			if(temp.getStrikeOut() < lowestStrikeOut)
+			{
+				Leader = temp;
+				lowestStrikeOut=temp.getStrikeOut();
+			}
+			else if(temp.getStrikeOut() == lowestStrikeOut)
+			{
+				Leader.setName(Leader.getName() + ", " + temp.getName());
+			}
+			temp=temp.getNext();
+		}
+		int counter=0;
+		Node spot=List.getHead();
+		while(spot)
+		{
+			if(spot.getStrikeOut() == lowestStrikeOut)
+			{
+				List.delete(counter);
+			}
+			counter++;
+			spot=spot.getNext();
+		}
+		
+		if(i!=3)
+		{
+			Leader.setNext(new Node);
+			Leader=Leader.getNext();
+		}
+		return StrikeOutLeader;
+	}
+}
+LList findHBPLeader(List)
+{
+	Node Leader;
+	Node temp=List.getHead().getNext();
+	LList HBPLeader.setHead(Leader);
+	
+	int HighestHBP=List.getHead().getHBP();
+	for(int i=0; i<3; i++)
+	{
+		while(temp exists)
+		{
+			if(temp.getHBP() > HighestHBP)
+			{
+				Leader = temp;
+				HighestHBP=temp.getHBP();
+			}
+			else if(temp.getHBP() == HighestHBP)
+			{
+				Leader.setName(Leader.getName() + ", " + temp.getName());
+			}
+			temp=temp.getNext();
+		}
+		int counter=0;
+		Node spot=List.getHead();
+		while(spot)
+		{
+			if(spot.getStrikeOut() == HighestHBP)
+			{
+				List.delete(counter);
+			}
+			counter++;
+			spot=spot.getNext();
+		}
+		
+		if(i!=3)
+		{
+			Leader.setNext(new Node);
+			Leader=Leader.getNext();
+		}
+		return HBPLeader;
+	}
+
+}

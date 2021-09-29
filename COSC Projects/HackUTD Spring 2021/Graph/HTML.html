@@ -1,0 +1,1201 @@
+<!DOCTYPE HTML>
+<html lang="eg">
+<head>
+    <script>
+        window.onload = function ( name1,file1,name2,file2,name3,file3,name4,file4,name5,file5,
+                                   name6,file6,name7,file7,name8,file8,file9,name9,name10,file10)
+        {
+            name1="ACBI";
+            file1="ACBI.csv";
+            name2="ACC";
+            file2="ACC.csv";
+            name3="ACCD";
+            file3="ACCD.csv";
+            name4="ACMR";
+            file4="ACMR.csv";
+            name5="BOX";
+            file5="BOX.csv";
+
+
+            let dataPoints = [];
+            let dataPoints2 = [];
+            let dataPoints3 = [];
+            let dataPoints4 = [];
+            let dataPoints5 = [];
+            let dataPoints6 = [];
+            let dataPoints7 = [];
+            let dataPoints8 = [];
+            let dataPoints9 = [];
+            let dataPoints10 = [];
+            if(name10 && file10) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name5,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints5 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name6,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints6 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name7,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints7 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name8,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints8 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name9,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints9 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name10,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints10 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name9 && file9) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name5,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints5 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name6,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints6 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name7,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints7 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name8,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints8 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name9,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints9 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name8 && file8) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name5,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints5 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name6,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints6 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name7,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints7 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name8,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints8 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name7 && file7) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name5,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints5 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name6,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints6 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name7,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints7 // Y: [Open, High ,Low, Close]
+                    },]
+                });
+            }
+            else if(name6 && file6) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name5,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints5 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name6,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints6 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name5 && file5) {
+                chart = new CanvasJS.Chart("chartContainer", {
+
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    exportsEnabled:false,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price",
+                        logarithmic: true,
+                        logarithmBase: 2
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name5,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints5 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name4 && file4) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name4,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints4 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name3 && file3) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name3,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints3 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name2 && file2) {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemClick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }, {
+                        type: "candlestick",
+                        showInLegend: true,
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        name: name2,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints2 // Y: [Open, High ,Low, Close]
+                    }]
+                });
+            }
+            else if(name1 && file1) {
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: [{
+                        type: "candlestick",
+                        risingColor: "#000000",
+                        fallingColor: "#C70039",
+                        showInLegend: true,
+                        name: name1,
+                        yValueFormatString: "$#,##0.00",
+                        xValueFormatString: "M/DD/YYYY",
+                        dataPoints: dataPoints //Y: [Open, High, Low, Close]
+                    }]
+                });
+            }
+            else {
+                chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: false,
+                    theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    zoomEnabled: true,
+                    colorSet: "Stock",
+                    title: {
+                        text: "Stock Prices over Time"
+                    },
+                    subtitles: [{
+                        text: "All Prices are in USD"
+                    }],
+                    axisX: {
+                        interval: 1,
+                        valueFormatString: "M/D/YYYY"
+                    },
+                    axisY: {
+                        prefix: "$",
+                        title: "Price"
+                    },
+                    toolTip: {
+                        shared: true,
+                        content: "Date: {x}<br /><strong>{name}</strong><br />Open: {y[0]}<br />Close: {y[3]}<br />High: {y[1]}<br />Low: {y[2]}<br /><br />"
+                    },
+                    legend: {
+                        reversed: true,
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
+                    data: []
+                });
+            }
+
+            $.get(file1, getDataPointsFromCSV1);
+            $.get(file2, getDataPointsFromCSV2);
+            $.get(file3, getDataPointsFromCSV3);
+            $.get(file4, getDataPointsFromCSV4);
+            $.get(file5, getDataPointsFromCSV5);
+            $.get(file6, getDataPointsFromCSV6);
+            $.get(file7, getDataPointsFromCSV7);
+            $.get(file8, getDataPointsFromCSV8);
+            $.get(file9, getDataPointsFromCSV9);
+            $.get(file10, getDataPointsFromCSV10);
+
+
+            function getDataPointsFromCSV1(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV2(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints2.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV3(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                for (let i = 0; i < csvLines.length; i++) {
+                    let points;
+                if (csvLines[i].length > 0) {
+                    points = csvLines[i].split(",");
+                    dataPoints3.push({
+                        x: new Date(
+                            parseInt(points[0].split("-")[0]),
+                            parseInt(points[0].split("-")[1]) - 1,
+                            parseInt(points[0].split("-")[2])
+                        ),
+                        y: [
+                            parseFloat(points[2]),
+                            parseFloat(points[4]),
+                            parseFloat(points[5]),
+                            parseFloat(points[3])
+                        ]
+                    });
+                }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV4(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints4.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV5(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints5.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV6(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints6.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV7(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints7.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV8(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints8.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV9(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints9.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            function getDataPointsFromCSV10(csv)
+            {
+                let csvLines;
+                csvLines = csv.split(/[\r?\n|]+/);
+
+                let points;
+                for (let i = 0; i < csvLines.length; i++) {
+                    if (csvLines[i].length > 0) {
+                        points = csvLines[i].split(",");
+                        dataPoints10.push({
+                            x: new Date(
+                                parseInt(points[0].split("-")[0]),
+                                parseInt(points[0].split("-")[1]) - 1,
+                                parseInt(points[0].split("-")[2])
+                            ),
+                            y: [
+                                parseFloat(points[2]),
+                                parseFloat(points[4]),
+                                parseFloat(points[5]),
+                                parseFloat(points[3])
+                            ]
+                        });
+                    }
+                }
+                chart.render();
+            }
+            chart.render();
+
+            function toggleDataSeries(e)
+            {
+                e.dataSeries.compare = !!(typeof (e.dataSeries.compare) === "undefined" || e.dataSeries.compare);
+                e.chart.render();
+            }
+            CanvasJS.addColorSet("Stock",
+                [   "#581845",
+                    "#900C3F",
+                    "#FF5733",
+                    "#22FFBA",
+                    "#22CBFF",
+                    "#2296FF",
+                    "#226EFF",
+                    "#3022FF",
+                    "#8E22FF",
+                    "#BD22FF",
+                    "#F222FF",
+                    "#FF3A99",
+                    "#FF3A5E",
+                    "#ff3a3a"
+                ]);
+
+
+        }
+    </script>
+    <title></title>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+</body>
+</html>
