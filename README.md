@@ -1,2 +1,2 @@
 # Kevin-UTD
- School Work for UTD
+ School Work for UTD classes
