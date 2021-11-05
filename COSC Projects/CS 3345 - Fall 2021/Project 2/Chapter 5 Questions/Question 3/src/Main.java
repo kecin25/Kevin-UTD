@@ -3,7 +3,7 @@
     Description:Write a program to compute the number of collisions required in a long random
     sequence of insertions using linear probing, quadratic probing, and double hashing.
     Made by: Kevin Boudreaux
-    Made on: 11/22/2021
+    Made on: 10/22/2021
     ID: KCB180002
  */
 import java.util.Random;
@@ -27,10 +27,10 @@ public class Main {
             DoubleMap.insertDoubleHash(temp);
         }
         
-        System.out.println("Number of Collisions for Chaining, with a size " +ChainingMap.getSize() + ", is: " + ChainingMap.getCollisionCount());
-        System.out.println("Number of Collisions for Linear Probing, with a size " +LinearMap.getSize() + ", is: " + LinearMap.getCollisionCount());
-        System.out.println("Number of Collisions for Quadratic Probing, with a size " +QuadraticMap.getSize() + ", is: " + QuadraticMap.getCollisionCount());
-        System.out.println("Number of Collisions for Double Hashing with, a size " +DoubleMap.getSize() + ", is: " + DoubleMap.getCollisionCount());
+        System.out.println("Number of Collisions for Chaining, with a size of " +ChainingMap.getSize() + ", is: " + ChainingMap.getCollisionCount());
+        System.out.println("Number of Collisions for Linear Probing, with a size of " +LinearMap.getSize() + ", is: " + LinearMap.getCollisionCount());
+        System.out.println("Number of Collisions for Quadratic Probing, with a size of " +QuadraticMap.getSize() + ", is: " + QuadraticMap.getCollisionCount());
+        System.out.println("Number of Collisions for Double Hashing with, a size of " +DoubleMap.getSize() + ", is: " + DoubleMap.getCollisionCount());
         System.out.println("Do you want to see the arrays? Y/N");
         Scanner input = new Scanner(System.in);
         String PrintArrays = input.nextLine();
