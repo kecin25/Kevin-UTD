@@ -20,11 +20,11 @@ public class Main
         String fileName = input.nextLine();
         File file = new File(fileName);
         
-    //    System.out.println("What character do you want to represent the ants?");
+        System.out.println("What character do you want to represent the ants?");
         char ant = input.next().charAt(0);
-    //    System.out.println("What character do you want to represent the beetles?");
+        System.out.println("What character do you want to represent the beetles?");
         char beetle = input.next().charAt(0);
-    //    System.out.println("How many turns do you want to run the simulation?");
+        System.out.println("How many turns do you want to run the simulation?");
         int turns = input.nextInt();
         
     //  Creates a scanner to parse through the file
