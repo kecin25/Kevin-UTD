@@ -16,7 +16,6 @@
 .eqv 	HEIGHT 64
 .eqv 	MEM 0x10010000			#mem address of pixel (0)
 
-
 #colors
 .eqv	WHITE	0x00FFFFFF
 .eqv	BLACK 	0x00000000

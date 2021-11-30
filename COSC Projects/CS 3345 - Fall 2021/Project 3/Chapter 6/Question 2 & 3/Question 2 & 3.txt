@@ -1,0 +1,6 @@
+Question 2:
+a. Show the results of inserting 10, 12, 1, 14, 16, 5, 8, 15, 13, 9, 7, 4, 11, 13, and 2 one at a time, into an initually empty binary heap
+b. Show the result of using the linear-time algorithm to build a binary heap using the same input
+
+Question 3:
+Show the result of preforming three deleteMin operations in the heap of the previous exercise

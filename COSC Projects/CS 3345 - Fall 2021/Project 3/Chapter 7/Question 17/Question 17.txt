@@ -1,0 +1,7 @@
+Determine the running time for mergesort for
+a. sorted input
+b. reverse-ordered input
+c. random input
+
+
+answer: The time is always going to be O(nlogn) because the sort will always divide the array into smaller parts and compare the smaller parts.
