@@ -6,5 +6,5 @@ Class Work
 HackUTD Spring 2021							    
 (Worked primarily on HTML and Canvas JS to get the graph working **no loner functions due to free trial used to get stock data expiring)
 
-BattleShip Game.ext								
+BattleShip Game.exe								
 (Personal project during summer of 2020, made a crude version of the classic battleship game using CPP with minimal to no input validation)
