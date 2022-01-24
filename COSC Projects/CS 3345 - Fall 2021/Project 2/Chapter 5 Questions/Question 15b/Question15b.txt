@@ -1,9 +1,0 @@
-Suppose we want to find the first occurrence of a string P1P2 ··· Pk in a long input
-string A1A2 ··· AN. We can solve this problem by hashing the pattern string, obtaining a hash value HP, and comparing this value with the hash value formed from
-A1A2 ··· Ak, A2A3 ··· Ak+1, A3A4 ··· Ak+2, and so on until AN−k+1AN−k+2 ··· AN.
-If we have a match of hash values, we compare the strings character by character
-to verify the match. We return the position (in A) if the strings actually do match,
-and we continue in the unlikely event that the match is false.
-
-Show that the running time is O(k + N) plus the time spent refuting false
-matches

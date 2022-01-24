@@ -1,0 +1,223 @@
+Kevin Boudreaux
+KCB180002
+3/26/2021
+
+Classes
+
+Binary Tree Class:
+{
+	Root Pointer that points to a Node
+	generic parameter Root = null;
+
+	public int compare( generic X, generic Y){return x.compareTo(y);}
+
+	Void Insert Function with generic parameter
+	{	
+		if(root == null)
+			root = generic parameter given
+		else
+		{
+			call helper insert function, pass in given node and root
+		}
+	}
+	Private Void insert helper function (needs insert node and current node)
+	{
+		if(node given exponent > current exponent  *use compare function*)
+		{
+			if(current right child == null)
+				current right child == node given
+				return;
+			else
+				call insert helper with need to pass in node and current's right child
+		}
+		else if(node given exponent < current exponent  *use compare function*)
+		{
+			if (current left child == null)
+				current left child == node given
+				return;
+			else
+				call insert helper with need to pass in node and current's left child
+		}
+		else
+		{
+			current coeficient =+ given node coeficient;
+			if(current coeficient == 0)
+				delete(coeficient);
+				return
+		}
+	}
+	
+	Search, returns node type with a generic parameter
+	{
+		for project 3 generic parameter will be based off of exponent
+		if(root == generic parameter passed in  *use compare function*)
+			return root
+		else if( generic parameter < what is being comapred to  *use compare function*)
+			call Search helper with root's left child and generic parameter
+		else
+			call Search	helper with roots's right child and generic parameter
+			
+	}
+	
+	Search helper function(Node, generic parameter)
+	{
+		if( current node == null)
+			return null;
+		else if(generic parameter < what is being compared to  *use compare function*)
+			call Search helper with Node's left child and generic parameter
+		else if( generic parameter > what is being compared to  *use compare function*)
+			call Search helper with Node's right child and generic parameter
+		else
+			return node;
+	}
+	
+	**Idea of delete function is to check to see if its the root, if so get left child and set as new root then call insert function for right child, same process for deleted node if there is a child 
+	that needs to be dealt with **
+	
+	
+	Delete, Node return type with generic parameter
+	{
+		if(root != null && root == given generic  *use compare function*)
+		{
+			Node left= root's left child;
+			root = root's right child;
+			
+			if(root's left child == null  *use compare function*)
+				root's left child = left
+			else
+				call helper function with generic parameter and Node left;
+		}
+		else if(root != null && given generic < root  *use compare function*)
+			call helper function left with generic and root's left child, as well as current node
+		else if(root != null && given generic > root  *use compare function*)
+			call helper function right  with generic and root's right child, as well as current node
+	}
+	private delete helper function left, returns node with generic and 2 nodes as parameters
+	{
+		if(generic == comparing node)
+			left = comparing's left child
+			above's node left child = comparing's right child
+			call insert function for left
+		else if(generic > comparing node)
+			call right helper function with generic, current node, current node's right child
+		else
+			call left helper function with generic, current node, current node's left child
+	}
+	private delete helper function right, returns node with generic and 2 nodes as parameters
+	{
+		if(generic == comparing node)
+			right = comparing's right child
+			above's node right child = comparing's left child
+			call insert function for right
+		else if(generic > comparing node)
+			call right helper function with generic, current node, current node's right child
+		else
+			call left helper function with generic, current node, current node's left child
+	}
+	
+	public void Print function for printing Binary Tree
+	{
+		String
+		String = print(root, string);
+		while(String.at(0) == ' ' or '+')
+			cut off first character of string
+		print String;
+	}
+	private void Print(Node, string )
+	{
+		if(node == null)
+			return;
+		Print(Node's left child, string);
+		
+		if(Payload has a Trig Value
+			string append coeficient + Trig value + " " + inner coeficient +"X"
+		else
+			string append coeficient+"X"^+exponent
+			
+		Print(Node's Right Child, string);
+	}
+	
+}
+
+Node Class:
+{
+	Node is a generic class
+	
+	left and right pointers 
+	
+	Payload variable to hold payload
+	
+	generic setters and generic getters for left / right pointers
+	
+	Payload holder that connects to payload class
+	
+	int compareTo function that is generic, calls payload's compareTo function, returns int value
+}
+Payload Class:
+{
+	string coeficient
+	int exponent
+	char/string for Trig value if any
+	
+	setters and getters for both
+}
+
+
+Main:
+{
+	set up scanner to take line by line input to be able to get equation
+	
+	build string to be input
+	
+	if first spot in string is not | then make a upper and lower bounds
+	everything before the | will be converted into an int and set as upper bounds
+	everything after | up to first space will be lower bounds
+	
+	remove up to first space in string to be able to get to equation
+	
+	remove last charcter in string
+	remove all characters at end of string until end of string is a number X
+	
+	while string ! empty 
+	{
+	int TrigFix=0;
+		look for the first +/- (should be after first exponent/X value
+		substring up to first +/-
+		if x is not found then set substring to coeficient and insert into binary tree
+		
+		else 
+		{
+			if trig is not found (S,T,C for sin, tan, cos)
+			{
+				everything before x value is put in as coeficient and everything after ^ is put in as exponent
+				change exponent to be +1
+				check to see if coeficient / exponent is a whole number if so, set coeficient to number
+				
+				if not set coeficient to be the simplified verison of the fraction in the form of (coeficient/exponent)
+			}
+			else
+			{
+				look for C first, if not then look for S. 
+				grab everything before the C or S and set as coeficient, remove up to the space after sin/cos
+				everything before x is innter coeficient
+				
+				if C is found
+				{
+					set trig ID as Sin and divide the coeficient by inner coeficient
+					set exponent to 5000 + TrigFix
+				}
+				if S is found
+				{
+					set Trig ID as Cos and divide coeficient by inner coeficient then flip +/- on coeficient
+					set exponent to 5000 + TrigFix
+				}
+			}
+			
+			insert node into binary tree
+		}
+	TrigFix++;
+	}
+	
+	call function to print binary tree
+	
+}

@@ -1,6 +1,0 @@
-Write a method that takes as input a binary search tree, T, and two keys k1 and k2,
-which are ordered so that k1 ≤ k2, and prints all elements X in the tree such that
-k1 ≤ Key(X) ≤ k2. Do not assume any information about the type of keys except
-that they can be ordered (consistently). Your program should run in O(K + logN)
-average time, where K is the number of keys printed. Bound the running time of
-your algorithm

@@ -1,2 +1,0 @@
-Write a program to compute the number of collisions required in a long random
-sequence of insertions using linear probing, quadratic probing, and double hashing.

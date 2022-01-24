@@ -1,0 +1,1 @@
+Write an efficient routine to perform insert using binomial queues. Do not call merge

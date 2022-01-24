@@ -1,0 +1,7 @@
+1) look up jupyter Notebook in search bar
+2) when opened, it opens a CMD prompt. Type jupyter notebook
+3) this starts the notebook server on your machine, go to the browser window
+4) navigate to this folder
+5) open HelloAI.pynb 
+6) run all parts of the code
+7) open music-recommender.dot in pycharm to see visual graph of how it predicts the outcome given a set input

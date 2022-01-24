@@ -1,0 +1,1 @@
+Give the prefix, infix, and postfix expressions corresponding to the tree in the picture in the file.

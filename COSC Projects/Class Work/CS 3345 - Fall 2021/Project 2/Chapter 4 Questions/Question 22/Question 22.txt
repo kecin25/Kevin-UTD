@@ -1,0 +1,2 @@
+Design a linear-time algorithm that verifies that the height information in an AVL
+tree is correctly maintained and that the balance property is in order

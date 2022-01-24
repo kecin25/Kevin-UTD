@@ -1,6 +1,0 @@
-sinx -cos x dx
-sinx+cosx+x^2+x+1 dx
-sin10x-cos4x+7x^6+5x-x^-2+x^-7 dx
-45sin45x+30cos30x+15sin15x+x^2-5x+3x^-2 dx
--cos5x+x^3+1 dx
--1 dx

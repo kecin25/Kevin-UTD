@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88bb1bc5-9133-4939-9b6d-81aff24a35e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Homework/Homework 1/Homework1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Homework/Homework 2/Homework 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Homework/Homework 3/Homework 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Homework/Homework 4/Homework 4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Projects/Project 0/Project 0.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Projects/Project 1/Project 1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Projects/Project 2/Project 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Projects/Project 3/Project 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS 2336 - Spring 2021/Projects/Project 4/Project 4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/Basic Automation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/transactions.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Basic Automation/transactions2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Basic Machine Learning.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/.idea/Intro to Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Intro to Python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS 3345 - Fall 2021/Project 3/Chapter 7/Question 15/Question 15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS 3345 - Fall 2021/Project 3/Chapter 7/Question 15/Question 15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/Homework1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/out/production/Homework1/BinaryFormatException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/out/production/Homework1/GenericList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/out/production/Homework1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/src/BinaryFormatException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/src/GenericList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/Homework 2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/Sample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/out/production/Homework 2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 2/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/Graph3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/Homework 3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/graph1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/graph2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/out/production/Homework 3/Main$graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/out/production/Homework 3/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 3/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/Homework 4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/Homework 4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/out/production/Homework 4/Main$LinkedlistIS$node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/out/production/Homework 4/Main$LinkedlistIS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/out/production/Homework 4/Main$MergeSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/out/production/Homework 4/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Homework/Homework 4/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/Project 0.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/out/production/Project 0/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/sample_leaders.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/sample_stats.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 0/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/Project 1 Psueodocode.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/Project 1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/out/production/Project 1/Ant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/out/production/Project 1/Beetle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/out/production/Project 1/Creature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/out/production/Project 1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/out/production/Project 1/World3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/src/Ant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/src/Beetle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/src/Creature.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/src/World3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/world.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 1/world2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/Project 2 Pseudocode.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/Project 2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/Sample_stats3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/out/production/Project 2/LinkList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/out/production/Project 2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/out/production/Project 2/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/sample_stats.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/sample_stats2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/src/LinkList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 2/src/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/Project 3 PsuodoCode.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/Project 3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/Sample1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/Sample2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/TestCase1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/TestCase2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/TestCase3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/TestCase4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/TestCase5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/TestCase6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/out/production/Project 3/BinTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/out/production/Project 3/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/out/production/Project 3/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/out/production/Project 3/Payload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/src/BinTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/src/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 3/src/Payload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/Project 4 PseudoCode.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/Project 4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/keyfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/out/production/Project 4/GenericHashMap$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/out/production/Project 4/GenericHashMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/out/production/Project 4/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/out/production/Project 4/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/sample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/sample2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/sample3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/sample_playbyplay.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/src/GenericHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/src/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS2336 - Spring 2021/Projects/Project 4/test.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23zUhtdO5FClIRJoeE2SQNdLSzI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88bb1bc5-9133-4939-9b6d-81aff24a35e9" name="Changes" comment="" />
+      <created>1642736532401</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642736532401</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,1 +1,0 @@
-Show the result of accessing the keys 3, 9, 1, 5 in order in the splay tree in the png given

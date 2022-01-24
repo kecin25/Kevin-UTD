@@ -1,0 +1,6 @@
+Given input {4371, 1323, 6173, 4199, 4344, 9679, 1989} and a hash function
+h(x) = x mod 10, show the resulting:
+a. Separate chaining hash table.
+b. Hash table using linear probing.
+c. Hash table using quadratic probing.
+d. Hash table with second hash function h2(x) = 7 − (x mod 7)

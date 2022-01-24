@@ -1,5 +1,0 @@
-a. Find a minimum spanning tree for the graph in Figure 9.84 using both Prim's and Kruskal's algorithms
-b. Is this minimum spanning tree unique? why?
-	yes, because just looking at Prim's algorithm you will get a different minimum spanning tree at each location you start at. Starting at position A instead of B will make A and E connected instead of 
-	B and E. Kruskal's algorithm can give several minimum spanning trees based on different implementations. when finding the smallest edge using > instead of >= will make a difference on the outcome of the
-	tree.

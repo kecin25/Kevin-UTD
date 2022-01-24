@@ -1,1 +1,0 @@
-Write the methods to preform the double rotation without the inefficiency of doing two single rotations

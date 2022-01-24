@@ -1,4 +1,0 @@
-Write a program to check for balancing symbols in the following languages:
-    a. Pascal (begin/end, (), [], {}).
-    b. Java (/**/, (), [], {}).
-    c. Explain how to print out an error message that is likely to reflect the probable cause.

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1599093920 source:c:\users\kevin\desktop\cosc projects\fall 2020 - cs1337\homework\homework_2\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+
+1599094004 source:c:\users\kevin\documents\github\kevin-utd\cosc projects\fall 2020 - cs1337\homework\homework_2\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+

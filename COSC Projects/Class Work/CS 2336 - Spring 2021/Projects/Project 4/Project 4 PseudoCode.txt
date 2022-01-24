@@ -1,0 +1,217 @@
+//KCB180002
+Classes:
+Player.Java
+{
+	String name;
+	int hit;
+	int out;
+	int strikeout;
+	int walk;
+	int HBP;
+	int sacrifice;
+	
+	String getName(){return name;)
+	int getHits(){return hit;}
+	int getOut(){return out;}
+	int getStrikeOut(){return StrikeOut;}
+	int getWalks(){return walk;}
+	int getHBP(){return walk;}
+	int getSacrifice{return sacrifice;}
+	double getBA()
+	{
+		if((strikeout+out+hit) == 0)
+			return 0;
+		else
+			return (double)hits/(strikeout+out+hit);
+	}
+	double getOBA()
+	{
+		if((hit+out+strikeout+walk+HBP+sacrifice)==0)
+			return 0
+		else
+			return (double)(hit+walk+HBP)/(hit+out+strikeout+walk+HBP+sacrifice)
+	}
+
+	void setName(String x){name=x;}
+	void setHits(int x){hit=x;}
+	void setOut(int x){out=x;}
+	void setStrikeOut(int x){strikeout=x;}
+	void setWalks(int x){walk=x;}
+	void setHBP(int x){HBP=x;}
+	void setSacrifice(int x){sacrifice=x;}
+
+
+}
+GenericHashMap.java
+{
+	have variable TArrayList<T>
+	
+	setter and getter for T
+	
+	private int getindex(pass in key)
+	{
+		coverts key into integer 
+	}
+	
+	int comareTo(T temp)
+	{
+		call T compareTo method and return value from T's comapreTo method
+	}
+	T insert(T temp)
+	{
+		inserts given temp into hashmap and if there is a conflict insert it into the next free box
+	}
+	
+	T search(T temp)
+	{
+		find where temp should be located by calling get index method
+		check that spot and if it is equal using compareTo method then return that box
+		else if it is empty from start return null
+		else search next box
+	}
+		
+}
+
+Main:
+{
+	Make a hash table called key that is the size of 44
+	open the file called keyfile and parse it line by line 
+	
+	while(string is not empty)
+	{
+		if(character 0 of string == '#')
+		{
+			string grabs next line
+			continue;
+		}
+		i++;
+		if(i>=0 and i<=20)
+		{
+			hash table spot grabbed by string = out
+		}
+		else if(i==21)
+			hash table spot grabbed by string = strikeout
+		else if(i <26)
+			hash table spot grabbed by string = hit
+		else if (i == 27)
+			hash table spot grabbed by string = walk
+		else if(i< 35)
+			hash table spot grabbed by string = sacrfice 
+		else if(i==36)
+			hash table grabbed by string = hit by pitch 
+		else
+			spot grabbed by string = errors
+			
+		string grabs next line in the key file
+	
+	}
+	close key file
+	//parsing through file to set up tables
+	
+	prompt for player file
+	set up string to grab line by line from player file
+	
+	make player hash table for away team with size one
+	make player hash table for home team with size one
+	while(line is not empty)
+	{
+		check to see if first character is a H or A for home and away teams
+		if(H)
+		{
+			if(Home team hash table is full)
+			{
+				make temp hash table double the size of current hash table
+				
+				go spot by spot in player hash table and insert into temp hashtable
+				
+				set player hash table = temp hashtable
+			}
+			remove everything up to and including first space in string
+			set up tep player object
+			set name in temp player object to everything up to first space in string
+			remove up to and including first space in string (everything left should be the play)
+			
+			search key hash map to see what goes up
+			
+			series of if else if statments that add one to the correct integers in the player object based on what is returned 
+			
+			check to see if temp player object is in home team hash table
+			if not insert into hashtable
+			if is in table then combine all stats for the one that is in the hash table
+			
+		}
+		else
+		{
+			if(Away Team hash table is full)
+			{
+				make temp hash table double the size of current hash table
+				
+				go spot by spot in player hash table and insert into temp hashtable
+				
+				set player hash table = temp hashtable
+			}
+			remove everything up to and including first space in string
+			set up tep player object
+			set name in temp player object to everything up to first space in string
+			remove up to and including first space in string (everything left should be the play)
+			
+			search key hash map to see what goes up
+			
+			series of if else if statments that add one to the correct integers in the player object based on what is returned 
+			
+			check to see if temp player object is in away team hash table
+			if not insert into hashtable
+			if is in table then combine all stats for the one that is in the hash table
+		}
+	}
+	
+	close player input file
+	//building leaderboard
+	
+	print out Away \endl
+	
+	for(i = size of away team hash table)
+	{
+		use hashTable(i) to
+		print name \t
+		print batting average \t
+		print on base percentage \t
+		print hits \t
+		print walks \t
+		print strikeouts \t
+		print hit by pitch \t
+		endl;
+	}
+	
+	print out Home \endl
+	for(i = size of home team hash table)
+	{
+		use hashTable(i) to
+		print name \t
+		print batting average \t
+		print on base percentage \t
+		print hits \t
+		print walks \t
+		print strikeouts \t
+		print hit by pitch \t
+		endl;
+	}
+	
+	//printing league leaders
+	//repeat for each leader type - could be in main or called by main as functions
+	
+	combine the two hashtables into one larger hashtable could use a function in main or in custom hash map class
+	
+	check to find highest score for leader
+	if a tie then add a comma and other name
+	have a counter to keep track of how many names there are
+	
+	print out the value of the score held by the leader(s)
+	print out the names of the leader(s)
+	remove leaders from hash table
+	
+	repeat for 2nd place if name counter is not above 3
+	
+	repeat for 3rd place if name counter is not above 3
+
+}

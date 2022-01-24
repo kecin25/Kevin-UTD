@@ -1,0 +1,291 @@
+//Project 1 Psueodocode
+//Kevin Boudreaux
+//2-5-2021
+//KCB180002
+
+Classes
+
+Base Class: abstract Creature.java
+{
+	private:
+	char Character;
+	int rowLoco;
+	int colLoco;
+	int breedCounter;
+	
+	functions/methods:
+	abstract char movement (char arry[][])
+	{
+	
+	}
+	abstract bool breedChecker(char array[][])
+	{
+	
+	}
+	void setCharacter(char x)
+		Character = x;
+	void setRowLoco(int x)
+		rowLoco=x;
+	void setColLoco(int x)
+		colLoco=x;
+	char getCharacter()
+		return Character;
+	int getRowLoco()
+		return rowLoco;
+	int getColLoco()
+		return colLoco;
+		
+	Private:
+	void setBreedCounter(int x)
+		breedCounter = x;
+	int getBreedCounter()
+		return breedCounter;
+	
+}
+
+Derived Class: Ant extends Creature()
+{
+	
+	char movement(char array[][])
+	{
+		find closest orthoginal beetle and move in opposite direction
+		
+		4 ints to hold beetles location in every direction set them to zero
+		
+		switch statment
+		
+		
+		(in each statment check to see if space moving to is occupied and if so dont move also check to see if moves off grid, if cant move in chosen direction then cant move )
+		if all are = 0 dont move
+		if only one = 0 move towards 0
+		if beetles in all directions move towards largest num
+		
+		if N direction is closest move south
+		if E direction is closest move west
+		if S direction is closest move north
+		if W direction is closest move north
+		
+		if multiple places to move check in order and move in direction N,E,S,W
+		
+	}
+	bool breedChecker()
+	{
+		if( getBreedCounter() == 3)
+		{
+			setBreedCounter(0);
+			return true;
+		}
+		else
+		{
+			setBreedCounter(getBreedCounter()+1);
+			return false;
+		}
+	}
+}
+
+Derived Class: Beetle extends Creature
+{
+	Private:
+	int starvcounter
+	
+	char movement(char array [][])
+	{
+		create 4 ints one for each direction 
+		bool for if tie is tied
+		check each direction and move towards closest ant by using the col and row locos and having a loop check in every direction
+		
+		if tie for closest ant
+		{
+			create 3 ints, two for row and col, third for number of ants next to 
+			check to see which has the most neighbors
+			{
+			 for loop that runs for each direction
+			 {
+				if statment to check for closest ants only
+				{
+				 count how many nearby ants and if higher then current set current highest to new highest and change row and col loco for highest ant amount
+				 if tied set bool to true
+				 if finds new highest set bool to false
+				}
+			 }
+			}
+			if bool is true move N then E then S then W
+		}
+	}
+	
+	bool breedChecker()
+	{
+		if( getBreedCounter() == 8)
+		{
+			setBreedCounter(0);
+			return true;
+		}
+		else
+		{
+			setBreedCounter(getBreedCounter()+1);
+			return false;
+		}
+	}
+	
+	bool starveCheck;
+	{
+		if(starvcounter == 5)
+			return true;
+		else
+		{
+			starvcounter++;
+			return false;
+		}
+	}
+	void antEaten()
+	{
+		starvcounter=0;
+	}
+}
+
+
+Main functions
+{
+	create a animal 2d array size of 10x10
+
+	ask user for input file name
+	
+	ask for output char for Ant and Beetle
+
+	ask for number of turns
+	
+	while loop
+	{
+		run line by line grabbing with a string with a counter for current line (starting at one)
+		for loop (run 10 times)
+		{
+			if string.at(x) == 'a'
+			{
+				2dArray[rowcounter][x] = new ant;
+				2dArray[rowcounter][x].setCharacter(antCharacter);
+				2dArray[rowcounter][x].setRowLoco(rowcounter);
+				2dArray[rowcounter][x].setColLoco(x);
+			}
+			else if ( string.at(x) == 'b')
+			{
+				2dArray[rowcounter][x]= new beetle;
+				2dArray[rowcounter][x].setCharacter(beetleCharacter);
+				2dArray[rowcounter][x].setRowLoco(rowcounter);
+				2dArray[rowcounter][x].setColLoco(x);
+			}
+		}
+	}
+	
+	for(num of turns)
+	{
+		print out current turn
+		
+		
+		for(10 for rows(x))
+		{
+			for(10 for columns(y))
+			{
+				if(2dArray[x][y] == beetle class
+				{
+					char direction = 2dArray[x][y].movement(2dArray);
+					
+					(swtich statment for each direction that the char direction might be)
+						access spot of array that corliates with direction picked, see if does not have beetle
+						if no beetle
+						{
+							if ant was there 
+							{
+								2dArray[x][y].antEaten();
+							}
+							new spot in 2dArray = current spot in array
+							current spot in array = null;
+						
+						}
+				}
+			}
+		}
+		
+		
+		for(10 for rows(x))
+		{
+			for(10 for columns(y))
+			{
+				if(2dArray[x][y]==ant class
+				{
+					char direction = 2dArray[x][y].movement(2dArray);
+					
+					(switch statement for each direction that the char direction might be)
+						access spot of array that corliates with direction picked, see if does not have ant
+						if no ant
+						{
+							new spot in 2dArray = cirremt spot in array
+							current spot in array = null;
+						}
+				}
+			}
+		}
+		
+		for(10 for rows(x))
+		{
+			for(10 for columns(y))
+			{
+				if 2dArray[x][y] == beetle
+				{
+					if(2dArray[x][y].starveCheck())
+					{
+						2dArray[x][y] == null;
+					}
+					
+				}
+			}
+		}
+		
+		for(10 for rows(x))
+		{
+			for(10 for columns(y))
+			{
+				if 2dArray[x][y] == ant
+				{
+					if( 2dArray[x][y].breedChecker())
+					{
+						check in order of N,E,S,W for empty spot. if spot is empty new2dArrayspot = new ant;
+					}
+				}
+			}
+		}
+		
+		for(10 for rows(x))
+		{
+			for(10 for columns(y))
+			{
+				if 2dArray[x][y] == Beetles
+				{
+					if(2dArray[x][y].breedChecker())
+					{
+						check in order of N,E,S,W for empty spot. if spot is empty new2dArrayspot = new ant;
+					}
+				}
+			}
+		}
+		
+		
+		for(10 for rows(x))
+		{
+			for(10 for columns(y))
+			{
+				if(current spot == ant)
+				{
+					print out ant char
+				}
+				else if ( current spot == beetle
+				{
+					print out beetle character
+				}
+				else
+					print out blank space
+				
+			}
+			print out endl;
+		}
+	}
+}

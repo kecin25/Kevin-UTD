@@ -1,1 +1,0 @@
-Merge the two binomial queues in figure 6-59
