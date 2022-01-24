@@ -1,2 +1,2 @@
 # Kevin-UTD
- School Work for UTD classes
+School work and side projects while attending UTD
