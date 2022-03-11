@@ -1,0 +1,423 @@
+login as: kcb180002
+Pre-authentication banner message from server:
+|                       University of Texas at Dallas
+|                       Department of Computer Science
+|
+|                 Use of UTD Information Systems is subject to
+|           the UTD Information Security and Acceptable Use Policy.
+|
+|   Pursuant to Texas Administrative Code 202:
+|   (1) Unauthorized use is prohibited;
+|   (2) Usage may be subject to security testing and monitoring;
+|   (3) Misuse is subject to criminal prosecution; and
+|   (4) No expectation of privacy except as otherwise provided by applicable
+|       privacy laws.
+|
+|        ATTENTION: utdnetid != utdnetid@utdallas.edu (UTD != Google!)
+|
+|    Just use utdnetid, and for the love of programming, STOP USING ALL CAPS!
+|
+|   [[NOTE: All CS Graduate Students should use csgrads1.utdallas.edu      ]]
+|   [[   If you are a CS Graduate Student, you cannot logon to this server.]]
+|
+|
+|  ***** This system will require a connection to the GlobalProtect VPN startin
+> g
+|  on the following dates:
+|
+|  cslinux1.utdallas.edu - June 15, 2020
+|  cslinux2.utdallas.edu - June 22, 2020
+|
+|  ***** GlobalProtect VPN Instructions: https://www.utdallas.edu/oit/howto/vpn
+> /
+|
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v21.5 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to kcb180002@cslinux1.utdallas.edu                     ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Last failed login: Wed Feb 16 13:04:29 CST 2022 from utdvpn-10-50-124-241.utdallas.edu on ssh:notty
+There were 2 failed login attempts since the last successful login.
+Last login: Wed Feb  9 10:31:02 2022 from utdvpn-10-50-124-241.utdallas.edu
+
+                       ***---***---***---***---***---***
+                    csgrads1.utdallas.edu - CentOS Linux 7.9
+                 --All CS Graduate Students should use csgrads1--
+                      cs1.utdallas.edu - CentOS Linux 7.9
+                      cs2.utdallas.edu - CentOS Linux 7.9
+                       ***---***---***---***---***---***
+
+This system is for use by CS students who need a general purpose Linux system
+to complete homework assignments.  Computationally or resource intensive
+simulations will be throttled automatically.
+
+Thank you,
+CS Lab Manager
+cs-labs@utdallas.edu
+
+               /scratch disk space can be used for temporary files.
+      All files within /scratch will be erased on a regular basis (Sunday 0300).
+
+{cslinux1:~/cs3377/week5/Lab_3} head /etc/services
+# /etc/services:
+# $Id: services,v 1.55 2013/04/14 ovasik Exp $
+#
+# Network services, Internet style
+# IANA services version: last updated 2013-04-10
+#
+# Note that it is presently the policy of IANA to assign a single well-known
+# port number for both TCP and UDP; hence, most entries here have two entries
+# even if the protocol doesn't support UDP operations.
+# Updated from RFC 1700, ``Assigned Numbers'' (October 1994).  Not all ports
+{cslinux1:~/cs3377/week5/Lab_3} ls /etc
+\                               chrony.keys.rpmnew          fuse.conf                     ImageMagick-6                 login.defs.rpmnew                 oddjob          rc4.d              sudo.conf
+1                               cifs-utils                  fwupd                         init.d                        logrotate.conf                    oddjobd.conf    rc5.d              sudoers
+a2ps                            cockpit                     gconf                         inittab                       logrotate.d                       oddjobd.conf.d  rc6.d              sudoers.d
+a2ps.cfg                        cron.d                      gcrypt                        inputrc                       logwatch                          omreg.cfg       rc.d               sudoers.lecture
+a2ps-site.cfg                   cron.daily                  gdbinit                       ipa                           lsb-release.d                     omreg.ini       rc.local           sudoers.rpmnew
+abrt                            cron.deny                   gdbinit.d                     iproute2                      lsm                               openldap        rdma               sudo-ldap.conf
+acpi                            cron.hourly                 gdm                           ipsec.conf                    lvm                               openmpi-x86_64  redhat-lsb         sysconfig
+adjtime                         cron.monthly                geoclue                       ipsec.d                       lynx.cfg                          openvpn         redhat-release     sysctl.conf
+akonadi                         crontab                     GeoIP.conf                    ipsec.secrets                 lynx.lss                          openwsman       request-key.conf   sysctl.conf.rpmnew
+aliases                         cron.weekly                 ghostscript                   iscsi                         lynx-site.cfg                     opt             request-key.d      sysctl.d
+aliases.db                      crypttab                    gimp                          issue                         machine-id                        os-release      resolv.conf        systemd
+aliases.rpmnew                  csh.cshrc                   glvnd                         issue.181018                  magic                             PackageKit      rpc                system-release
+alsa                            csh.login                   gnome-vfs-2.0                 issue.d                       mailcap                           pam.d           rpm                system-release-cpe
+alternatives                    cups                        gnupg                         issue.net                     mail.rc                           papersize       rsyncd.conf        target
+anacrontab                      cupshelpers                 GREP_COLORS                   issue.net.ORIG                makedumpfile.conf.sample          passwd          rsyslog.conf       tcsd.conf
+ant.conf                        dbus-1                      groff                         issue.NEW                     man_db.conf                       passwd-         rsyslog.d          terminfo
+ant.d                           dconf                       group                         issue.ORIG                    mate-settings-daemon              passwd.161006   rwtab              tmpfiles.d
+asound.conf                     default                     group-                        java                          maven                             pbm2ppa.conf    rwtab.d            Trolltech.conf
+at.deny                         depmod.d                    grub2.cfg                     jvm                           mfs                               pcp             samba              trusted-key.key
+audisp                          dhcp                        grub.d                        jvm-commmon                   mime.types                        pcp.conf        sane.d             tuned
+audit                           DIR_COLORS                  gshadow                       jwhois.conf                   mke2fs.conf                       pcp.env         sasl2              udev
+auto.direct                     DIR_COLORS.256color         gshadow-                      kde                           modprobe.d                        Pegasus         scl                udisks2
+auto.direct.170106              DIR_COLORS.lightbgcolor     gss                           kde4rc                        modulefiles                       php.d           screenrc           unbound
+autofs.conf                     dleyna-server-service.conf  gssproxy                      kderc                         modules-load.d                    php.ini         securetty          updatedb.conf
+autofs_ldap_auth.conf           dnsmasq.conf                hba.conf                      kdump.conf                    motd                              pinforc         security           UPower
+auto.master                     dnsmasq.d                   hba.conf.010518-21_37_10.bak  kdump.conf.rpmnew             motd_05-10-2016                   pkcs11          selinux            vconsole.conf
+auto.master._before_ipa_client  dracut.conf                 hba.conf.010919-12_58_44.bak  kernel                        motd.160525                       pki             services           vimrc
+auto.master.d                   dracut.conf.d               hba.conf.013119-17_52_52.bak  krb5.conf                     motd.d                            plymouth        sestatus.conf      virc
+auto.master.orig                e2fsck.conf                 hba.conf.020119-09_31_23.bak  krb5.conf._bak                mtab                              pm              setroubleshoot     virtuoso
+auto.misc                       edac                        hba.conf.020419-06_18_42.bak  krb5.conf._before_ipa_client  mtools.conf                       pnm2ppa.conf    setuptool.d        vmware-tools
+auto.net                        egl                         hba.conf.031218-10_35_58.bak  krb5.conf.d                   multipath                         polkit-1        sgml               vpnc
+auto.smb                        elinks.conf                 hba.conf.050918-10_36_17.bak  krb5.conf.ipabkp              my.cnf                            popt.d          shadow             wgetrc
+avahi                           enscript.cfg                hba.conf.051018-11_34_42.bak  krb5.keytab                   my.cnf.d                          portreserve     shadow-            wpa_supplicant
+bash_completion.d               environment                 hba.conf.051319-13_47_57.bak  ksmtuned.conf                 nanorc                            postfix         shells             X11
+bashrc                          ethertypes                  hba.conf.051719-14_42_48.bak  ksysguarddrc                  netconfig                         ppp             shells.rpmnew      xdg
+binfmt.d                        exports                     hba.conf.060418-15_45_59.bak  latrace.d                     NetworkManager                    prelink.conf    skel               xinetd.conf
+bluetooth                       exports.d                   hba.conf.060419-16_58_28.bak  ld.so.cache                   networks                          prelink.conf.d  slp.conf           xinetd.d
+bonobo-activation               extlinux.conf               hba.conf.061418-09_28_20.bak  ld.so.conf                    nfs.conf                          printcap        slp.spi            xml
+brltty                          fail2ban                    hba.conf.081318-11_45_04.bak  ld.so.conf.d                  nfsmount.conf                     profile         smartmontools      xrdb
+brltty.conf                     favicon.png                 hba.conf.110718-16_59_33.bak  libaudit.conf                 nscd.conf                         profile.d       snmp               yp.conf
+centos-release                  fcoe                        hba.conf.121918-08_02_10.bak  libblockdev                   nslcd.conf                        protocols       sos.conf           yum
+centos-release-upstream         festival                    highlight                     libibverbs.d                  nsswitch.conf                     pulse           sound              yum.conf
+certmonger                      filesystems                 host.conf                     libnl                         nsswitch.conf.bak                 purple          speech-dispatcher  yum.repos.d
+cgconfig.conf                   filezilla                   hostname                      libpaper.d                    nsswitch.conf._before_ipa_client  python          ssh                zlogin
+cgconfig.d                      firefox                     hosts                         libreport                     nsswitch.conf.ipabkp              qemu-ga         ssl                zlogout
+cgrules.conf                    firewalld                   hosts.allow                   libuser.conf                  nsswitch.conf.orig                qemu-kvm        sssd               zprofile
+cgsnapshot_blacklist.conf       flatpak                     hosts.deny                    libvirt                       nsswitch.conf.rpmnew              radvd.conf      statetab           zshenv
+chkconfig.d                     fonts                       hp                            lightdm                       ntp                               rc0.d           statetab.d         zshrc
+chrony.conf                     foomatic                    html2psrc                     locale.conf                   ntp.conf                          rc1.d           subgid
+chrony.conf.rpmnew              fprintd.conf                idmapd.conf                   localtime                     numad.conf                        rc2.d           subuid
+chrony.keys                     fstab                       idmapd.conf.ipabkp            login.defs                    odbcinst.ini                      rc3.d           subversion
+{cslinux1:~/cs3377/week5/Lab_3} who
+cae190001 pts/0        2022-02-16 13:08 (10.169.187.176)
+efb190000 pts/3        2022-02-16 12:02 (10.164.188.216)
+mnn200001 pts/4        2022-02-16 13:29 (utdvpn-10-50-121-15.utdallas.edu)
+amos     pts/6        2022-01-25 10:18 (oitleap01.utdallas.edu)
+lab190003 pts/7        2022-02-16 13:45 (utdvpn-10-50-122-216.utdallas.edu)
+epu190000 pts/8        2022-02-16 12:37 (utdvpn-10-50-121-64.utdallas.edu)
+fdc200000 pts/9        2022-02-16 11:51 (utdvpn-10-50-125-58.utdallas.edu)
+ozbirn   pts/10       2022-01-24 12:59 (ozbirn2.campus.ad.utdallas.edu)
+jxf190016 pts/11       2022-02-16 13:03 (10.169.179.203)
+fdc200000 pts/12       2022-02-16 13:42 (utdvpn-10-50-125-58.utdallas.edu)
+nla190001 pts/13       2022-02-16 13:12 (10.169.168.210)
+fdc200000 pts/16       2022-02-16 10:58 (utdvpn-10-50-125-58.utdallas.edu)
+zxs200013 pts/17       2022-02-16 12:05 (10.169.190.70)
+jpc180002 pts/18       2022-02-16 13:31 (10.190.166.2)
+jce180001 pts/19       2022-02-16 12:52 (utdvpn-10-50-120-231.utdallas.edu)
+jma190007 pts/23       2022-02-16 11:23 (10.161.179.159)
+txt200023 pts/24       2022-02-16 12:43 (10.169.176.12)
+kpc180000 pts/26       2022-02-16 13:46 (utdvpn-10-50-121-26.utdallas.edu)
+sca190002 pts/27       2022-02-16 11:50 (10.169.167.8)
+epu190000 pts/28       2022-02-16 12:44 (utdvpn-10-50-121-64.utdallas.edu)
+smv210000 pts/31       2022-02-16 12:51 (utdvpn-10-50-122-104.utdallas.edu)
+rwd200001 pts/32       2022-02-16 12:51 (utdvpn-10-50-120-237.utdallas.edu)
+ibt190000 pts/33       2022-02-16 13:29 (10.176.207.213)
+lwr210000 pts/34       2022-02-16 12:53 (10.169.172.21)
+uxa180002 pts/35       2022-02-16 12:54 (10.169.162.160)
+nct200001 pts/36       2022-02-16 12:54 (10.169.171.208)
+vrk200001 pts/37       2022-02-16 12:54 (10.169.187.154)
+muq180000 pts/42       2022-02-16 13:11 (utdvpn-10-50-121-47.utdallas.edu)
+axs180200 pts/43       2022-02-16 10:45 (utdvpn-10-50-120-126.utdallas.edu)
+jrh190007 pts/46       2022-02-16 12:54 (10.169.166.166)
+kpc180000 pts/47       2022-02-16 13:36 (utdvpn-10-50-121-26.utdallas.edu)
+fym180001 pts/48       2022-02-16 11:43 (utdvpn-10-50-125-157.utdallas.edu)
+kcb180002 pts/50       2022-02-16 13:05 (utdvpn-10-50-124-241.utdallas.edu)
+pxp210041 pts/51       2022-02-16 12:55 (10.169.178.68)
+vrk200001 pts/52       2022-02-16 12:55 (10.169.187.154)
+pxp210041 pts/53       2022-02-16 12:55 (10.169.178.68)
+rnp190001 pts/55       2022-02-16 13:48 (utdvpn-10-50-120-106.utdallas.edu)
+fdc200000 pts/57       2022-02-16 11:33 (utdvpn-10-50-125-58.utdallas.edu)
+sxa173731 pts/58       2022-02-16 11:45 (10.176.90.131)
+bzw210000 pts/59       2022-02-16 12:55 (10.169.173.34)
+axc190063 pts/60       2022-02-16 13:31 (utdvpn-10-50-121-135.utdallas.edu)
+jep180001 pts/61       2022-02-16 12:55 (utdvpn-10-50-124-160.utdallas.edu)
+jtb200000 pts/62       2022-02-16 11:37 (utdvpn-10-50-120-157.utdallas.edu)
+sch190001 pts/63       2022-02-16 12:58 (10.169.168.62)
+jml190001 pts/64       2022-02-16 13:04 (10.169.169.92)
+axa190185 pts/65       2022-02-16 13:35 (10.176.204.129)
+sxa173731 pts/67       2022-02-16 12:04 (10.176.90.131)
+sij160030 pts/70       2022-02-16 12:55 (10.169.173.146)
+ssb180006 pts/72       2022-02-16 13:24 (utdvpn-10-50-122-134.utdallas.edu)
+kam190009 pts/73       2022-02-16 12:13 (utdvpn-10-50-125-124.utdallas.edu)
+aam200016 pts/74       2022-02-16 12:56 (utdvpn-10-50-124-57.utdallas.edu)
+cmt160330 pts/75       2022-02-16 12:56 (10.169.189.21)
+klw180005 pts/76       2022-02-16 12:56 (utdvpn-10-50-121-164.utdallas.edu)
+hxa180025 pts/77       2022-02-16 13:47 (10.169.165.69)
+ssc190010 pts/78       2022-02-16 12:56 (10.169.164.108)
+sxe210020 pts/79       2022-02-16 12:56 (10.176.202.255)
+sij160030 pts/80       2022-02-16 12:56 (10.169.173.146)
+mlz200000 pts/81       2022-02-16 12:56 (10.169.177.7)
+jtj170000 pts/82       2022-02-16 12:56 (utdvpn-10-50-120-246.utdallas.edu)
+jtj170000 pts/83       2022-02-16 12:56 (utdvpn-10-50-120-246.utdallas.edu)
+kha200000 pts/84       2022-02-16 12:56 (10.169.180.130)
+asv210003 pts/85       2022-02-16 12:56 (10.169.190.151)
+sxj190054 pts/86       2022-02-16 12:59 (utdvpn-10-50-125-90.utdallas.edu)
+pap190002 pts/88       2022-02-16 12:57 (10.169.160.63)
+jtb200000 pts/89       2022-02-16 13:48 (utdvpn-10-50-120-157.utdallas.edu)
+fxt190000 pts/90       2022-02-16 12:58 (10.169.175.194)
+fxr190007 pts/91       2022-02-16 12:58 (10.169.191.198)
+hlg200001 pts/92       2022-02-16 13:02 (10.169.183.45)
+dxa190023 pts/93       2022-02-16 12:59 (10.169.187.54)
+kxg200016 pts/94       2022-02-16 12:59 (10.169.187.28)
+hxk151830 pts/95       2022-02-16 13:00 (10.169.181.10)
+hxa180025 pts/96       2022-02-16 13:00 (10.169.165.69)
+rnd200002 pts/97       2022-02-16 13:00 (10.176.206.151)
+sxj190054 pts/99       2022-02-16 12:59 (utdvpn-10-50-125-90.utdallas.edu)
+mta180003 pts/100      2022-02-16 12:59 (10.169.179.135)
+muq180000 pts/102      2022-02-16 12:59 (utdvpn-10-50-121-47.utdallas.edu)
+fxa180022 pts/103      2022-02-16 13:00 (utdvpn-10-50-123-175.utdallas.edu)
+rvc200000 pts/104      2022-02-16 13:00 (10.169.185.179)
+jaj180001 pts/107      2022-02-16 13:01 (10.169.184.82)
+ara200001 pts/108      2022-02-16 13:01 (10.176.201.174)
+ria190000 pts/109      2022-02-16 13:01 (utdvpn-10-50-120-244.utdallas.edu)
+kll200003 pts/110      2022-02-16 13:02 (10.176.207.248)
+rxw190021 pts/111      2022-02-16 13:02 (10.176.202.233)
+axv190048 pts/112      2022-02-16 13:02 (10.169.163.245)
+irk180000 pts/113      2022-02-16 13:08 (10.169.178.148)
+tcc180002 pts/114      2022-02-16 13:38 (utdvpn-10-50-120-78.utdallas.edu)
+srm210002 pts/115      2022-02-16 13:16 (10.169.184.113)
+jcy190002 pts/116      2022-02-16 13:03 (10.169.166.125)
+jcy190002 pts/117      2022-02-16 13:04 (10.169.166.125)
+rvc200000 pts/118      2022-02-16 13:04 (10.169.185.179)
+jml190001 pts/119      2022-02-16 13:04 (10.169.169.92)
+nrs190002 pts/120      2022-02-16 13:04 (utdvpn-10-50-120-220.utdallas.edu)
+jeh190000 pts/121      2022-02-16 13:04 (10.169.191.14)
+jat200004 pts/125      2022-02-16 13:05 (10.169.169.26)
+sxa200067 pts/126      2022-02-16 13:05 (10.169.178.205)
+amz200002 pts/127      2022-02-16 13:06 (utdvpn-10-50-121-8.utdallas.edu)
+mxr190063 pts/128      2022-02-16 13:06 (10.169.173.180)
+kar190002 pts/129      2022-02-16 13:06 (10.176.205.134)
+rsr190002 pts/130      2022-02-16 13:13 (10.169.165.159)
+cae190001 pts/131      2022-02-16 13:07 (10.169.187.176)
+ljm190000 pts/132      2022-02-16 13:06 (10.169.189.69)
+jml190001 pts/133      2022-02-16 13:06 (10.169.169.92)
+veerasam pts/134      2022-02-16 13:49 (10.169.173.91)
+scm190002 pts/135      2022-02-16 13:07 (10.169.173.75)
+hxr200011 pts/136      2022-02-16 13:13 (utdvpn-10-50-120-196.utdallas.edu)
+aca180003 pts/137      2022-02-16 13:08 (10.169.189.205)
+cas200000 pts/138      2022-02-16 13:09 (10.169.169.131)
+jsw190001 pts/139      2022-02-16 13:09 (10.169.170.192)
+veerasam pts/140      2022-02-16 13:09 (10.169.173.91)
+std190001 pts/141      2022-02-16 13:39 (utdvpn-10-50-126-14.utdallas.edu)
+nxd190019 pts/142      2022-02-16 13:10 (utdvpn-10-50-121-18.utdallas.edu)
+aob190001 pts/143      2022-02-16 13:11 (utdvpn-10-50-121-36.utdallas.edu)
+hxr200011 pts/144      2022-02-16 13:13
+mnp190003 pts/145      2022-02-16 13:27 (utdvpn-10-50-126-65.utdallas.edu)
+axf190025 pts/146      2022-02-16 13:16 (utdvpn-10-50-121-246.utdallas.edu)
+srm210002 pts/147      2022-02-16 13:16 (10.169.184.113)
+mnp190003 pts/148      2022-02-16 13:27 (utdvpn-10-50-126-65.utdallas.edu)
+jpc180002 pts/149      2022-02-16 13:35
+irp190001 pts/150      2022-02-16 13:45 (10.169.173.48)
+cmr190010 pts/151      2022-02-16 13:35 (10.150.180.211)
+sav180001 pts/152      2022-02-16 13:35 (utdvpn-10-50-121-78.utdallas.edu)
+asb180007 pts/153      2022-02-16 13:43 (utdvpn-10-50-127-237.utdallas.edu)
+axk190108 pts/155      2022-02-16 13:44 (utdvpn-10-50-121-86.utdallas.edu)
+{cslinux1:~/cs3377/week5/Lab_3} date
+Wed Feb 16 13:54:32 CST 2022
+{cslinux1:~/cs3377/week5/Lab_3} uname -a
+Linux cslinux1.utdallas.edu 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+{cslinux1:~/cs3377/week5/Lab_3} history | tail 10
+tail: cannot open ‘10’ for reading: No such file or directory
+{cslinux1:~/cs3377/week5/Lab_3} history | tail -10
+   67  cd ..
+   68  mkdir Lab_3
+   69  cd Lab_3
+   70  head /etc/services
+   71  ls /etc
+   72  who
+   73  date
+   74  uname -a
+   75  history | tail 10
+   76  history | tail -10
+{cslinux1:~/cs3377/week5/Lab_3} !71
+ls /etc
+\                               chrony.keys.rpmnew          fuse.conf                     ImageMagick-6                 login.defs.rpmnew                 oddjob          rc4.d              sudo.conf
+1                               cifs-utils                  fwupd                         init.d                        logrotate.conf                    oddjobd.conf    rc5.d              sudoers
+a2ps                            cockpit                     gconf                         inittab                       logrotate.d                       oddjobd.conf.d  rc6.d              sudoers.d
+a2ps.cfg                        cron.d                      gcrypt                        inputrc                       logwatch                          omreg.cfg       rc.d               sudoers.lecture
+a2ps-site.cfg                   cron.daily                  gdbinit                       ipa                           lsb-release.d                     omreg.ini       rc.local           sudoers.rpmnew
+abrt                            cron.deny                   gdbinit.d                     iproute2                      lsm                               openldap        rdma               sudo-ldap.conf
+acpi                            cron.hourly                 gdm                           ipsec.conf                    lvm                               openmpi-x86_64  redhat-lsb         sysconfig
+adjtime                         cron.monthly                geoclue                       ipsec.d                       lynx.cfg                          openvpn         redhat-release     sysctl.conf
+akonadi                         crontab                     GeoIP.conf                    ipsec.secrets                 lynx.lss                          openwsman       request-key.conf   sysctl.conf.rpmnew
+aliases                         cron.weekly                 ghostscript                   iscsi                         lynx-site.cfg                     opt             request-key.d      sysctl.d
+aliases.db                      crypttab                    gimp                          issue                         machine-id                        os-release      resolv.conf        systemd
+aliases.rpmnew                  csh.cshrc                   glvnd                         issue.181018                  magic                             PackageKit      rpc                system-release
+alsa                            csh.login                   gnome-vfs-2.0                 issue.d                       mailcap                           pam.d           rpm                system-release-cpe
+alternatives                    cups                        gnupg                         issue.net                     mail.rc                           papersize       rsyncd.conf        target
+anacrontab                      cupshelpers                 GREP_COLORS                   issue.net.ORIG                makedumpfile.conf.sample          passwd          rsyslog.conf       tcsd.conf
+ant.conf                        dbus-1                      groff                         issue.NEW                     man_db.conf                       passwd-         rsyslog.d          terminfo
+ant.d                           dconf                       group                         issue.ORIG                    mate-settings-daemon              passwd.161006   rwtab              tmpfiles.d
+asound.conf                     default                     group-                        java                          maven                             pbm2ppa.conf    rwtab.d            Trolltech.conf
+at.deny                         depmod.d                    grub2.cfg                     jvm                           mfs                               pcp             samba              trusted-key.key
+audisp                          dhcp                        grub.d                        jvm-commmon                   mime.types                        pcp.conf        sane.d             tuned
+audit                           DIR_COLORS                  gshadow                       jwhois.conf                   mke2fs.conf                       pcp.env         sasl2              udev
+auto.direct                     DIR_COLORS.256color         gshadow-                      kde                           modprobe.d                        Pegasus         scl                udisks2
+auto.direct.170106              DIR_COLORS.lightbgcolor     gss                           kde4rc                        modulefiles                       php.d           screenrc           unbound
+autofs.conf                     dleyna-server-service.conf  gssproxy                      kderc                         modules-load.d                    php.ini         securetty          updatedb.conf
+autofs_ldap_auth.conf           dnsmasq.conf                hba.conf                      kdump.conf                    motd                              pinforc         security           UPower
+auto.master                     dnsmasq.d                   hba.conf.010518-21_37_10.bak  kdump.conf.rpmnew             motd_05-10-2016                   pkcs11          selinux            vconsole.conf
+auto.master._before_ipa_client  dracut.conf                 hba.conf.010919-12_58_44.bak  kernel                        motd.160525                       pki             services           vimrc
+auto.master.d                   dracut.conf.d               hba.conf.013119-17_52_52.bak  krb5.conf                     motd.d                            plymouth        sestatus.conf      virc
+auto.master.orig                e2fsck.conf                 hba.conf.020119-09_31_23.bak  krb5.conf._bak                mtab                              pm              setroubleshoot     virtuoso
+auto.misc                       edac                        hba.conf.020419-06_18_42.bak  krb5.conf._before_ipa_client  mtools.conf                       pnm2ppa.conf    setuptool.d        vmware-tools
+auto.net                        egl                         hba.conf.031218-10_35_58.bak  krb5.conf.d                   multipath                         polkit-1        sgml               vpnc
+auto.smb                        elinks.conf                 hba.conf.050918-10_36_17.bak  krb5.conf.ipabkp              my.cnf                            popt.d          shadow             wgetrc
+avahi                           enscript.cfg                hba.conf.051018-11_34_42.bak  krb5.keytab                   my.cnf.d                          portreserve     shadow-            wpa_supplicant
+bash_completion.d               environment                 hba.conf.051319-13_47_57.bak  ksmtuned.conf                 nanorc                            postfix         shells             X11
+bashrc                          ethertypes                  hba.conf.051719-14_42_48.bak  ksysguarddrc                  netconfig                         ppp             shells.rpmnew      xdg
+binfmt.d                        exports                     hba.conf.060418-15_45_59.bak  latrace.d                     NetworkManager                    prelink.conf    skel               xinetd.conf
+bluetooth                       exports.d                   hba.conf.060419-16_58_28.bak  ld.so.cache                   networks                          prelink.conf.d  slp.conf           xinetd.d
+bonobo-activation               extlinux.conf               hba.conf.061418-09_28_20.bak  ld.so.conf                    nfs.conf                          printcap        slp.spi            xml
+brltty                          fail2ban                    hba.conf.081318-11_45_04.bak  ld.so.conf.d                  nfsmount.conf                     profile         smartmontools      xrdb
+brltty.conf                     favicon.png                 hba.conf.110718-16_59_33.bak  libaudit.conf                 nscd.conf                         profile.d       snmp               yp.conf
+centos-release                  fcoe                        hba.conf.121918-08_02_10.bak  libblockdev                   nslcd.conf                        protocols       sos.conf           yum
+centos-release-upstream         festival                    highlight                     libibverbs.d                  nsswitch.conf                     pulse           sound              yum.conf
+certmonger                      filesystems                 host.conf                     libnl                         nsswitch.conf.bak                 purple          speech-dispatcher  yum.repos.d
+cgconfig.conf                   filezilla                   hostname                      libpaper.d                    nsswitch.conf._before_ipa_client  python          ssh                zlogin
+cgconfig.d                      firefox                     hosts                         libreport                     nsswitch.conf.ipabkp              qemu-ga         ssl                zlogout
+cgrules.conf                    firewalld                   hosts.allow                   libuser.conf                  nsswitch.conf.orig                qemu-kvm        sssd               zprofile
+cgsnapshot_blacklist.conf       flatpak                     hosts.deny                    libvirt                       nsswitch.conf.rpmnew              radvd.conf      statetab           zshenv
+chkconfig.d                     fonts                       hp                            lightdm                       ntp                               rc0.d           statetab.d         zshrc
+chrony.conf                     foomatic                    html2psrc                     locale.conf                   ntp.conf                          rc1.d           subgid
+chrony.conf.rpmnew              fprintd.conf                idmapd.conf                   localtime                     numad.conf                        rc2.d           subuid
+chrony.keys                     fstab                       idmapd.conf.ipabkp            login.defs                    odbcinst.ini                      rc3.d           subversion
+{cslinux1:~/cs3377/week5/Lab_3} history | tail -10
+   70  head /etc/services
+   71  ls /etc
+   72  who
+   73  date
+   74  uname -a
+   75  history | tail 10
+   76  history | tail -10
+   77  $ ls /etc
+   78  ls /etc
+   79  history | tail -10
+{cslinux1:~/cs3377/week5/Lab_3} !-6
+uname -a
+Linux cslinux1.utdallas.edu 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+{cslinux1:~/cs3377/week5/Lab_3} !!
+uname -a
+Linux cslinux1.utdallas.edu 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+{cslinux1:~/cs3377/week5/Lab_3} !head
+head /etc/services
+# /etc/services:
+# $Id: services,v 1.55 2013/04/14 ovasik Exp $
+#
+# Network services, Internet style
+# IANA services version: last updated 2013-04-10
+#
+# Note that it is presently the policy of IANA to assign a single well-known
+# port number for both TCP and UDP; hence, most entries here have two entries
+# even if the protocol doesn't support UDP operations.
+# Updated from RFC 1700, ``Assigned Numbers'' (October 1994).  Not all ports
+{cslinux1:~/cs3377/week5/Lab_3} alias d="date"
+{cslinux1:~/cs3377/week5/Lab_3} d
+Wed Feb 16 14:08:38 CST 2022
+{cslinux1:~/cs3377/week5/Lab_3} ls -l
+total 0
+{cslinux1:~/cs3377/week5/Lab_3} alias ls="ls -l"
+{cslinux1:~/cs3377/week5/Lab_3} ls
+total 0
+{cslinux1:~/cs3377/week5/Lab_3} unalias ls
+{cslinux1:~/cs3377/week5/Lab_3} alias
+alias bye='logout'
+alias cls='clear'
+alias cp='cp -i'
+alias d='date'
+alias del='rm -i'
+alias egrep='egrep --color=auto'
+alias erase='rm -i'
+alias fgrep='fgrep --color=auto'
+alias fixlines='stty rows 24 cols 80;stty -tabs;export LINES=24'
+alias grep='grep --color=auto'
+alias help='man man'
+alias key='man -k'
+alias l.='ls -d .* --color=auto'
+alias la='ls -a'
+alias lc='ls -C'
+alias ldir='ls -l $* | grep "^d"'
+alias ll='ls -la'
+alias lo='logout'
+alias md='mkdir'
+alias mv='mv -i'
+alias open='chmod go+r'
+alias perlll='eval `perl -Mlocal::lib`'
+alias rd='rmdir'
+alias rm='rm -i'
+alias shut='chmod go-rwx'
+alias vi='vim'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+{cslinux1:~/cs3377/week5/Lab_3} echo "to store your aliases forever you can save them in .bash_aliases in the home dir"
+to store your aliases forever you can save them in .bash_aliases in the home dir
+{cslinux1:~/cs3377/week5/Lab_3} function welcome {
+> echo "Welcome to my computer"
+> }
+{cslinux1:~/cs3377/week5/Lab_3} welcome
+Welcome to my computer
+{cslinux1:~/cs3377/week5/Lab_3} function long {
+> date
+> ls
+> }
+{cslinux1:~/cs3377/week5/Lab_3} long
+Wed Feb 16 14:15:48 CST 2022
+{cslinux1:~/cs3377/week5/Lab_3} touch temp
+{cslinux1:~/cs3377/week5/Lab_3} long
+Wed Feb 16 14:15:59 CST 2022
+temp
+{cslinux1:~/cs3377/week5/Lab_3} echo "to save a function you can save it as a file in your ~/.bash_profile"
+to save a function you can save it as a file in your ~/.bash_profile
+
+
+
+
+
+
+
+
+

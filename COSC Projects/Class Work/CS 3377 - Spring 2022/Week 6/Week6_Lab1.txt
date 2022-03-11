@@ -1,0 +1,247 @@
+login as: kcb180002
+Pre-authentication banner message from server:
+|                       University of Texas at Dallas
+|                       Department of Computer Science
+|
+|                 Use of UTD Information Systems is subject to
+|           the UTD Information Security and Acceptable Use Policy.
+|
+|   Pursuant to Texas Administrative Code 202:
+|   (1) Unauthorized use is prohibited;
+|   (2) Usage may be subject to security testing and monitoring;
+|   (3) Misuse is subject to criminal prosecution; and
+|   (4) No expectation of privacy except as otherwise provided by applicable
+|       privacy laws.
+|
+|        ATTENTION: utdnetid != utdnetid@utdallas.edu (UTD != Google!)
+|
+|    Just use utdnetid, and for the love of programming, STOP USING ALL CAPS!
+|
+|   [[NOTE: All CS Graduate Students should use csgrads1.utdallas.edu      ]]
+|   [[   If you are a CS Graduate Student, you cannot logon to this server.]]
+|
+|
+|  ***** This system will require a connection to the GlobalProtect VPN startin
+> g
+|  on the following dates:
+|
+|  cslinux1.utdallas.edu - June 15, 2020
+|  cslinux2.utdallas.edu - June 22, 2020
+|
+|  ***** GlobalProtect VPN Instructions: https://www.utdallas.edu/oit/howto/vpn
+> /
+|
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+Access denied
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v21.5 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to kcb180002@cslinux1.utdallas.edu                     ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Last failed login: Thu Feb 24 14:59:44 CST 2022 from utdvpn-10-50-123-149.utdallas.edu on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Wed Feb 23 11:21:44 2022 from utdvpn-10-50-124-241.utdallas.edu
+
+                       ***---***---***---***---***---***
+                    csgrads1.utdallas.edu - CentOS Linux 7.9
+                 --All CS Graduate Students should use csgrads1--
+                      cs1.utdallas.edu - CentOS Linux 7.9
+                      cs2.utdallas.edu - CentOS Linux 7.9
+                       ***---***---***---***---***---***
+
+This system is for use by CS students who need a general purpose Linux system
+to complete homework assignments.  Computationally or resource intensive
+simulations will be throttled automatically.
+
+Thank you,
+CS Lab Manager
+cs-labs@utdallas.edu
+
+               /scratch disk space can be used for temporary files.
+      All files within /scratch will be erased on a regular basis (Sunday 0300).
+
+{cslinux1:~} cd cs3377/Week6
+{cslinux1:~/cs3377/Week6} ls
+Lab_1
+{cslinux1:~/cs3377/Week6} cd Lab_1
+{cslinux1:~/cs3377/Week6/Lab_1} ls
+mysql
+{cslinux1:~/cs3377/Week6/Lab_1} cd mysql
+{cslinux1:~/cs3377/Week6/Lab_1/mysql} ls
+sqlite-files  sqlite-files.zip
+{cslinux1:~/cs3377/Week6/Lab_1/mysql} cd sqlite-files
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files} ls
+sqlite  test6.c
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files} cd sqlite
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ls
+a.out         db       sqlite3                # SQLite C-C++ Tutorial.url  test0    test1    test2    test3    test4    test4.db  test5.c   test.db
+company.sql;  shell.c  Sqlite3 tutorial.pptx  # SQLite Download Page.url   test0.c  test1.c  test2.c  test3.c  test4.c  test5     test6.db
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} rmv test.db test4.db test6.db
+bash: rmv: command not found...
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} del test.db test4.db test6.db
+rm: remove regular file ‘test.db’? y
+rm: remove regular empty file ‘test4.db’? y
+rm: remove regular empty file ‘test6.db’? y
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ls
+a.out         db       sqlite3                # SQLite C-C++ Tutorial.url  test0    test1    test2    test3    test4    test5
+company.sql;  shell.c  Sqlite3 tutorial.pptx  # SQLite Download Page.url   test0.c  test1.c  test2.c  test3.c  test4.c  test5.c
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} g++ test0.c -o -l sqlite3
+/usr/bin/ld: i386 architecture of input file `sqlite3' is incompatible with i386:x86-64 output
+/usr/bin/ld: error in sqlite3(.eh_frame); no .eh_frame_hdr table will be created.
+/usr/tmp/ccBVLz9u.o: In function `main':
+test0.c:(.text+0x24): undefined reference to `sqlite3_open'
+test0.c:(.text+0x39): undefined reference to `sqlite3_errmsg'
+test0.c:(.text+0x81): undefined reference to `sqlite3_close'
+/usr/bin/ld: -l: Unable to sort relocs - they are in more than one size
+collect2: error: ld returned 1 exit status
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} cd ..
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files} cd ..
+{cslinux1:~/cs3377/Week6/Lab_1/mysql} g++ test0.c -o -l sqlite3
+g++: error: test0.c: No such file or directory
+g++: error: sqlite3: No such file or directory
+g++: fatal error: no input files
+compilation terminated.
+{cslinux1:~/cs3377/Week6/Lab_1/mysql} ls
+sqlite-files  sqlite-files.zip
+{cslinux1:~/cs3377/Week6/Lab_1/mysql} cd sqlite-files
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files} ls
+sqlite  test6.c
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files} cd sqlite
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} g++ test0.c -o test0 -l sqlite3
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ./test0
+Opened database successfully
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} test0.db
+bash: test0.db: command not found...
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} sqlite3 test0.db
+SQLite version 3.14.1 2016-08-11 18:53:32
+Enter ".help" for usage hints.
+sqlite> .tables
+sqlite> .databases
+seq  name             file
+---  ---------------  ----------------------------------------------------------
+0    main             /home/010/k/kc/kcb180002/cs3377/Week6/Lab_1/mysql/sqlite-f
+sqlite> .schema
+sqlite> .dump company
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+COMMIT;
+sqlite> .output company.sql
+sqlite> .dump company
+sqlite> .exit
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ./test1
+Opened database successfully
+Table created successfully
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} sqlite3 test1.db
+SQLite version 3.14.1 2016-08-11 18:53:32
+Enter ".help" for usage hints.
+sqlite> SHOW DATABASES;
+Error: near "SHOW": syntax error
+sqlite> select * from COMPANY;
+Error: no such table: COMPANY
+sqlite> .q
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ./test2
+Opened database successfully
+Records created successfully
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} sqlite3 test3.db
+SQLite version 3.14.1 2016-08-11 18:53:32
+Enter ".help" for usage hints.
+sqlite> select * from COMPANY;
+Error: no such table: COMPANY
+sqlite> .q
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} sqlite3 test.db
+SQLite version 3.14.1 2016-08-11 18:53:32
+Enter ".help" for usage hints.
+sqlite> select * from COMPANY;
+1|Paul|32|California|20000.0
+2|Allen|25|Texas|15000.0
+3|Teddy|23|Norway|20000.0
+4|Mark|25|Rich-Mond |65000.0
+sqlite> .q
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ./test4
+Opened database successfully
+Callback function called: ID = 1
+NAME = Paul
+AGE = 32
+ADDRESS = California
+SALARY = 25000.0
+
+Callback function called: ID = 2
+NAME = Allen
+AGE = 25
+ADDRESS = Texas
+SALARY = 15000.0
+
+Callback function called: ID = 3
+NAME = Teddy
+AGE = 23
+ADDRESS = Norway
+SALARY = 20000.0
+
+Callback function called: ID = 4
+NAME = Mark
+AGE = 25
+ADDRESS = Rich-Mond
+SALARY = 65000.0
+
+Operation done successfully
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} sqlite3 test.db
+SQLite version 3.14.1 2016-08-11 18:53:32
+Enter ".help" for usage hints.
+sqlite> .tables
+COMPANY
+sqlite> show * from COMPANY;
+Error: near "show": syntax error
+sqlite> select * from COMPANY;
+1|Paul|32|California|25000.0
+2|Allen|25|Texas|15000.0
+3|Teddy|23|Norway|20000.0
+4|Mark|25|Rich-Mond |65000.0
+sqlite> .q
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ./test5
+Opened database successfully
+Callback function called: ID = 1
+NAME = Paul
+AGE = 32
+ADDRESS = California
+SALARY = 25000.0
+
+Callback function called: ID = 3
+NAME = Teddy
+AGE = 23
+ADDRESS = Norway
+SALARY = 20000.0
+
+Callback function called: ID = 4
+NAME = Mark
+AGE = 25
+ADDRESS = Rich-Mond
+SALARY = 65000.0
+
+Operation done successfully
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} sqlite3 test.db
+SQLite version 3.14.1 2016-08-11 18:53:32
+Enter ".help" for usage hints.
+sqlite> .tables
+COMPANY
+sqlite> select * from COMPANY;
+1|Paul|32|California|25000.0
+3|Teddy|23|Norway|20000.0
+4|Mark|25|Rich-Mond |65000.0
+sqlite> .q
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite} ./test6
+-bash: ./test6: No such file or directory
+{cslinux1:~/cs3377/Week6/Lab_1/mysql/sqlite-files/sqlite}

@@ -1,0 +1,127 @@
+login as: KCB180002
+Pre-authentication banner message from server:
+|                       University of Texas at Dallas
+|                       Department of Computer Science
+|
+|                 Use of UTD Information Systems is subject to
+|           the UTD Information Security and Acceptable Use Policy.
+|
+|   Pursuant to Texas Administrative Code 202:
+|   (1) Unauthorized use is prohibited;
+|   (2) Usage may be subject to security testing and monitoring;
+|   (3) Misuse is subject to criminal prosecution; and
+|   (4) No expectation of privacy except as otherwise provided by applicable
+|       privacy laws.
+|
+|        ATTENTION: utdnetid != utdnetid@utdallas.edu (UTD != Google!)
+|
+|    Just use utdnetid, and for the love of programming, STOP USING ALL CAPS!
+|
+|   [[NOTE: All CS Graduate Students should use csgrads1.utdallas.edu      ]]
+|   [[   If you are a CS Graduate Student, you cannot logon to this server.]]
+|
+|
+|  ***** This system will require a connection to the GlobalProtect VPN startin
+> g
+|  on the following dates:
+|
+|  cslinux1.utdallas.edu - June 15, 2020
+|  cslinux2.utdallas.edu - June 22, 2020
+|
+|  ***** GlobalProtect VPN Instructions: https://www.utdallas.edu/oit/howto/vpn
+> /
+|
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v21.5 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to KCB180002@cslinux1.utdallas.edu                     ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Last login: Wed Jan 26 13:22:01 2022 from utdvpn-10-50-124-241.utdallas.edu
+
+                       ***---***---***---***---***---***
+                    csgrads1.utdallas.edu - CentOS Linux 7.9
+                 --All CS Graduate Students should use csgrads1--
+                      cs1.utdallas.edu - CentOS Linux 7.9
+                      cs2.utdallas.edu - CentOS Linux 7.9
+                       ***---***---***---***---***---***
+
+This system is for use by CS students who need a general purpose Linux system
+to complete homework assignments.  Computationally or resource intensive
+simulations will be throttled automatically.
+
+Thank you,
+CS Lab Manager
+cs-labs@utdallas.edu
+
+               /scratch disk space can be used for temporary files.
+      All files within /scratch will be erased on a regular basis (Sunday 0300).
+
+{cslinux1:~} ls
+perl5  public_html
+{cslinux1:~} date
+Wed Jan 26 13:34:46 CST 2022
+{cslinux1:~} pwd
+/home/010/k/kc/kcb180002
+{cslinux1:~} touch
+touch: missing file operand
+Try 'touch --help' for more information.
+{cslinux1:~} touch public_html
+{cslinux1:~} whoami
+kcb180002
+{cslinux1:~} touch testfile.txt
+{cslinux1:~} ls
+perl5  public_html  testfile.txt
+{cslinux1:~} testfile.txt -l
+bash: testfile.txt: command not found...
+{cslinux1:~} ls testfile.txt
+testfile.txt
+{cslinux1:~} ls testfile.txt -l
+-rw------- 1 kcb180002 sn 0 Jan 26 13:35 testfile.txt
+{cslinux1:~} vi testfile.txt
+{cslinux1:~} rm testfile.txt
+rm: remove regular file ‘testfile.txt’? y
+{cslinux1:~} ls
+perl5  public_html
+{cslinux1:~} touch CS_3377
+{cslinux1:~} ls
+CS_3377  perl5  public_html
+{cslinux1:~} cd CS_3377
+-bash: cd: CS_3377: Not a directory
+{cslinux1:~} rm CS_3377
+rm: remove regular empty file ‘CS_3377’? y
+{cslinux1:~} mkdir cs3377
+{cslinux1:~} ls
+cs3377  perl5  public_html
+{cslinux1:~} cd cs3377
+{cslinux1:~/cs3377} mkdir week2
+{cslinux1:~/cs3377} cd week2
+{cslinux1:~/cs3377/week2} ls
+Week2 Lab1.txt
+{cslinux1:~/cs3377/week2} ls Week2 Lab1.txt -l
+ls: cannot access Week2: No such file or directory
+ls: cannot access Lab1.txt: No such file or directory
+{cslinux1:~/cs3377/week2} ls Week2_Lab1.txt -l
+-rw------- 1 kcb180002 sn 4295 Jan 26 13:45 Week2_Lab1.txt
+{cslinux1:~/cs3377/week2} vi Week2_Lab1.txt
+{cslinux1:~/cs3377/week2} cd Lab2
+{cslinux1:~/cs3377/week2/Lab2} ls
+hello.c
+{cslinux1:~/cs3377/week2/Lab2} gcc hello.c
+{cslinux1:~/cs3377/week2/Lab2} -o hello
+bash: -o: command not found...
+{cslinux1:~/cs3377/week2/Lab2} gcc hello.c -o hello
+{cslinux1:~/cs3377/week2/Lab2} ./hello
+Hello World
+{cslinux1:~/cs3377/week2/Lab2}

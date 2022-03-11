@@ -1,0 +1,66 @@
+1. To compile fig1-3.c program attached here.
+     Note. To compile the program, you need error.c and apue.h
+	 
+	 
+
+{cslinux1:~/cs3377/Week7/Lab2} ls
+apue.h  error.c  fig1-3  fig1-3.c  hello-apue.c
+{cslinux1:~/cs3377/Week7/Lab2}
+
+	 
+	 
+2. To create a Makefile for fig1-3.c with apue.h and error.c
+      and run it with make to compile the program.    
+(1) Use the files attached here from APUE code repository
+(2) Create Makefile (to compile the program - fig1-3.c with apue.h and error.c files).
+          gcc fig1-3.c error.c -o fig1-3
+		  
+
+{cslinux1:~/cs3377/Week7/Lab2} gcc fig1-3.c error.c -ofig1-3
+{cslinux1:~/cs3377/Week7/Lab2}
+
+(3) Type "make" (it will run the Makefile file, to compile). 
+
+(4) Run the program with current directory, to show that it is compiled and running. 
+         ./fig1-3    ./
+{cslinux1:~/cs3377/Week7/Lab2} ./fig1-3
+usage: ls directory_name
+{cslinux1:~/cs3377/Week7/Lab2} ./fig1-3 ./
+.
+..
+hello-apue.c
+fig1-3
+apue.h
+fig1-3.c
+error.c
+
+(5) List the files (Makefile and fig1-3.c) using ls -l, and its file content using cat command 
+{cslinux1:~/cs3377/Week7/Lab2} ls -l
+total 264
+-rw------- 1 kcb180002 sn  4631 Mar  2 13:31 apue.h
+-rw------- 1 kcb180002 sn  2282 Mar  2 13:31 error.c
+-rwx--x--x 1 kcb180002 sn 13440 Mar  2 13:33 fig1-3
+-rw------- 1 kcb180002 sn   340 Mar  2 13:31 fig1-3.c
+-rw------- 1 kcb180002 sn   110 Mar  2 13:31 hello-apue.c
+{cslinux1:~/cs3377/Week7/Lab2} cat fig1-3.c
+#include "apue.h"
+#include <dirent.h>
+
+int
+main(int argc, char *argv[])
+{
+        DIR                             *dp;
+        struct dirent   *dirp;
+
+        if (argc != 2)
+                err_quit("usage: ls directory_name");
+
+        if ((dp = opendir(argv[1])) == NULL)
+                err_sys("can't open %s", argv[1]);
+        while ((dirp = readdir(dp)) != NULL)
+                printf("%s\n", dirp->d_name);
+
+        closedir(dp);
+        exit(0);
+}
+{cslinux1:~/cs3377/Week7/Lab2}

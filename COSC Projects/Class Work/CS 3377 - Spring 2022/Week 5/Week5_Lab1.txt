@@ -1,0 +1,121 @@
+login as: kcb180002
+Pre-authentication banner message from server:
+|                       University of Texas at Dallas
+|                       Department of Computer Science
+|
+|                 Use of UTD Information Systems is subject to
+|           the UTD Information Security and Acceptable Use Policy.
+|
+|   Pursuant to Texas Administrative Code 202:
+|   (1) Unauthorized use is prohibited;
+|   (2) Usage may be subject to security testing and monitoring;
+|   (3) Misuse is subject to criminal prosecution; and
+|   (4) No expectation of privacy except as otherwise provided by applicable
+|       privacy laws.
+|
+|        ATTENTION: utdnetid != utdnetid@utdallas.edu (UTD != Google!)
+|
+|  ***** This system will require a connection to the GlobalProtect VPN startin
+> g
+|  on the following dates:
+|
+|  cslinux1.utdallas.edu - June 15, 2020
+|  cslinux2.utdallas.edu - June 22, 2020
+|
+|  ***** GlobalProtect VPN Instructions: https://www.utdallas.edu/oit/howto/vpn
+> /
+|
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+Access denied
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v21.5 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to kcb180002@cslinux2.utdallas.edu                     ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Last failed login: Wed Feb 16 12:02:10 CST 2022 from utdvpn-10-50-124-241.utdallas.edu on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Wed Feb  9 11:35:47 2022 from utdvpn-10-50-124-241.utdallas.edu
+
+                       ***---***---***---***---***---***
+                    csgrads1.utdallas.edu - CentOS Linux 7.9
+                 --All CS Graduate Students should use csgrads1--
+                      cs1.utdallas.edu - CentOS Linux 7.9
+                      cs2.utdallas.edu - CentOS Linux 7.9
+                       ***---***---***---***---***---***
+
+This system is for use by CS students who need a general purpose Linux system
+to complete homework assignments.  Computationally or resource intensive
+simulations will be throttled automatically.
+
+Thank you,
+CS Lab Manager
+cs-labs@utdallas.edu
+
+               /scratch disk space can be used for temporary files.
+      All files within /scratch will be erased on a regular basis (Sunday 0300).
+
+{cslinux2:~} cd cs3377/week5
+{cslinux2:~/cs3377/week5} vim short
+{cslinux2:~/cs3377/week5} la
+.  ..  short
+{cslinux2:~/cs3377/week5} cat short
+echo 'hi there'
+{cslinux2:~/cs3377/week5} la -l short
+-rw------- 1 kcb180002 sn 16 Feb 16 12:04 short
+{cslinux2:~/cs3377/week5} chmod u+x short
+{cslinux2:~/cs3377/week5} la -l short
+-rwx------ 1 kcb180002 sn 16 Feb 16 12:04 short
+{cslinux2:~/cs3377/week5} vi short
+{cslinux2:~/cs3377/week5} cat short
+#! echo 'hi there'
+{cslinux2:~/cs3377/week5} vi short
+{cslinux2:~/cs3377/week5} cat short
+#! echo "hi there" # prints hi there to the console
+{cslinux2:~/cs3377/week5} bash short
+hi there
+{cslinux2:~/cs3377/week5} touch first
+{cslinux2:~/cs3377/week5} la -l first
+-rw------- 1 kcb180002 sn 29 Feb 16 12:23 first
+{cslinux2:~/cs3377/week5} chmod u+x first
+{cslinux2:~/cs3377/week5} vi first
+{cslinux2:~/cs3377/week5} bash first test
+first argument: test
+{cslinux2:~/cs3377/week5} bash first test test2
+first argument: test
+{cslinux2:~/cs3377/week5} touch cptobak
+{cslinux2:~/cs3377/week5} vi cptobak
+{cslinux2:~/cs3377/week5} bash cptobak first
+{cslinux2:~/cs3377/week5} la
+.  ..  cptobak  first  first.bat  short
+{cslinux2:~/cs3377/week5} cat first.bat
+#!
+echo "first argument: $1"
+{cslinux2:~/cs3377/week5} touch "file with space"
+{cslinux2:~/cs3377/week5} la
+.  ..  cptobak  file with space  first  first.bat  short
+{cslinux2:~/cs3377/week5} bash cptobak "file with space"
+cp: target ‘file with space.bat’ is not a directory
+{cslinux2:~/cs3377/week5} la
+.  ..  cptobak  file with space  file with space.bat  first  first.bat  short
+{cslinux2:~/cs3377/week5} rm "file with space.bat"
+rm: remove regular empty file ‘file with space.bat’? y
+{cslinux2:~/cs3377/week5} vi cptobak
+{cslinux2:~/cs3377/week5} bash cptobak "file with space"
+cp: target ‘file with space.bat’ is not a directory
+{cslinux2:~/cs3377/week5} echo "the full name is used instead of the name up to the first space in the given input"
+the full name is used instead of the name up to the first space in the given input
+{cslinux2:~/cs3377/week5}

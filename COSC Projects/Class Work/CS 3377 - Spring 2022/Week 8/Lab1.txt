@@ -1,0 +1,167 @@
+Case1. fork();
+
+{cslinux1:~/cs3377/week8/Lab1} gcc myCase1.c -o myCase1
+{cslinux1:~/cs3377/week8/Lab1} ./myCase1
+Origional program, pid=1187
+
+In the child process, pid = 1188, ppid = 1187
+
+In the parent process, pid=1187, fork returned = 1188
+
+
+Case2. fork();fork();fork();
+
+{cslinux1:~/cs3377/week8/Lab1} vi myCase2.c
+{cslinux1:~/cs3377/week8/Lab1} gcc myCase2.c -o myCase2
+{cslinux1:~/cs3377/week8/Lab1} ./myCase2
+Origional program, pid=6784
+
+In the child process, pid=6787, ppid=6784
+
+In the child process, pid=6790, ppid=6785
+
+In the child process, pid=6789, ppid=6786
+
+In the child process, pid=6791, ppid=6788
+
+In the parent process, pid=6784, fork returned=6787
+
+In the parent process, pid=6786, fork returned=6789
+
+In the parent process, pid=6785, fork returned=6790
+
+In the parent process, pid=6788, fork returned=6791
+
+{cslinux1:~/cs3377/week8/Lab1}
+
+
+
+Case3. fork();fork();fork();fork();
+
+{cslinux1:~/cs3377/week8/Lab1} vi myCase3.c
+{cslinux1:~/cs3377/week8/Lab1} gcc myCase3.c -o myCase3
+{cslinux1:~/cs3377/week8/Lab1} ./myCase3
+Origional program, pid=10156
+
+In the child process, pid=10162, ppid=10156
+
+In the child process, pid=10165, ppid=10157
+
+In the child process, pid=10168, ppid=10161
+
+In the child process, pid=10170, ppid=10164
+
+In the child process, pid=10167, ppid=10159
+
+In the child process, pid=10166, ppid=10160
+
+In the child process, pid=10169, ppid=10158
+
+In the child process, pid=10171, ppid=10163
+
+In the parent process, pid=10156, fork returned=10162
+
+In the parent process, pid=10157, fork returned=10165
+
+In the parent process, pid=10161, fork returned=10168
+
+In the parent process, pid=10159, fork returned=10167
+
+In the parent process, pid=10164, fork returned=10170
+
+In the parent process, pid=10160, fork returned=10166
+
+In the parent process, pid=10158, fork returned=10169
+
+In the parent process, pid=10163, fork returned=10171
+
+{cslinux1:~/cs3377/week8/Lab1}
+
+
+Case4. if(pid= fork() && pid2 = fork()) {fork();}
+	   if(pid= fork() && pid2 = fork()) {fork();}
+
+
+{cslinux1:~/cs3377/week8/Lab1} vi myCase4.c
+{cslinux1:~/cs3377/week8/Lab1} gcc myCase4.c -o myCase4
+{cslinux1:~/cs3377/week8/Lab1} ./myCase4
+Origional program, pid=18833
+
+In the child process, pid=18837, ppid=18834
+
+In the child process, pid2=18837, ppid=18834
+
+In the child process, pid2=18839, ppid=18834
+
+In the child process, pid=18840, ppid=18835
+
+In the child process, pid=18841, ppid=18836
+
+In the child process, pid2=18842, ppid=18833
+
+In the child process, pid=18838, ppid=18833
+
+In the child process, pid2=18845, ppid=18836
+
+In the child process, pid2=18840, ppid=18835
+
+In the child process, pid2=18844, ppid=18835
+
+In the parent process, pid=18834, forks returned=18837, 18839
+
+In the parent process, pid=18833, forks returned=18838, 18842
+
+In the parent process, pid=18843, forks returned=18837, 18839
+
+In the parent process, pid=18835, forks returned=18840, 18844
+
+In the parent process, pid=18846, forks returned=18838, 18842
+
+In the parent process, pid=18836, forks returned=18841, 18845
+
+In the parent process, pid=18847, forks returned=18840, 18844
+
+In the parent process, pid=18848, forks returned=18841, 18845
+
+{cslinux1:~/cs3377/week8/Lab1}
+
+Case5. for(int i=1; i<=3; i++) {fork();}
+
+{cslinux1:~/cs3377/week8/Lab1} vi myCase5.c
+{cslinux1:~/cs3377/week8/Lab1} gcc myCase5.c -o myCase5 -std=gnu99
+{cslinux1:~/cs3377/week8/Lab1} ./myCase5
+Origional program, pid=20609
+
+In the child process, pid=20614, ppid=20609
+
+In the child process, pid=20617, ppid=20612
+
+In the child process, pid=20618, ppid=20611
+
+In the child process, pid=20620, ppid=20610
+
+In the child process, pid=20621, ppid=20615
+
+In the child process, pid=20622, ppid=20616
+
+In the child process, pid=20623, ppid=20613
+
+In the child process, pid=20624, ppid=20619
+
+In the parent process, pid=20609, fork returned=20614
+
+In the parent process, pid=20612, fork returned=20617
+
+In the parent process, pid=20611, fork returned=20618
+
+In the parent process, pid=20610, fork returned=20620
+
+In the parent process, pid=20615, fork returned=20621
+
+In the parent process, pid=20616, fork returned=20622
+
+In the parent process, pid=20613, fork returned=20623
+
+In the parent process, pid=20619, fork returned=20624
+
+{cslinux1:~/cs3377/week8/Lab1}

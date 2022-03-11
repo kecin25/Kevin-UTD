@@ -1,0 +1,387 @@
+login as: KCB180002
+Pre-authentication banner message from server:
+|                       University of Texas at Dallas
+|                       Department of Computer Science
+|
+|                 Use of UTD Information Systems is subject to
+|           the UTD Information Security and Acceptable Use Policy.
+|
+|   Pursuant to Texas Administrative Code 202:
+|   (1) Unauthorized use is prohibited;
+|   (2) Usage may be subject to security testing and monitoring;
+|   (3) Misuse is subject to criminal prosecution; and
+|   (4) No expectation of privacy except as otherwise provided by applicable
+|       privacy laws.
+|
+|        ATTENTION: utdnetid != utdnetid@utdallas.edu (UTD != Google!)
+|
+|    Just use utdnetid, and for the love of programming, STOP USING ALL CAPS!
+|
+|   [[NOTE: All CS Graduate Students should use csgrads1.utdallas.edu      ]]
+|   [[   If you are a CS Graduate Student, you cannot logon to this server.]]
+|
+|
+|  ***** This system will require a connection to the GlobalProtect VPN startin
+> g
+|  on the following dates:
+|
+|  cslinux1.utdallas.edu - June 15, 2020
+|  cslinux2.utdallas.edu - June 22, 2020
+|
+|  ***** GlobalProtect VPN Instructions: https://www.utdallas.edu/oit/howto/vpn
+> /
+|
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v21.5 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to KCB180002@cslinux1.utdallas.edu                     ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Last login: Wed Feb  2 12:52:42 2022 from utdvpn-10-50-124-241.utdallas.edu
+
+                       ***---***---***---***---***---***
+                    csgrads1.utdallas.edu - CentOS Linux 7.9
+                 --All CS Graduate Students should use csgrads1--
+                      cs1.utdallas.edu - CentOS Linux 7.9
+                      cs2.utdallas.edu - CentOS Linux 7.9
+                       ***---***---***---***---***---***
+
+This system is for use by CS students who need a general purpose Linux system
+to complete homework assignments.  Computationally or resource intensive
+simulations will be throttled automatically.
+
+Thank you,
+CS Lab Manager
+cs-labs@utdallas.edu
+
+               /scratch disk space can be used for temporary files.
+      All files within /scratch will be erased on a regular basis (Sunday 0300).
+
+{cslinux1:~} cd cs3377
+{cslinux1:~/cs3377} ls
+week2  week3
+{cslinux1:~/cs3377} mkdir week4
+{cslinux1:~/cs3377} cd week4
+{cslinux1:~/cs3377/week4} find /user/bin -mtime -1200 | wc -l
+find: ‘/user/bin’: No such file or directory
+0
+{cslinux1:~/cs3377/week4} find /usr/bin -mtime -1200 | wc -l
+1979
+{cslinux1:~/cs3377/week4} find /usr/bin -name c*
+/usr/bin/cat
+/usr/bin/chem
+/usr/bin/cd-it8
+/usr/bin/cdparanoia
+/usr/bin/combinedeltarpm
+/usr/bin/catman
+/usr/bin/cal
+/usr/bin/chfn
+/usr/bin/chacl
+/usr/bin/clear
+/usr/bin/cpp
+/usr/bin/composeglyphs
+/usr/bin/cd-create-profile
+/usr/bin/check-binary-files
+/usr/bin/ciptool
+/usr/bin/cmsutil
+/usr/bin/c++filt
+/usr/bin/createdb
+/usr/bin/checkisomd5
+/usr/bin/cp
+/usr/bin/co
+/usr/bin/csplit
+/usr/bin/cpanp
+/usr/bin/ctags
+/usr/bin/chmorph
+/usr/bin/checksctp
+/usr/bin/certutil
+/usr/bin/canberra-gtk-play
+/usr/bin/caja-file-management-properties
+/usr/bin/chage
+/usr/bin/chardetect
+/usr/bin/chrt
+/usr/bin/checkXML
+/usr/bin/createlang
+/usr/bin/clibrary
+/usr/bin/captoinfo
+/usr/bin/cd
+/usr/bin/checkmk
+/usr/bin/celtenc051
+/usr/bin/cg_merge
+/usr/bin/cupstestdsc
+/usr/bin/cups-config
+/usr/bin/check-regexp
+/usr/bin/cdda-player
+/usr/bin/composite
+/usr/bin/cpansign
+/usr/bin/collateindex.pl
+/usr/bin/cancel
+/usr/bin/cgdelete
+/usr/bin/cg_annotate
+/usr/bin/cgget
+/usr/bin/crontab
+/usr/bin/cxpm
+/usr/bin/cpan
+/usr/bin/cpan2dist
+/usr/bin/clibrary2
+/usr/bin/compare
+/usr/bin/caja
+/usr/bin/cue2toc
+/usr/bin/coredumpctl
+/usr/bin/cpp2html
+/usr/bin/compress
+/usr/bin/chmod
+/usr/bin/cd-fix-profile
+/usr/bin/cc
+/usr/bin/celtdec051
+/usr/bin/cgclassify
+/usr/bin/colcrt
+/usr/bin/compile_et
+/usr/bin/chronyc
+/usr/bin/cgset
+/usr/bin/cupstestppd
+/usr/bin/cistopbm
+/usr/bin/coverage
+/usr/bin/card
+/usr/bin/cvtsudoers
+/usr/bin/cifsiostat
+/usr/bin/centrino-decode
+/usr/bin/cgsnapshot
+/usr/bin/cvsbug
+/usr/bin/crash
+/usr/bin/chmem
+/usr/bin/cgexec
+/usr/bin/caja-autorun-software
+/usr/bin/cscope
+/usr/bin/cpanm
+/usr/bin/chsh
+/usr/bin/ccache-swig
+/usr/bin/cd-info
+/usr/bin/cpack
+/usr/bin/coverage-2.7
+/usr/bin/crywrap
+/usr/bin/chcon
+/usr/bin/croco-0.6-config
+/usr/bin/config_data
+/usr/bin/createrepo
+/usr/bin/comm
+/usr/bin/caja-connect-server
+/usr/bin/cscope-indexer
+/usr/bin/cisco-decrypt
+/usr/bin/cmuwmtopbm
+/usr/bin/cairo-sphinx
+/usr/bin/curl-config
+/usr/bin/col
+/usr/bin/chainsaw
+/usr/bin/cd-iccdump
+/usr/bin/combinediff
+/usr/bin/cd-read
+/usr/bin/csh
+/usr/bin/ctest
+/usr/bin/cpupower
+/usr/bin/cancel.cups
+/usr/bin/convert
+/usr/bin/coverage2
+/usr/bin/cd-paranoia
+/usr/bin/chcat
+/usr/bin/cmp
+/usr/bin/cdda2wav
+/usr/bin/c89
+/usr/bin/certwatch
+/usr/bin/clhsdb
+/usr/bin/cvt
+/usr/bin/cksum
+/usr/bin/certmaster-getcert
+/usr/bin/clean-binary-files
+/usr/bin/cvs
+/usr/bin/column
+/usr/bin/checkmodule
+/usr/bin/colrm
+/usr/bin/c99
+/usr/bin/cups-calibrate
+/usr/bin/catchsegv
+/usr/bin/clpi_dump
+/usr/bin/crlutil
+/usr/bin/chkfont
+/usr/bin/complete-ant-cmd.pl
+/usr/bin/consolehelper-gtk
+/usr/bin/chown
+/usr/bin/cut
+/usr/bin/connection_recovery
+/usr/bin/callgrind_annotate
+/usr/bin/createuser
+/usr/bin/ca-legacy
+/usr/bin/cdrecord
+/usr/bin/cameratopam
+/usr/bin/cifscreds
+/usr/bin/ccmake
+/usr/bin/cowthink
+/usr/bin/cockpit-bridge
+/usr/bin/curl
+/usr/bin/conjure
+/usr/bin/crc32
+/usr/bin/colormgr
+/usr/bin/calibrate_ppa
+/usr/bin/cdrdao
+/usr/bin/corelist
+/usr/bin/c2ph
+/usr/bin/chattr
+/usr/bin/clusterdb
+/usr/bin/cgcreate
+/usr/bin/code
+/usr/bin/cpanp-run-perl
+/usr/bin/charmap
+/usr/bin/consolehelper
+/usr/bin/command
+/usr/bin/cifsdd
+/usr/bin/curve_keygen
+/usr/bin/chgrp
+/usr/bin/c++
+/usr/bin/cpio
+/usr/bin/checkpolicy
+/usr/bin/cdda2ogg
+/usr/bin/ci
+/usr/bin/cg_diff
+/usr/bin/canberra-boot
+/usr/bin/create-jar-links
+/usr/bin/cowsay
+/usr/bin/certtool
+/usr/bin/cd-drive
+/usr/bin/csslint-0.6
+/usr/bin/callgrind_control
+/usr/bin/caja-sendto
+/usr/bin/cmake
+/usr/bin/chvt
+{cslinux1:~/cs3377/week4} find ~ -size -100
+/home/010/k/kc/kcb180002
+/home/010/k/kc/kcb180002/.viminfo
+/home/010/k/kc/kcb180002/.cshrc
+/home/010/k/kc/kcb180002/.setow
+/home/010/k/kc/kcb180002/.bash_profile
+/home/010/k/kc/kcb180002/.qtermtab
+/home/010/k/kc/kcb180002/.profile
+/home/010/k/kc/kcb180002/.Xauthority
+/home/010/k/kc/kcb180002/.bash_history
+/home/010/k/kc/kcb180002/.config
+/home/010/k/kc/kcb180002/.config/abrt
+/home/010/k/kc/kcb180002/.plan
+/home/010/k/kc/kcb180002/.path
+/home/010/k/kc/kcb180002/.Xdefaults.maker
+/home/010/k/kc/kcb180002/.fvwm2rc
+/home/010/k/kc/kcb180002/public_html
+/home/010/k/kc/kcb180002/.defaults
+/home/010/k/kc/kcb180002/.exrc
+/home/010/k/kc/kcb180002/.bashrc
+/home/010/k/kc/kcb180002/.Xdefaults
+/home/010/k/kc/kcb180002/.xsession
+/home/010/k/kc/kcb180002/.cache
+/home/010/k/kc/kcb180002/.cache/abrt
+/home/010/k/kc/kcb180002/.cache/abrt/lastnotification
+/home/010/k/kc/kcb180002/.login
+/home/010/k/kc/kcb180002/.local
+/home/010/k/kc/kcb180002/.local/share
+/home/010/k/kc/kcb180002/perl5
+/home/010/k/kc/kcb180002/.tcshrc
+/home/010/k/kc/kcb180002/.xserverrc
+/home/010/k/kc/kcb180002/.logout
+/home/010/k/kc/kcb180002/.elmrc
+/home/010/k/kc/kcb180002/.setx
+/home/010/k/kc/kcb180002/.lesshst
+/home/010/k/kc/kcb180002/cs3377
+/home/010/k/kc/kcb180002/cs3377/week4
+/home/010/k/kc/kcb180002/cs3377/week3
+/home/010/k/kc/kcb180002/cs3377/week3/Lab1
+/home/010/k/kc/kcb180002/cs3377/week3/Lab1/days
+/home/010/k/kc/kcb180002/cs3377/week3/Lab1/pratice
+/home/010/k/kc/kcb180002/cs3377/week3/Lab1/Week3_Lab1.txt
+/home/010/k/kc/kcb180002/cs3377/week3/Lab2
+/home/010/k/kc/kcb180002/cs3377/week3/Lab2/dog
+/home/010/k/kc/kcb180002/cs3377/week3/Lab2/Week3_Lab2.txt
+/home/010/k/kc/kcb180002/cs3377/week3/Lab3
+/home/010/k/kc/kcb180002/cs3377/week3/Lab3/Makefile
+/home/010/k/kc/kcb180002/cs3377/week3/Lab3/Week3_Lab3.txt
+/home/010/k/kc/kcb180002/cs3377/week3/Lab3/hello.c
+/home/010/k/kc/kcb180002/cs3377/week3/Lab3/hello
+/home/010/k/kc/kcb180002/cs3377/week2
+/home/010/k/kc/kcb180002/cs3377/week2/Lab2
+/home/010/k/kc/kcb180002/cs3377/week2/Lab2/Week2_Lab2.txt
+/home/010/k/kc/kcb180002/cs3377/week2/Lab2/a.out
+/home/010/k/kc/kcb180002/cs3377/week2/Lab2/hello.c
+/home/010/k/kc/kcb180002/cs3377/week2/Lab2/hello
+/home/010/k/kc/kcb180002/cs3377/week2/Week2_Lab1.txt
+{cslinux1:~/cs3377/week4} find /usr | head -10
+/usr
+/usr/lib
+/usr/lib/libpam_misc.so.0.82.0
+/usr/lib/gcc
+/usr/lib/gcc/x86_64-redhat-linux
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/crtbegin.o
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/libgomp.spec
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/libcaf_single.a
+{cslinux1:~/cs3377/week4} find /usr/bin -name *sh* -type l
+/usr/bin/mfsmakesnapshot
+/usr/bin/mshortname
+/usr/bin/mshowfat
+/usr/bin/sh
+/usr/bin/mfssettrashtime
+/usr/bin/csh
+/usr/bin/bashbug
+/usr/bin/fig2ps2tex.sh
+/usr/bin/texhash
+/usr/bin/mate-panel-screenshot
+/usr/bin/mfscopytrashtime
+/usr/bin/wish
+/usr/bin/mfsrmsnapshot
+/usr/bin/tclsh
+/usr/bin/mfsgettrashtime
+/usr/bin/mfsrgettrashtime
+/usr/bin/mfsrsettrashtime
+{cslinux1:~/cs3377/week4} find /usr/bin -name *sh* -type l -exec ls -l \;
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  9 10:27 ls
+{cslinux1:~/cs3377/week4}

@@ -1,0 +1,126 @@
+login as: KCB180002
+Pre-authentication banner message from server:
+|                       University of Texas at Dallas
+|                       Department of Computer Science
+|
+|                 Use of UTD Information Systems is subject to
+|           the UTD Information Security and Acceptable Use Policy.
+|
+|   Pursuant to Texas Administrative Code 202:
+|   (1) Unauthorized use is prohibited;
+|   (2) Usage may be subject to security testing and monitoring;
+|   (3) Misuse is subject to criminal prosecution; and
+|   (4) No expectation of privacy except as otherwise provided by applicable
+|       privacy laws.
+|
+|        ATTENTION: utdnetid != utdnetid@utdallas.edu (UTD != Google!)
+|
+|    Just use utdnetid, and for the love of programming, STOP USING ALL CAPS!
+|
+|   [[NOTE: All CS Graduate Students should use csgrads1.utdallas.edu      ]]
+|   [[   If you are a CS Graduate Student, you cannot logon to this server.]]
+|
+|
+|  ***** This system will require a connection to the GlobalProtect VPN startin
+> g
+|  on the following dates:
+|
+|  cslinux1.utdallas.edu - June 15, 2020
+|  cslinux2.utdallas.edu - June 22, 2020
+|
+|  ***** GlobalProtect VPN Instructions: https://www.utdallas.edu/oit/howto/vpn
+> /
+|
+End of banner message from server
+Keyboard-interactive authentication prompts from server:
+| Password:
+End of keyboard-interactive prompts from server
+    +----------------------------------------------------------------------+
+    ¦                 • MobaXterm Personal Edition v21.5 •                 ¦
+    ¦               (SSH client, X server and network tools)               ¦
+    ¦                                                                      ¦
+    ¦ ? SSH session to KCB180002@cslinux1.utdallas.edu                     ¦
+    ¦   • Direct SSH      :  ?                                             ¦
+    ¦   • SSH compression :  ?                                             ¦
+    ¦   • SSH-browser     :  ?                                             ¦
+    ¦   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ¦
+    ¦                                                                      ¦
+    ¦ ? For more info, ctrl+click on help or visit our website.            ¦
+    +----------------------------------------------------------------------+
+
+Last login: Wed Feb  2 12:45:39 2022 from utdvpn-10-50-124-241.utdallas.edu
+
+                       ***---***---***---***---***---***
+                    csgrads1.utdallas.edu - CentOS Linux 7.9
+                 --All CS Graduate Students should use csgrads1--
+                      cs1.utdallas.edu - CentOS Linux 7.9
+                      cs2.utdallas.edu - CentOS Linux 7.9
+                       ***---***---***---***---***---***
+
+This system is for use by CS students who need a general purpose Linux system
+to complete homework assignments.  Computationally or resource intensive
+simulations will be throttled automatically.
+
+Thank you,
+CS Lab Manager
+cs-labs@utdallas.edu
+
+               /scratch disk space can be used for temporary files.
+      All files within /scratch will be erased on a regular basis (Sunday 0300).
+
+{cslinux1:~} cd
+{cslinux1:~} pwd
+/home/010/k/kc/kcb180002
+{cslinux1:~} cd cs3377/week3/Lab2
+{cslinux1:~/cs3377/week3/Lab2} mkdir two
+{cslinux1:~/cs3377/week3/Lab2} file two
+two: directory
+{cslinux1:~/cs3377/week3/Lab2} pwd
+/home/010/k/kc/kcb180002/cs3377/week3/Lab2
+{cslinux1:~/cs3377/week3/Lab2} cd two
+{cslinux1:~/cs3377/week3/Lab2/two} pwd
+/home/010/k/kc/kcb180002/cs3377/week3/Lab2/two
+{cslinux1:~/cs3377/week3/Lab2/two} vim fox
+{cslinux1:~/cs3377/week3/Lab2/two} ls
+fox
+{cslinux1:~/cs3377/week3/Lab2/two} ls fox
+fox
+{cslinux1:~/cs3377/week3/Lab2/two} ls /home/010/k/kc/kcb180002/cs3377/week3/Lab2
+two
+{cslinux1:~/cs3377/week3/Lab2/two} ls /home/010/k/kc/kcb180002/cs3377/week3/Lab2/two
+fox
+{cslinux1:~/cs3377/week3/Lab2/two} cd
+{cslinux1:~} ls two
+ls: cannot access two: No such file or directory
+{cslinux1:~} cd cs3377
+{cslinux1:~/cs3377} cd week3
+{cslinux1:~/cs3377/week3} cd Lab2
+{cslinux1:~/cs3377/week3/Lab2} ls two
+fox
+{cslinux1:~/cs3377/week3/Lab2} rmdir two
+rmdir: failed to remove ‘two’: Directory not empty
+{cslinux1:~/cs3377/week3/Lab2} rm /two/fox
+rm: cannot remove ‘/two/fox’: No such file or directory
+{cslinux1:~/cs3377/week3/Lab2} rm two/fox
+rm: remove regular empty file ‘two/fox’? y
+{cslinux1:~/cs3377/week3/Lab2} ls
+two
+{cslinux1:~/cs3377/week3/Lab2} ls two
+{cslinux1:~/cs3377/week3/Lab2} rmdir two
+{cslinux1:~/cs3377/week3/Lab2} touch dog
+{cslinux1:~/cs3377/week3/Lab2} ls
+dog
+{cslinux1:~/cs3377/week3/Lab2} ls -l
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  2 12:57 dog
+{cslinux1:~/cs3377/week3/Lab2} ls -l /bin/bash
+-rwxr-xr-x 1 root root 964536 Nov 24 10:33 /bin/bash
+{cslinux1:~/cs3377/week3/Lab2} chmod 600 dog
+{cslinux1:~/cs3377/week3/Lab2} ls -l
+total 24
+-rw------- 1 kcb180002 sn 0 Feb  2 12:57 dog
+{cslinux1:~/cs3377/week3/Lab2} chmod 444 dog
+{cslinux1:~/cs3377/week3/Lab2} ls -l
+total 24
+-r--r--r-- 1 kcb180002 sn 0 Feb  2 12:57 dog
+{cslinux1:~/cs3377/week3/Lab2}
