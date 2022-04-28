@@ -1,0 +1,544 @@
+(1) ping
+        https://en.wikipedia.org/wiki/Ping_(networking_utility)
+        Example: ping www.utdallas.edu 
+                      ping cs1.utdallas.edu
+                      ping www.amazon.com
+         Note. To ping cs1.utdallas.edu, you need to run UTD VPN (GlobalProtect) first.
+		 
+
+Using Moba Terminal:
+
+
+{cslinux1:~/cs3377/Week12/Lab1} ping www.utdallas.edu
+PING produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com (3.21.250.42) 56(84) bytes of data.
+^C
+--- produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com ping statistics ---
+61 packets transmitted, 0 received, 100% packet loss, time 59999ms
+
+{cslinux1:~/cs3377/Week12/Lab1} ping cs1.utdallas.edu
+PING cslinux1.utdallas.edu (10.176.92.15) 56(84) bytes of data.
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=1 ttl=64 time=0.040 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=2 ttl=64 time=0.056 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=3 ttl=64 time=0.045 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=4 ttl=64 time=0.059 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=5 ttl=64 time=0.045 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=6 ttl=64 time=0.052 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=7 ttl=64 time=0.049 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=8 ttl=64 time=0.050 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=9 ttl=64 time=0.049 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=10 ttl=64 time=0.039 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=11 ttl=64 time=0.049 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=12 ttl=64 time=0.047 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=13 ttl=64 time=0.046 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=14 ttl=64 time=0.044 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=15 ttl=64 time=0.045 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=16 ttl=64 time=0.042 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=17 ttl=64 time=0.065 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=18 ttl=64 time=0.043 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=19 ttl=64 time=0.038 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=20 ttl=64 time=0.053 ms
+64 bytes from cslinux1.utdallas.edu (10.176.92.15): icmp_seq=21 ttl=64 time=0.045 ms
+^C
+--- cslinux1.utdallas.edu ping statistics ---
+21 packets transmitted, 21 received, 0% packet loss, time 20000ms
+rtt min/avg/max/mdev = 0.038/0.047/0.065/0.010 ms
+{cslinux1:~/cs3377/Week12/Lab1} ping www.amazon.com
+PING d3ag4hukkh62yn.cloudfront.net (65.8.215.105) 56(84) bytes of data.
+64 bytes from server-65-8-215-105.dfw55.r.cloudfront.net (65.8.215.105): icmp_seq=1 ttl=230 time=2.62 ms
+64 bytes from server-65-8-215-105.dfw55.r.cloudfront.net (65.8.215.105): icmp_seq=2 ttl=230 time=2.61 ms
+64 bytes from server-65-8-215-105.dfw55.r.cloudfront.net (65.8.215.105): icmp_seq=3 ttl=230 time=2.64 ms
+64 bytes from server-65-8-215-105.dfw55.r.cloudfront.net (65.8.215.105): icmp_seq=4 ttl=230 time=2.64 ms
+64 bytes from server-65-8-215-105.dfw55.r.cloudfront.net (65.8.215.105): icmp_seq=5 ttl=230 time=2.56 ms
+^C
+--- d3ag4hukkh62yn.cloudfront.net ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 2.568/2.618/2.641/0.053 ms
+
+
+
+
+Using Personal PC:
+
+C:\Users\kevin>ping www.utdallas.edu
+
+Pinging produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com [3.133.32.155] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 3.133.32.155:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\kevin>ping www.amazon.com
+
+Pinging d3ag4hukkh62yn.cloudfront.net [108.156.247.196] with 32 bytes of data:
+Reply from 108.156.247.196: bytes=32 time=17ms TTL=245
+Reply from 108.156.247.196: bytes=32 time=17ms TTL=245
+Reply from 108.156.247.196: bytes=32 time=16ms TTL=245
+Reply from 108.156.247.196: bytes=32 time=15ms TTL=245
+
+Ping statistics for 108.156.247.196:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 15ms, Maximum = 17ms, Average = 16ms
+
+C:\Users\kevin>ping www.utdallas.edu
+
+Pinging produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com [3.21.250.42] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 3.21.250.42:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\kevin>ping cs1.utdallas.edu
+
+Pinging cslinux1.utdallas.edu [10.176.92.15] with 32 bytes of data:
+Reply from 10.176.92.15: bytes=32 time=16ms TTL=59
+Reply from 10.176.92.15: bytes=32 time=17ms TTL=59
+Reply from 10.176.92.15: bytes=32 time=16ms TTL=59
+Reply from 10.176.92.15: bytes=32 time=16ms TTL=59
+
+Ping statistics for 10.176.92.15:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 16ms, Maximum = 17ms, Average = 16ms
+
+
+
+
+
+		 
+(2) traceroute (or use tracert in Microsoft Windows Command).
+     https://en.wikipedia.org/wiki/Traceroute
+     Example: traceroute www.utdallas.edu  
+         and a few other examples as you like to try (e.g., google, amazon, etc.).
+
+
+Using Moba Terminal:
+
+
+
+{cslinux1:~/cs3377/Week12/Lab1} traceroute www.utdallas.edu
+traceroute to www.utdallas.edu (3.133.32.155), 30 hops max, 60 byte packets
+ 1  utdgw10-176-92.utdallas.edu (10.176.92.1)  0.373 ms  0.408 ms  0.369 ms
+ 2  129.110.90.64 (129.110.90.64)  0.357 ms  0.334 ms  0.311 ms
+ 3  corefo-xe-2-0-7.utdallas.edu (10.222.4.189)  0.855 ms  1.248 ms  1.251 ms
+ 4  * * *
+ 5  pa-eth-2-14-unit-600.utdallas.edu (10.222.1.2)  0.848 ms  0.847 ms  0.885 ms
+ 6  * * *
+ 7  mx204-1-et-0-0-1-unit-700.utdallas.edu (129.110.5.35)  1.152 ms  1.183 ms  1.163 ms
+ 8  edgertr2-p2p.utdallas.edu (129.110.82.11)  1.137 ms  1.085 ms  1.086 ms
+ 9  74.200.187.112 (74.200.187.112)  1.981 ms  1.935 ms  1.852 ms
+10  74.200.187.230 (74.200.187.230)  2.312 ms  2.629 ms  2.524 ms
+11  74.200.187.38 (74.200.187.38)  5.480 ms  5.418 ms  5.251 ms
+12  fourhundredge-0-0-0-21.4079.core2.dall.net.internet2.edu (163.253.1.87)  22.392 ms fourhundredge-0-0-0-20.4079.core2.dall.net.internet2.edu (163.253.1.85)  23.535 ms fourhundredge-0-0-0-19.4079.core2.dall.net.internet2.edu (163.253.1.83)  23.512 ms
+13  fourhundredge-0-0-0-2.4079.core2.kans.net.internet2.edu (163.253.2.11)  24.298 ms  23.982 ms  25.070 ms
+14  fourhundredge-0-0-0-0.4079.core1.chic.net.internet2.edu (163.253.2.28)  23.118 ms  22.258 ms  22.174 ms
+15  fourhundredge-0-0-0-0.4079.core1.eqch.net.internet2.edu (163.253.1.207)  25.135 ms  24.104 ms  24.195 ms
+16  fourhundredge-0-0-0-49.4079.agg2.eqch.net.internet2.edu (163.253.1.219)  23.125 ms fourhundredge-0-0-0-48.4079.agg2.eqch.net.internet2.edu (163.253.1.217)  24.232 ms fourhundredge-0-0-0-49.4079.agg1.eqch.net.internet2.edu (163.253.1.215)  24.234 ms
+17  99.82.179.50 (99.82.179.50)  22.111 ms  27.946 ms  27.887 ms
+18  52.93.249.167 (52.93.249.167)  28.436 ms 52.93.249.143 (52.93.249.143)  28.763 ms  29.130 ms
+19  52.95.62.95 (52.95.62.95)  27.653 ms 150.222.212.19 (150.222.212.19)  27.118 ms 52.95.62.81 (52.95.62.81)  27.123 ms
+20  * * *
+21  150.222.245.241 (150.222.245.241)  28.335 ms 150.222.249.9 (150.222.249.9)  27.258 ms 150.222.249.7 (150.222.249.7)  27.005 ms
+22  * * *
+23  * * *
+24  * * *
+25  * 15.230.135.40 (15.230.135.40)  27.310 ms *
+26  * 54.239.41.54 (54.239.41.54)  27.464 ms 52.93.135.188 (52.93.135.188)  28.401 ms
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+{cslinux1:~/cs3377/Week12/Lab1} traceroute cs1.utdallas.edu
+traceroute to cs1.utdallas.edu (10.176.92.15), 30 hops max, 60 byte packets
+ 1  cslinux1.utdallas.edu (10.176.92.15)  0.050 ms  0.022 ms  0.018 ms
+
+
+
+
+Using Personal PC:
+
+
+
+C:\Users\kevin>tracert www.amazon.com
+
+Tracing route to d3ag4hukkh62yn.cloudfront.net [108.138.169.199]
+over a maximum of 30 hops:
+
+  1     1 ms    <1 ms    <1 ms  ^C
+C:\Users\kevin>
+C:\Users\kevin>tracert cs1.utdallas.edu
+
+Tracing route to cslinux1.utdallas.edu [10.176.92.15]
+over a maximum of 30 hops:
+
+  1    15 ms    17 ms    15 ms  utdvpn-10-50-0-1.utdallas.edu [10.50.0.1]
+  2    18 ms    23 ms    23 ms  swvwagg206-irb-unit-600.utdallas.edu [10.222.1.1]
+  3    17 ms    16 ms    19 ms  corephy-et-1-0-64-unit-0.utdallas.edu [10.222.1.33]
+  4    20 ms    16 ms    15 ms  dsrecss-xe-1-0-9.utdallas.edu [10.222.4.186]
+  5    16 ms    15 ms    17 ms  129.110.90.65
+  6    24 ms    16 ms    19 ms  cslinux1.utdallas.edu [10.176.92.15]
+
+Trace complete.
+
+(3) netstat -aopt (ref: https://en.wikipedia.org/wiki/Netstat)
+Note. Check man page of netstat and its options. Some options are not allowed (blocked) in cs1 with -p option. If you are using a linux system shared with other students doing this exercise (for example, cs1), then you need to check first and select Server's port# available (that is, the port# is not used by any other), usually between 1000 and 64000. If you are using your own Unix/Linux system (e.g., your Mac or Linux), then you may pick any port number (usually between 1000 and 65000 [<64K]) if this port is not used.
+     Case1. Try the following command to see which ports are used now (port# 10 to 99):
+             netstat -aont | grep "`hostname -i`:[1-9][0-9] "
+         Note: the back-tick mark for hostname ( to run the command on the run).
+                  You see most of the output listed begin with the following output
+                       tcp        0      0 129.110.92.15:22   ....
+        This states that tcp port# 22 is active of this host (cs1 IP address is: 129.110.92.15).
+        Question. What is TCP port# 22 for? 
+        Hint. Check TCP Port# 22 in Wiki
+                 https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+
+     Case2. Try the following command to see which ports are used now 
+                      (for example, port# between 30000 to 30099):
+              netstat -aont | grep "`hostname -i`:300[0-9][0-9] "
+ 
+              Question. Is there any TCP port not used (that is, inactive)?
+             Hint. netstat command lists only those TCP ports in use.
+ 
+     Case3. Can you find the TCP connection between your laptop (logged in cs1) and cs1
+                         (using ssh, putty or MobaXterm, etc.)?
+             Hint. See the attached file: Use netstat to find the connection between your laptop and cs1.
+
+
+
+Case 1:
+
+{cslinux1:~/cs3377/Week12/Lab1} netstat -aont | grep "`hostname -i`:[1-9][0-9]"
+tcp        0      0 10.176.92.15:22         10.169.163.109:64988    ESTABLISHED keepalive (7195.55/0/0)
+tcp        0      0 10.176.92.15:22         10.169.182.117:51037    ESTABLISHED keepalive (5999.52/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.93:55462      ESTABLISHED keepalive (6491.04/0/0)
+tcp        0      0 10.176.92.15:22         10.178.189.43:64082     ESTABLISHED keepalive (1215.39/0/0)
+tcp        0      0 10.176.92.15:22         10.169.190.127:51639    ESTABLISHED keepalive (5606.30/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51918      ESTABLISHED keepalive (789.41/0/0)
+tcp        0      0 10.176.92.15:22         10.176.209.153:59964    ESTABLISHED keepalive (5344.16/0/0)
+tcp        0      0 10.176.92.15:22         10.169.178.237:62609    ESTABLISHED keepalive (6032.29/0/0)
+tcp        0      0 10.176.92.15:22         10.169.164.177:57172    ESTABLISHED keepalive (5802.91/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.185:57533     ESTABLISHED keepalive (6982.56/0/0)
+tcp        0      0 10.176.92.15:22         10.176.209.153:59997    ESTABLISHED keepalive (5376.93/0/0)
+tcp        0      0 10.176.92.15:22         10.178.189.43:64477     ESTABLISHED keepalive (2362.27/0/0)
+tcp     5474      0 10.176.92.15:38886      10.182.70.12:389        ESTABLISHED keepalive (6671.26/0/0)
+tcp        0     44 10.176.92.15:22         10.169.165.129:63790    ESTABLISHED on (0.23/0/0)
+tcp        0      0 10.176.92.15:22         10.169.189.53:56372     ESTABLISHED keepalive (6130.59/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.184:50892     ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.227:51003     ESTABLISHED keepalive (2198.43/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.197:61503     ESTABLISHED keepalive (6097.82/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.18:54375      ESTABLISHED keepalive (6425.50/0/0)
+tcp        0      0 10.176.92.15:22         10.169.187.0:64748      ESTABLISHED keepalive (5606.30/0/0)
+tcp        0      0 10.176.92.15:22         10.178.189.43:64098     ESTABLISHED keepalive (1215.39/0/0)
+tcp        0      0 10.176.92.15:22         10.169.160.153:49363    ESTABLISHED keepalive (6458.27/0/0)
+tcp        0    576 10.176.92.15:22         10.178.181.44:54596     ESTABLISHED on (0.03/0/0)
+tcp        0      0 10.176.92.15:22         10.169.187.252:54688    ESTABLISHED keepalive (5901.21/0/0)
+tcp        0      0 10.176.92.15:42340      10.182.70.12:88         TIME_WAIT   timewait (48.35/0/0)
+tcp        0      0 10.176.92.15:22         10.176.197.176:52870    ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.169.164.177:57173    ESTABLISHED keepalive (5802.91/0/0)
+tcp        0      0 10.176.92.15:22         10.169.161.181:57931    ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.221:65313     ESTABLISHED keepalive (2657.18/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51913      ESTABLISHED keepalive (576.41/0/0)
+tcp        0      0 10.176.92.15:823        10.182.21.11:2049       ESTABLISHED keepalive (47.52/0/0)
+tcp        0      0 10.176.92.15:22         10.169.182.117:51038    ESTABLISHED keepalive (6032.29/0/0)
+tcp        0      0 10.176.92.15:22         10.169.180.242:49884    ESTABLISHED keepalive (6032.29/0/0)
+tcp        0      0 10.176.92.15:22         10.178.165.22:49223     ESTABLISHED keepalive (789.41/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.61:54623      ESTABLISHED keepalive (7195.55/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.227:50267     ESTABLISHED keepalive (2026.40/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.13:60657     ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.169.166.70:55504     ESTABLISHED keepalive (2296.73/0/0)
+tcp        0      0 10.176.92.15:22         10.169.163.204:64062    ESTABLISHED keepalive (8.61/0/9)
+tcp        0      0 10.176.92.15:22         10.50.120.184:56743     ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.169.165.129:54762    ESTABLISHED keepalive (6032.29/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.149:50063     ESTABLISHED keepalive (6278.05/0/0)
+tcp        0      0 10.176.92.15:22         10.50.122.16:53211      ESTABLISHED keepalive (3214.24/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.182:63402     ESTABLISHED keepalive (6359.97/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51914      ESTABLISHED keepalive (592.80/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.61:54624      ESTABLISHED keepalive (7195.55/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.136:53593     ESTABLISHED keepalive (4098.97/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51921      ESTABLISHED keepalive (789.41/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.48:50088     ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.197:61506     ESTABLISHED keepalive (6097.82/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51920      ESTABLISHED keepalive (789.41/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.221:57106     ESTABLISHED keepalive (2608.03/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.97:54358     ESTABLISHED keepalive (6065.05/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.136:53368     ESTABLISHED keepalive (854.94/0/0)
+tcp        0      0 10.176.92.15:22         10.169.168.49:51163     ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.176.214.39:54195     ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.169.190.127:64420    ESTABLISHED keepalive (6556.57/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.13:60658     ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.209:55745     ESTABLISHED keepalive (5966.75/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.211:50591     ESTABLISHED keepalive (6523.81/0/0)
+tcp        0      0 10.176.92.15:22         10.169.179.202:50493    ESTABLISHED keepalive (6425.50/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.221:57109     ESTABLISHED keepalive (2591.65/0/0)
+tcp        0      0 10.176.92.15:22         10.50.122.99:57511      ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.169.180.94:59103     ESTABLISHED keepalive (3247.01/0/0)
+tcp        0      0 10.176.92.15:22         10.176.214.39:54196     ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.169.182.21:58312     ESTABLISHED keepalive (5999.52/0/0)
+tcp        0      0 10.176.92.15:22         10.176.214.39:64670     ESTABLISHED keepalive (6359.97/0/0)
+tcp        0      0 10.176.92.15:22         10.169.169.249:61394    ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.194:50134     ESTABLISHED keepalive (5950.37/0/0)
+tcp        0      0 10.176.92.15:22         10.169.171.246:53685    ESTABLISHED keepalive (6523.81/0/0)
+tcp        0      0 10.176.92.15:22         10.178.181.44:54597     ESTABLISHED keepalive (3672.99/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.48:50471     ESTABLISHED keepalive (6589.34/0/0)
+tcp        0      0 10.176.92.15:22         10.169.174.129:61962    ESTABLISHED keepalive (5311.39/0/0)
+tcp        0     64 10.176.92.15:22         10.50.120.185:65318     ESTABLISHED on (0.20/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.18:54384      ESTABLISHED keepalive (6589.34/0/0)
+tcp        0      0 10.176.92.15:22         10.50.122.81:53040      ESTABLISHED keepalive (5802.91/0/0)
+tcp        0      0 10.176.92.15:22         10.169.161.2:49210      ESTABLISHED keepalive (6015.90/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.180:56908     ESTABLISHED keepalive (5802.91/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.93:55444      ESTABLISHED keepalive (6491.04/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.185:61083     ESTABLISHED keepalive (5999.52/0/0)
+tcp        0      0 10.176.92.15:22         10.169.187.252:54679    ESTABLISHED keepalive (5835.68/0/0)
+tcp        0    928 10.176.92.15:22         10.50.123.149:50061     ESTABLISHED on (0.04/0/0)
+tcp        0      0 10.176.92.15:1016       10.176.97.12:2049       ESTABLISHED keepalive (25.76/0/0)
+tcp        0      0 10.176.92.15:22         10.169.160.153:54749    ESTABLISHED keepalive (6654.88/0/0)
+tcp        0      0 10.176.92.15:22         10.169.163.204:64186    ESTABLISHED keepalive (10.65/0/9)
+tcp        0      0 10.176.92.15:22         10.176.92.18:53956      ESTABLISHED keepalive (3771.29/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.184:56744     ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.13:60656     ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.169.187.139:60692    ESTABLISHED keepalive (5835.68/0/0)
+tcp        0      0 10.176.92.15:22         10.176.211.255:43068    ESTABLISHED keepalive (6032.28/0/0)
+tcp        0      0 10.176.92.15:22         10.169.173.107:62639    ESTABLISHED keepalive (6982.56/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.221:65314     ESTABLISHED keepalive (2657.18/0/0)
+tcp        0      0 10.176.92.15:22         10.176.214.39:64671     ESTABLISHED keepalive (6359.96/0/0)
+tcp        0      0 10.176.92.15:22         10.169.189.53:56449     ESTABLISHED keepalive (6556.57/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.18:54376      ESTABLISHED keepalive (6425.50/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.93:55445      ESTABLISHED keepalive (6491.04/0/0)
+tcp        0    316 10.176.92.15:955        10.182.21.29:2049       ESTABLISHED on (0.20/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.136:53504     ESTABLISHED keepalive (2821.02/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.172:52924     ESTABLISHED keepalive (6327.20/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.18:54385      ESTABLISHED keepalive (6589.34/0/0)
+tcp        0      0 10.176.92.15:22         10.169.171.27:52759     ESTABLISHED keepalive (5540.76/0/0)
+tcp        0      0 10.176.92.15:22         10.169.166.70:55406     ESTABLISHED keepalive (2313.12/0/0)
+tcp        0      0 10.176.92.15:42268      10.182.70.12:88         TIME_WAIT   timewait (43.36/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.185:57532     ESTABLISHED keepalive (6982.56/0/0)
+tcp        0      0 10.176.92.15:944        10.182.21.23:2049       ESTABLISHED keepalive (15.26/0/0)
+tcp        0      0 10.176.92.15:22         10.169.179.202:50497    ESTABLISHED keepalive (6425.50/0/0)
+tcp        0      0 10.176.92.15:22         10.169.180.94:59102     ESTABLISHED keepalive (3230.62/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.107:61731     ESTABLISHED keepalive (265.12/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.221:65317     ESTABLISHED keepalive (2673.56/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.191:51876     ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.169.169.211:61623    ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.50.124.32:57736      ESTABLISHED keepalive (6392.73/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.214:51906    ESTABLISHED keepalive (6212.51/0/0)
+tcp        0      0 10.176.92.15:22         10.169.187.139:60730    ESTABLISHED keepalive (7080.86/0/0)
+tcp        0      0 10.176.92.15:928        10.182.80.20:2049       ESTABLISHED keepalive (15.26/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.61:54626      ESTABLISHED keepalive (7211.93/0/0)
+tcp        0      0 10.176.92.15:22         10.169.173.227:63077    ESTABLISHED keepalive (5999.52/0/0)
+tcp        0      0 10.176.92.15:895        10.176.97.11:2049       ESTABLISHED keepalive (5.02/0/0)
+tcp        0      0 10.176.92.15:42314      10.182.70.12:88         TIME_WAIT   timewait (47.64/0/0)
+tcp        0      0 10.176.92.15:22         10.169.173.227:63074    ESTABLISHED keepalive (5966.75/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.180:56796     ESTABLISHED keepalive (5049.24/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.221:65307     ESTABLISHED keepalive (2657.18/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.191:53184     ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.169.169.211:61634    ESTABLISHED keepalive (5933.98/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.214:51989    ESTABLISHED keepalive (6228.89/0/0)
+tcp        0      0 10.176.92.15:22         10.169.189.53:56370     ESTABLISHED keepalive (6130.59/0/0)
+tcp        0      0 10.176.92.15:22         10.169.171.106:53189    ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.176.214.175:62996    ESTABLISHED keepalive (8.60/0/9)
+tcp        0      0 10.176.92.15:22         10.50.127.182:63401     ESTABLISHED keepalive (6359.96/0/0)
+tcp        0      0 10.176.92.15:22         10.50.123.107:50421     ESTABLISHED keepalive (5442.46/0/0)
+tcp        0      0 10.176.92.15:22         10.169.166.225:58452    ESTABLISHED keepalive (7146.40/0/0)
+tcp        0      0 10.176.92.15:22         10.50.124.113:58790     ESTABLISHED keepalive (7211.93/0/0)
+tcp        0      0 10.176.92.15:22         10.169.189.53:56447     ESTABLISHED keepalive (6556.57/0/0)
+tcp        0      0 10.176.92.15:22         10.178.189.43:64083     ESTABLISHED keepalive (1215.39/0/0)
+tcp        0      0 10.176.92.15:22         10.169.182.226:51451    ESTABLISHED keepalive (5835.68/0/0)
+tcp        0      0 10.176.92.15:22         10.169.163.109:64989    ESTABLISHED keepalive (7211.93/0/0)
+tcp        0      0 10.176.92.15:22         10.169.179.202:50552    ESTABLISHED keepalive (6917.02/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.197:60900     ESTABLISHED keepalive (6441.88/0/0)
+tcp        0      0 10.176.92.15:22         10.176.214.175:62992    ESTABLISHED keepalive (24.99/0/9)
+tcp        0      0 10.176.92.15:22         10.169.163.109:63403    ESTABLISHED keepalive (5278.62/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.1:54643       ESTABLISHED keepalive (928.67/0/0)
+tcp        0      0 10.176.92.15:22         10.169.165.129:64399    ESTABLISHED keepalive (5901.21/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.180:56911     ESTABLISHED keepalive (5802.91/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.176:54886    ESTABLISHED keepalive (1477.53/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.184:50893     ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.169.179.202:50551    ESTABLISHED keepalive (6917.02/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.214:51944    ESTABLISHED keepalive (6228.89/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.33:45024      ESTABLISHED keepalive (527.26/0/0)
+tcp        0      0 10.176.92.15:22         10.169.160.153:54752    ESTABLISHED keepalive (6654.88/0/0)
+tcp        0      0 10.176.92.15:22         10.178.189.43:64478     ESTABLISHED keepalive (2362.27/0/0)
+tcp        0      0 10.176.92.15:22         10.169.169.249:61397    ESTABLISHED keepalive (5802.91/0/0)
+tcp        0      0 10.176.92.15:22         10.169.169.40:58505     ESTABLISHED keepalive (5688.22/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.48:49998     ESTABLISHED keepalive (5770.14/0/0)
+tcp        0      0 10.176.92.15:22         10.169.171.72:60888     ESTABLISHED keepalive (6032.28/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.197:55711     ESTABLISHED keepalive (6425.50/0/0)
+tcp        0      0 10.176.92.15:22         10.169.190.127:51637    ESTABLISHED keepalive (5606.30/0/0)
+tcp        0      0 10.176.92.15:22         10.169.163.109:63402    ESTABLISHED keepalive (5278.62/0/0)
+tcp        0      0 10.176.92.15:22         10.169.161.181:52332    ESTABLISHED keepalive (5442.46/0/0)
+tcp        0      0 10.176.92.15:22         10.178.189.43:64097     ESTABLISHED keepalive (2362.27/0/0)
+tcp        0      0 10.176.92.15:22         10.50.124.113:58786     ESTABLISHED keepalive (7195.55/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.93:55463      ESTABLISHED keepalive (6491.04/0/0)
+tcp        0      0 10.176.92.15:22         10.169.190.127:64422    ESTABLISHED keepalive (6572.96/0/0)
+tcp        0     36 10.176.92.15:22         10.169.166.225:58450    ESTABLISHED on (0.24/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.224:58309     ESTABLISHED keepalive (3935.13/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.61:54625      ESTABLISHED keepalive (7211.93/0/0)
+tcp        0      0 10.176.92.15:22         10.176.211.255:43072    ESTABLISHED keepalive (6146.97/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51912      ESTABLISHED keepalive (560.03/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.227:49577     ESTABLISHED keepalive (4361.12/0/0)
+tcp        0      0 10.176.92.15:22         10.50.122.99:57487      ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.60:64376      ESTABLISHED keepalive (5475.23/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51911      ESTABLISHED keepalive (560.03/0/0)
+tcp        0      0 10.176.92.15:22         10.50.121.60:64395      ESTABLISHED keepalive (5589.92/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.97:54377     ESTABLISHED keepalive (6065.05/0/0)
+tcp        0      0 10.176.92.15:22         10.169.180.242:49888    ESTABLISHED keepalive (6032.28/0/0)
+tcp        0      0 10.176.92.15:22         10.169.161.181:64527    ESTABLISHED keepalive (5442.46/0/0)
+tcp        0      0 10.176.92.15:22         10.176.211.60:63070     ESTABLISHED keepalive (4803.48/0/0)
+tcp        0      0 10.176.92.15:22         10.169.178.237:62611    ESTABLISHED keepalive (6032.28/0/0)
+tcp        0      0 10.176.92.15:22         10.169.171.72:60889     ESTABLISHED keepalive (6032.28/0/0)
+tcp        0      0 10.176.92.15:22         10.169.187.0:64749      ESTABLISHED keepalive (5606.30/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.59:51919      ESTABLISHED keepalive (789.40/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.48:50476     ESTABLISHED keepalive (6589.34/0/0)
+tcp        0      0 10.176.92.15:22         10.169.161.181:54893    ESTABLISHED keepalive (5409.69/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.209:55744     ESTABLISHED keepalive (5966.75/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.51:59329      ESTABLISHED keepalive (723.87/0/0)
+tcp        0      0 10.176.92.15:22         10.169.183.214:51992    ESTABLISHED keepalive (6228.89/0/0)
+tcp        0      0 10.176.92.15:34852      10.176.97.176:514       ESTABLISHED off (0.00/0/0)
+tcp        0      0 10.176.92.15:22         10.50.127.51:59340      ESTABLISHED keepalive (756.64/0/0)
+tcp        0      0 10.176.92.15:22         10.50.120.180:56775     ESTABLISHED keepalive (4983.71/0/0)
+tcp        0      0 10.176.92.15:22         10.169.177.13:60659     ESTABLISHED keepalive (5426.08/0/0)
+tcp        0      0 10.176.92.15:22         10.169.169.40:58509     ESTABLISHED keepalive (5704.60/0/0)
+tcp        0      0 10.176.92.15:22         10.169.173.107:62640    ESTABLISHED keepalive (6982.56/0/0)
+
+
+
+Case 2:
+
+
+{cslinux1:~/cs3377/Week12/Lab1} netstat -aont | grep "`hostname -i`:300[0-9][0-9] "
+{cslinux1:~/cs3377/Week12/Lab1} netstat -aont | grep "`hostname -i`:2386[0-9] "
+
+(no ports in range of 30000-30099 and 23860-23869 in use)
+
+Case 3:
+IP config of PC: 10.50.123.149
+
+{cslinux1:~/cs3377/Week12/Lab1} netstat -aont | grep "10.50.123.149"
+tcp        0      0 10.176.92.15:22         10.50.123.149:50063     ESTABLISHED keepalive (5784.84/0/0)
+tcp        0     64 10.176.92.15:22         10.50.123.149:50061     ESTABLISHED on (0.22/0/0)
+
+
+
+          
+(4) nslookup
+     https://en.wikipedia.org/wiki/Nslookup
+
+          Example: nslookup www.utdallas.edu
+                   and a few examples as you like to try.
+
+
+
+{cslinux1:~/cs3377/Week12/Lab1} nslookup www.utdallas.edu
+Server:         10.176.92.9
+Address:        10.176.92.9#53
+
+Non-authoritative answer:
+www.utdallas.edu        canonical name = www.utdallas.edu.c14751.campuspress.com.
+www.utdallas.edu.c14751.campuspress.com canonical name = cloudflare-resolve-to.c14751.campuspress.com.
+cloudflare-resolve-to.c14751.campuspress.com    canonical name = utdallas.us-east-2.lb.campuspress.com.
+utdallas.us-east-2.lb.campuspress.com   canonical name = produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com.
+Name:   produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com
+Address: 3.21.250.42
+Name:   produ-loadb-on7bcbui3qss-86d92ccd5e16e1be.elb.us-east-2.amazonaws.com
+Address: 3.133.32.155
+
+{cslinux1:~/cs3377/Week12/Lab1} nslookup www.amazon.com
+Server:         10.176.92.9
+Address:        10.176.92.9#53
+
+Non-authoritative answer:
+www.amazon.com  canonical name = tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com        canonical name = d3ag4hukkh62yn.cloudfront.net.
+Name:   d3ag4hukkh62yn.cloudfront.net
+Address: 65.8.215.105
+
+
+
+(5) ifconfig - this command is not allowed in current cs1 (and cs systems). reading only.
+     https://en.wikipedia.org/wiki/Ifconfig
+        or you may try this in your own Mac, Linux, Try: 
+            ifconfig  -a
+     For Microsoft windows (desktops in cs openlab, under DOS command prompt): 
+            ipconfig -all 
+ Note. cs1 does not allow ifconfig due to security issue. Use your laptop for this part (5).
+ 
+ 
+ C:\Users\kevin>ipconfig -all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : Kevin-Computer
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : utdallas.edu
+                                       campus.ad.utdallas.edu
+                                       ad.utdallas.edu
+                                       lan
+
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : PANGP Virtual Ethernet Adapter
+   Physical Address. . . . . . . . . : 02-50-41-00-00-01
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 10.50.123.149(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.255
+   Default Gateway . . . . . . . . . :
+   DHCPv6 IAID . . . . . . . . . . . : 469913665
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-25-9E-DC-9E-2C-F0-5D-60-B9-EE
+   DNS Servers . . . . . . . . . . . : 10.100.128.15
+                                       10.182.72.82
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Ethernet 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+   Physical Address. . . . . . . . . : 2C-F0-5D-60-B9-EF
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : lan
+   Description . . . . . . . . . . . : Realtek PCIe 2.5GbE Family Controller
+   Physical Address. . . . . . . . . : 2C-F0-5D-60-B9-EE
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2603:8081:2101:4ed7::1cd7(Preferred)
+   Lease Obtained. . . . . . . . . . : Tuesday, March 22, 2022 4:37:04 PM
+   Lease Expires . . . . . . . . . . : Sunday, April 10, 2022 1:02:38 PM
+   IPv6 Address. . . . . . . . . . . : 2603:8081:2101:4ed7:dd09:b9d2:fbf:def3(Preferred)
+   Temporary IPv6 Address. . . . . . : 2603:8081:2101:4ed7:285d:6cb5:6792:48a5(Deprecated)
+   Temporary IPv6 Address. . . . . . : 2603:8081:2101:4ed7:3dc8:4f2f:fa20:52a4(Deprecated)
+   Temporary IPv6 Address. . . . . . : 2603:8081:2101:4ed7:896e:15b9:2a65:fb67(Deprecated)
+   Temporary IPv6 Address. . . . . . : 2603:8081:2101:4ed7:a53e:89aa:82f9:9311(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::dd09:b9d2:fbf:def3%16(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.1.105(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, April 6, 2022 9:48:04 AM
+   Lease Expires . . . . . . . . . . : Wednesday, April 6, 2022 9:48:03 PM
+   Default Gateway . . . . . . . . . : fe80::4ad2:4fff:fef8:bcba%16
+                                       192.168.1.1
+   DHCP Server . . . . . . . . . . . : 192.168.1.1
+   DHCPv6 IAID . . . . . . . . . . . : 254603357
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-25-9E-DC-9E-2C-F0-5D-60-B9-EE
+   DNS Servers . . . . . . . . . . . : 2603:8081:2101:4ed7::1
+                                       192.168.1.1
+                                       2603:8081:2101:4ed7::1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+ 
+ 
+ 
+ 
+ 

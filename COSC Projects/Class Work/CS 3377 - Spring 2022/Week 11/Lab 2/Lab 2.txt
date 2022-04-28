@@ -1,0 +1,200 @@
+1. Copy dot1s.c and name it to be: dot3s.c
+    Modify dot3s.c so that it will take the value for VECLEN from an argument.
+    Compile and run the program with an argument (50000 for VECLEN). 
+        time ./dot3s 50000 
+		
+
+{cslinux1:~/cs3377/Week11/Lab2} vi dot3s.c
+^[[A{cslinux1:~/cs3377/Week11/Lab2} gcc -pthread dot3s.c -o dot3s
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3s 50000
+Sum =  50000.000000
+
+real    0m0.175s
+user    0m0.002s
+sys     0m0.003s
+	
+	
+2. Copy dot1m.c and name it to be: dot3m.c 
+
+
+{cslinux1:~/cs3377/Week11/Lab2} cp dot1m.c dot3m.c
+
+
+
+2.1 Modify dot3m.c so that it will take two arguments, to  set the values for NUMTHREDS (number of the threads to run) and VECLEN (vector length for dot-product). That is, the program wll start with two argumments (e.g., 5 for NUMTHRDS and 10000 for VECLEN) where the value of VECLEN*NUMTHRDS of dot3m.c (5*10000 = 50000) is equal to the value of VECLEN of dot3s.c
+          time ./lab2-dot1m 5 10000
+		  
+		
+
+{cslinux1:~/cs3377/Week11/Lab2} vi dot3m.c
+{cslinux1:~/cs3377/Week11/Lab2} gcc -pthread dot3m.c -o dot3m
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3m 5 10000
+Thread 0 did 0 to 10000:  mysum=10000.000000 global sum=10000.000000
+Thread 1 did 10000 to 20000:  mysum=10000.000000 global sum=20000.000000
+Thread 2 did 20000 to 30000:  mysum=10000.000000 global sum=30000.000000
+Thread 3 did 30000 to 40000:  mysum=10000.000000 global sum=40000.000000
+Thread 4 did 40000 to 50000:  mysum=10000.000000 global sum=50000.000000
+Sum =  50000.000000
+
+real    0m0.011s
+user    0m0.003s
+sys     0m0.004s
+
+		
+2.2 To include the following output messages in the beginning:
+2.2a system call to print the date/time, hostname, and netid,
+         system("date; hostname; whoami; ls *");
+		
+
+{cslinux1:~/cs3377/Week11/Lab2} vi dot3m.c
+{cslinux1:~/cs3377/Week11/Lab2} gcc -pthread dot3m.c -o dot3m
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3m 5 10000
+Wed Mar 30 11:46:51 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+Thread 1 did 10000 to 20000:  mysum=10000.000000 global sum=10000.000000
+Thread 0 did 0 to 10000:  mysum=10000.000000 global sum=20000.000000
+Thread 3 did 30000 to 40000:  mysum=10000.000000 global sum=30000.000000
+Thread 2 did 20000 to 30000:  mysum=10000.000000 global sum=40000.000000
+Thread 4 did 40000 to 50000:  mysum=10000.000000 global sum=50000.000000
+Sum =  50000.000000
+
+real    0m0.036s
+user    0m0.011s
+sys     0m0.011s
+
+		
+		 
+2.2b to output the program name and the argument(s).
+          ** dot3s running with VECLEN=50000 running ** 
+          ** dot3m running with NUMTHRDS=5 VECLEN=1000 **
+		  
+
+{cslinux1:~/cs3377/Week11/Lab2} vi dot3m.c
+{cslinux1:~/cs3377/Week11/Lab2} gcc -pthread dot3m.c -o dot3m
+{cslinux1:~/cs3377/Week11/Lab2} ./dot3m 50000
+Wed Mar 30 11:51:50 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+./dot3m running with VECLEN=50000
+Thread 2 did 100000 to 150000:  mysum=50000.000000 global sum=50000.000000
+Thread 6 did 300000 to 350000:  mysum=50000.000000 global sum=100000.000000
+Thread 8 did 400000 to 450000:  mysum=50000.000000 global sum=150000.000000
+Thread 3 did 150000 to 200000:  mysum=50000.000000 global sum=200000.000000
+Thread 0 did 0 to 50000:  mysum=50000.000000 global sum=250000.000000
+Thread 5 did 250000 to 300000:  mysum=50000.000000 global sum=300000.000000
+Thread 7 did 350000 to 400000:  mysum=50000.000000 global sum=350000.000000
+Thread 1 did 50000 to 100000:  mysum=50000.000000 global sum=400000.000000
+Thread 4 did 200000 to 250000:  mysum=50000.000000 global sum=450000.000000
+Thread 9 did 450000 to 500000:  mysum=50000.000000 global sum=500000.000000
+Sum =  500000.000000
+
+
+{cslinux1:~/cs3377/Week11/Lab2} ./dot3m 5 50000
+Wed Mar 30 11:52:04 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+./dot3m running with NUMTHRDS= 5 VECLEN=50000
+Thread 2 did 100000 to 150000:  mysum=50000.000000 global sum=50000.000000
+Thread 3 did 150000 to 200000:  mysum=50000.000000 global sum=100000.000000
+Thread 4 did 200000 to 250000:  mysum=50000.000000 global sum=150000.000000
+Thread 1 did 50000 to 100000:  mysum=50000.000000 global sum=200000.000000
+Thread 0 did 0 to 50000:  mysum=50000.000000 global sum=250000.000000
+Sum =  250000.000000
+{cslinux1:~/cs3377/Week11/Lab2}
+		
+
+		
+3. Run dot3s for case1.
+    And run dot3m with the various N where N is the number of threads, for case2-5.
+  case1.   time ./dot3s    50000
+  case2.   time ./dot3m 1  50000
+  case3.   time ./dot3m 2  25000
+  case4.   time ./dot3m 5  10000
+  case5.   time ./dot3m 10 50000
+  
+
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3s 50000
+Sum =  50000.000000
+
+real    0m0.018s
+user    0m0.003s
+sys     0m0.002s
+
+
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3m 1 50000
+Wed Mar 30 11:53:52 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+./dot3m running with NUMTHRDS= 1 VECLEN=50000
+Thread 0 did 0 to 50000:  mysum=50000.000000 global sum=50000.000000
+Sum =  50000.000000
+
+real    0m0.057s
+user    0m0.008s
+sys     0m0.013s
+
+
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3m 2 25000
+Wed Mar 30 11:54:24 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+./dot3m running with NUMTHRDS= 2 VECLEN=25000
+Thread 0 did 0 to 25000:  mysum=25000.000000 global sum=25000.000000
+Thread 1 did 25000 to 50000:  mysum=25000.000000 global sum=50000.000000
+Sum =  50000.000000
+
+real    0m0.046s
+user    0m0.008s
+sys     0m0.011s
+
+
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3m 5 10000
+Wed Mar 30 11:54:47 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+./dot3m running with NUMTHRDS= 5 VECLEN=10000
+Thread 0 did 0 to 10000:  mysum=10000.000000 global sum=10000.000000
+Thread 3 did 30000 to 40000:  mysum=10000.000000 global sum=20000.000000
+Thread 2 did 20000 to 30000:  mysum=10000.000000 global sum=30000.000000
+Thread 1 did 10000 to 20000:  mysum=10000.000000 global sum=40000.000000
+Thread 4 did 40000 to 50000:  mysum=10000.000000 global sum=50000.000000
+Sum =  50000.000000
+
+real    0m0.041s
+user    0m0.009s
+sys     0m0.013s
+
+
+{cslinux1:~/cs3377/Week11/Lab2} time ./dot3m 10 50000
+Wed Mar 30 11:54:54 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m.c  dot1s.c  dot3m  dot3m.c  dot3s  dot3s.c
+./dot3m running with NUMTHRDS= 10 VECLEN=50000
+Thread 2 did 100000 to 150000:  mysum=50000.000000 global sum=50000.000000
+Thread 0 did 0 to 50000:  mysum=50000.000000 global sum=100000.000000
+Thread 5 did 250000 to 300000:  mysum=50000.000000 global sum=150000.000000
+Thread 4 did 200000 to 250000:  mysum=50000.000000 global sum=200000.000000
+Thread 9 did 450000 to 500000:  mysum=50000.000000 global sum=250000.000000
+Thread 1 did 50000 to 100000:  mysum=50000.000000 global sum=300000.000000
+Thread 8 did 400000 to 450000:  mysum=50000.000000 global sum=350000.000000
+Thread 7 did 350000 to 400000:  mysum=50000.000000 global sum=400000.000000
+Thread 3 did 150000 to 200000:  mysum=50000.000000 global sum=450000.000000
+Thread 6 did 300000 to 350000:  mysum=50000.000000 global sum=500000.000000
+Sum =  500000.000000
+
+real    0m0.062s
+user    0m0.012s
+sys     0m0.021s
+
+  
+Analysis:
+Looking at all the given numbers for the different run times for each case; an argument could be made that serial runs faster. One thing to consider before coming to that conclusion is the number of threads running as well as the size of VECLEN. In each case both of these
+values change. To get a more clear idea if serial is faster, we should run the same VECLEN for all cases while chaning the number of threads. Doing this several times will give a more clear idea if serial is the faster option.

@@ -1,0 +1,146 @@
+1. Copy and paste each program and name it to be: timeServer2.c and timeClient2.c
+
+
+{cslinux1:~/cs3377/Week13/Lab1} gcc timeServer0.c -o timeServer2
+{cslinux1:~/cs3377/Week13/Lab1} gcc timeClient0.c -o timeClient2
+
+
+2. Modify the programs to do the following tasks:
+    First, get your port# assigned to your netid for your server's port# to listen.
+    (2.1) timeServer2 will be run with one argument (which is the port#) to set the port#
+             (Let's assume that your port# assinged to your netid is: 23450)
+              ./timeServer2 23450  &
+             Use netstat command to show that your server is up and listening to the port#.
+ 
+
+
+{cslinux1:~/cs3377/Week13/Lab1} ./timeServer2 23860 &
+[1] 15758
+{cslinux1:~/cs3377/Week13/Lab1} Wed Apr 13 11:45:17 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+  PID TTY          TIME CMD
+15758 pts/37   00:00:00 timeServer2
+15768 pts/37   00:00:00 ps
+35222 pts/37   00:00:00 bash
+
+ timeServer: listening at IP=127.0.0.1 Port=34567
+
+
+ (2.2) timeClient2 will be run with two arguments of (1) server's IP address and (2) server's port#
+             (Let's assume that the IP address of cs1.utdallas.edu is: 10.176.92.15)
+              ./timeClient2  10.176.92.15  23450
+ (2.3) Each program will output some heading & information in the beginning.
+              Note. IP address and Port# in the output are provided in the arguments.
+              for server: ** timeServer2 listening to port#=23450 **
+                                  system("date; hostname; hostname -i; whoami; ls *"); 
+              for client:  ** timeClient2 to connect to the server IP=10.176.92.15  and Port#=12345 **
+                                  system("date; hostname; hostname -i; whoami; ls *");
+              // Without these output, your lab score may result in 0. 
+
+
+{cslinux1:~/cs3377/Week13/Lab1} ./timeClient2 127.0.0.1 23860
+Wed Apr 13 11:53:25 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+
+ timeClient: connecting to 127.0.0.1 Port#=34567
+
+ timeClient: connected to timeServer.
+
+ timeServer: timeClient got connected.
+
+ timeServer: successful & conglaturation
+
+ timeServer: now terminating.
+
+  PID TTY          TIME CMD
+15758 pts/37   00:00:00 timeServer2
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+23783 pts/37   00:00:00 timeClient2
+23793 pts/37   00:00:00 ps
+35222 pts/37   00:00:00 bash
+
+
+Wed Apr 13 11:53:25 2022
+
+ timeClient: now terminated.
+{cslinux1:~/cs3377/Week13/Lab1}   PID TTY          TIME CMD
+15758 pts/37   00:00:00 timeServer2
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+23818 pts/37   00:00:00 ps
+35222 pts/37   00:00:00 bash
+
+
+
+
+
+3.  Compile and Run the programs (with executables named: timeServer2 and timeClient2)
+        Find the IP address of cs1 where the server is running with: hostname -i
+        Warning: Do not use 127.0.0.1 for the server's IP address. Or your lab score will be 0.
+        (1) Run the server in cs1
+                  ./timeServer2 23450  &
+        (2) Run the client in cs2 
+                  ./timeClient2  10.176.92.15  23450
+        (3) After all done, make sure both the client and the server are terminated.
+              Using ps command, check whether the server or the client is still running.
+             If still running, kill the program using kill command.
+			 
+			 
+			 
+./timeServer2 23860 &
+[5] 26445
+[4]   Exit 127                ./timeServer 2 23860
+{cslinux1:~/cs3377/Week13/Lab1} Wed Apr 13 11:56:05 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+  PID TTY          TIME CMD
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+26445 pts/37   00:00:00 timeServer2
+26455 pts/37   00:00:00 ps
+35222 pts/37   00:00:00 bash
+
+ timeServer: listening at IP=127.0.0.1 Port=34567
+
+
+
+
+{cslinux1:~/cs3377/Week13/Lab1} ./timeClient2 10.176.92.15 23860
+Wed Apr 13 11:56:23 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+
+ timeClient: connecting to 127.0.0.1 Port#=34567
+
+ timeClient: connected to timeServer.
+
+ timeServer: timeClient got connected.
+
+ timeServer: successful & conglaturation
+
+ timeServer: now terminating.
+
+  PID TTY          TIME CMD
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+26445 pts/37   00:00:00 timeServer2
+26722 pts/37   00:00:00 timeClient2
+26732 pts/37   00:00:00 ps
+35222 pts/37   00:00:00 bash
+
+
+Wed Apr 13 11:56:23 2022
+
+ timeClient: now terminated.
+{cslinux1:~/cs3377/Week13/Lab1}   PID TTY          TIME CMD
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+26445 pts/37   00:00:00 timeServer2
+26756 pts/37   00:00:00 ps
+35222 pts/37   00:00:00 bash
+^C
+[5]+  Done                    ./timeServer2 23860
+

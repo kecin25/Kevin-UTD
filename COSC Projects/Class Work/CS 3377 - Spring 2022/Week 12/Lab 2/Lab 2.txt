@@ -1,0 +1,66 @@
+(1)  Read about NTP (wiki), NIST NTP and the list of NIST NTP servers:
+       https://en.wikipedia.org/wiki/Network_Time_Protocol
+       https://www.nist.gov/pml/time-and-frequency-division/services/internet-time-service-its
+       https://tf.nist.gov/tf-cgi/servers.cgi
+
+
+(2)  Read and Try the attached NTP-client program (getdate.c)
+      To compile the program: gcc getdate.c -o getdate
+      To run the program with one of NTP servers:  ./getdate time-a-g.nist.gov
+
+{cslinux1:~/cs3377/Week12/Lab2} gcc getdate.c -o getdate
+{cslinux1:~/cs3377/Week12/Lab2} ./getdate time-a-g.nist.gov
+daytime port is 13
+read 51 bytes:
+59675 22-04-06 18:42:46 50 0 0 230.1 UTC(NIST) *
+
+
+
+(3)  Update getdate.c program and name it to be getdate1.c program.
+             Compile and name the executable: getdate1
+      (a) Modify the program to have a system call to do: 
+              system("date; hostname; whoami; ls *");
+           // Make sure to list each of the programs and its program-run log
+           // of each program in your word document
+           // Without it, your lab score may result in 0. 
+
+
+{cslinux1:~/cs3377/Week12/Lab2} cp getdate.c getdate1.c
+{cslinux1:~/cs3377/Week12/Lab2} vi getdate1.c
+{cslinux1:~/cs3377/Week12/Lab2} gcc getdate1.c -o getdate1
+
+{cslinux1:~/cs3377/Week12/Lab2} ./getdate1 time-a-g.nist.gov
+Wed Apr  6 13:45:31 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+getdate  getdate1  getdate1.c  getdate.c
+daytime port is 13
+read 51 bytes:
+59675 22-04-06 18:45:33 50 0 0 900.4 UTC(NIST) *
+
+
+
+(4)  Run the program with time command
+      to get the run-time information (real, user, sys time) of each program run.
+         time ./getdate1
+		 
+		 
+		 
+{cslinux1:~/cs3377/Week12/Lab2} time ./getdate1 time-a-g.nist.gov
+Wed Apr  6 13:45:39 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+getdate  getdate1  getdate1.c  getdate.c
+daytime port is 13
+read 51 bytes:
+59675 22-04-06 18:45:40 50 0 0 304.2 UTC(NIST) *
+
+real    0m0.114s
+user    0m0.005s
+sys     0m0.016s	 
+		 
+		 
+		 
+		 
+		 
+		 

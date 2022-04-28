@@ -1,0 +1,98 @@
+1. Copy and paste each program and name it to be: timeServer.c and timeClient.c
+    Modify and Compile the programs (each executable to be): timeServer and timeClient
+     Each program will output some heading & information in the beginning.
+              for server: ** Lab3 server listening to port# 34567 **
+              for client:  ** Lab3 client to connect to port# 34567 **
+              system("date; hostname; whoami; ls *");
+              // Without these output, your lab score may result in 0. 
+			  
+
+{cslinux1:~/cs3377/Week12/Lab3} gcc timeClient.c -o timeClient
+{cslinux1:~/cs3377/Week12/Lab3} ./timeClient
+Wed Apr  6 13:52:42 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+
+ timeClient: connecting to 127.0.0.1 Port#=34567
+
+ Error : Connect Failed
+ 
+ 
+{cslinux1:~/cs3377/Week12/Lab3} gcc timeServer.c -o timeServer
+{cslinux1:~/cs3377/Week12/Lab3} ./timeServer
+Wed Apr  6 13:53:16 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+  PID TTY          TIME CMD
+ 5498 pts/101  00:00:00 bash
+17842 pts/101  00:00:00 timeServer
+17867 pts/101  00:00:00 ps
+
+ timeServer: listening at IP=127.0.0.1 Port=34567
+			  
+			  
+
+2.  Compile and Run the programs with the following steps.
+        (1) Run the server
+                  ./timeServer &
+        (2) Run timeClient to get the time of the day from the server
+                ./timeClient  
+        (3) After all done, make sure both the client and the server are terminated.
+              Using ps command, check whether the server or the client is still running.
+             If still running, kill the program using kill command.
+                   Using ps command to find the pid of the server, and use kill command to kill it.
+				   
+				   
+				   
+
+{cslinux1:~/cs3377/Week12/Lab3} ./timeServer &
+[1] 3256
+{cslinux1:~/cs3377/Week12/Lab3} Wed Apr  6 13:54:29 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+  PID TTY          TIME CMD
+ 3256 pts/101  00:00:00 timeServer
+ 3268 pts/101  00:00:00 ps
+ 5498 pts/101  00:00:00 bash
+
+ timeServer: listening at IP=127.0.0.1 Port=34567
+./timeClient
+Wed Apr  6 13:54:36 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+
+ timeClient: connecting to 127.0.0.1 Port#=34567
+
+ timeClient: connected to timeServer.
+
+ timeServer: timeClient got connected.
+
+ timeServer: successful & conglaturation
+
+ timeServer: now terminating.
+
+  PID TTY          TIME CMD
+ 3256 pts/101  00:00:00 timeServer
+ 3555 pts/101  00:00:00 timeClient
+ 3566 pts/101  00:00:00 ps
+ 5498 pts/101  00:00:00 bash
+
+
+Wed Apr  6 13:54:36 2022
+
+ timeClient: now terminated.
+{cslinux1:~/cs3377/Week12/Lab3}   PID TTY          TIME CMD
+ 3256 pts/101  00:00:00 timeServer
+ 3607 pts/101  00:00:00 ps
+ 5498 pts/101  00:00:00 bash
+
+{cslinux1:~/cs3377/Week12/Lab3} ps -u KCB180002
+  PID TTY          TIME CMD
+ 5492 ?        00:00:05 sshd
+ 5498 pts/101  00:00:00 bash
+ 5511 ?        00:00:07 bash
+ 5548 ?        00:00:00 sshd
+ 5568 ?        00:00:00 sftp-server
+21492 ?        00:00:00 sleep
+21494 pts/101  00:00:00 ps
+

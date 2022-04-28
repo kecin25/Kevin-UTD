@@ -1,0 +1,120 @@
+1. Read APUE11-12 and view the video tutorials, read the sample codes (dot1s.c and dot1m.c) to compute a dot-product.
+     Compile and run the dot1s.c and dot1m.c programs (attached here)
+          the executables will be: dot1s and dot1m respectively).
+    Run with time to get the run-time information (real, user, sys time) of the program run.
+    For example,
+          time ./dot1s
+          time ./dot1m
+
+
+{cslinux1:~/cs3377/Week11/Lab1} gcc -pthread dot1m.c -o dot1m
+{cslinux1:~/cs3377/Week11/Lab1} gcc -pthread dot1s.c -o dot1s
+{cslinux1:~/cs3377/Week11/Lab1} time ./dot1m
+Thread 0 did 0 to 100000:  mysum=100000.000000 global sum=100000.000000
+Thread 1 did 100000 to 200000:  mysum=100000.000000 global sum=200000.000000
+Thread 3 did 300000 to 400000:  mysum=100000.000000 global sum=300000.000000
+Thread 2 did 200000 to 300000:  mysum=100000.000000 global sum=400000.000000
+Thread 4 did 400000 to 500000:  mysum=100000.000000 global sum=500000.000000
+Thread 5 did 500000 to 600000:  mysum=100000.000000 global sum=600000.000000
+Thread 7 did 700000 to 800000:  mysum=100000.000000 global sum=700000.000000
+Thread 6 did 600000 to 700000:  mysum=100000.000000 global sum=800000.000000
+Thread 8 did 800000 to 900000:  mysum=100000.000000 global sum=900000.000000
+Thread 9 did 900000 to 1000000:  mysum=100000.000000 global sum=1000000.000000
+Sum =  1000000.000000
+
+real    0m0.055s
+user    0m0.017s
+sys     0m0.018s
+
+
+{cslinux1:~/cs3377/Week11/Lab1} time ./dot1s
+Sum =  1000000.000000
+
+real    0m0.043s
+user    0m0.016s
+sys     0m0.008s
+
+
+2. Copy each program (dot1s.c and dot1m.c) & name each to be: dot2s.c and dot2m.c
+
+
+{cslinux1:~/cs3377/Week11/Lab1} cp dot1s.c dot2s.c
+{cslinux1:~/cs3377/Week11/Lab1} cp dot1m.c dot2m.c
+
+
+2.1. Modify each program to have a system call to output some information in the beginning.
+           system("date; hostname; whoami; ls *");
+           // Make sure to list each of the programs and its program run-log of each program
+           // in your word document. Without it, your lab score may result in 0. 
+        Run with time to get the run-time information (real, user, sys time) of each program run.
+
+
+{cslinux1:~/cs3377/Week11/Lab1} vi dot2m.c
+{cslinux1:~/cs3377/Week11/Lab1} vi dot2s.c
+{cslinux1:~/cs3377/Week11/Lab1} gcc -pthread dot2s.c -o dot2s
+{cslinux1:~/cs3377/Week11/Lab1} gcc -pthread dot2m.c -o dot2m
+
+
+{cslinux1:~/cs3377/Week11/Lab1} time ./dot2s
+Wed Mar 30 11:14:31 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m  dot1m.c  dot1s  dot1s.c  dot2m  dot2m.c  dot2s  dot2s.c
+Sum =  1000000.000000
+
+real    0m0.074s
+user    0m0.023s
+sys     0m0.018s
+
+
+
+{cslinux1:~/cs3377/Week11/Lab1} time ./dot2m
+Wed Mar 30 11:14:39 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m  dot1m.c  dot1s  dot1s.c  dot2m  dot2m.c  dot2s  dot2s.c
+Thread 0 did 0 to 100000:  mysum=100000.000000 global sum=100000.000000
+Thread 3 did 300000 to 400000:  mysum=100000.000000 global sum=200000.000000
+Thread 5 did 500000 to 600000:  mysum=100000.000000 global sum=300000.000000
+Thread 9 did 900000 to 1000000:  mysum=100000.000000 global sum=400000.000000
+Thread 1 did 100000 to 200000:  mysum=100000.000000 global sum=500000.000000
+Thread 8 did 800000 to 900000:  mysum=100000.000000 global sum=600000.000000
+Thread 2 did 200000 to 300000:  mysum=100000.000000 global sum=700000.000000
+Thread 4 did 400000 to 500000:  mysum=100000.000000 global sum=800000.000000
+Thread 7 did 700000 to 800000:  mysum=100000.000000 global sum=900000.000000
+Thread 6 did 600000 to 700000:  mysum=100000.000000 global sum=1000000.000000
+Sum =  1000000.000000
+
+real    0m0.052s
+user    0m0.019s
+sys     0m0.021s
+
+		
+2.2. Modify dot2m.c to uses mutex to lock and unlock the shared resource (dotstr.sum) 
+         //  for access control as shown below.
+   pthread_mutex_lock (&mutexsum);
+   dotstr.sum += mysum;
+   printf("Thread (in mutex) %ld did %d to %d:  mysum=%f global sum=%f\n",
+ offset,start,end,mysum,dotstr.sum);
+   pthread_mutex_unlock (&mutexsum);
+ 
+       Run with time to get the run-time information (real, user, sys time) of the program run.
+	   
+(I made it be dot3m instead of dot2m)
+
+
+{cslinux1:~/cs3377/Week11/Lab1} cp dot2m.c dot3m.c
+{cslinux1:~/cs3377/Week11/Lab1} gcc -pthread dot3m.c -o dot3m
+{cslinux1:~/cs3377/Week11/Lab1} time ./dot3m
+Wed Mar 30 12:36:44 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+dot1m  dot1m.c  dot1s  dot1s.c  dot2m  dot2m.c  dot2s  dot2s.c  dot3m  dot3m.c
+Sum =  0.000000
+
+real    0m0.052s
+user    0m0.016s
+sys     0m0.026s
+
+
+

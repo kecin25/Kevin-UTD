@@ -1,0 +1,109 @@
+(1) Copy and paste each sample program in the zip file (echoServer0.c and echoClient0.c)
+      And name it to be: echoServer1.c and echoClient1.c
+     Compile and name each executable: echoServer1 and echoClient1
+	
+	
+{cslinux1:~/cs3377/Week14/Lab1} cp echoClient0.c echoClient1.c
+{cslinux1:~/cs3377/Week14/Lab1} cp echoServer0.c echoServer1.c
+{cslinux1:~/cs3377/Week14/Lab1} gcc echoServer1.c -o echoServer1
+{cslinux1:~/cs3377/Week14/Lab1} gcc echoClient1.c -o echoClient1
+	 
+	 
+
+(2) Modify the server program
+(2.a) to have a system call to output some information in the beginning.
+              printf("\n\n ** echoServer1 is running ** \n\n");
+              // change and print the port# assigned to you (netid).
+              system("date; hostname; whoami; ls *");
+			  
+{cslinux1:~/cs3377/Week14/Lab1} vi echoServer1.c
+ 
+			  
+(2.b) to run the server with an argument to set the port# to listen (as assigned to your netid).
+         to run the client with two arguments: ip (cs1) and port# of the server running & listening.
+		 
+
+{cslinux1:~/cs3377/Week14/Lab1} ./echoClient1 ip 23860
+Usage: TCPClient <IP address of the server: Success
+		 
+		 
+		 
+(2.c) to implement concurrent server  
+         When the server gets a client connected,
+           the parent echoServer will fork a child echoServer process to do:
+                  the child echoServer services the client (by echoing each message from client) 
+                         until the client sends "exit" message to the child echoServer to be terminated.
+                                  and the client will be terminated too.
+             after fork, the parent echoServer goes back to listen for any other client
+          Hint. see the hint of a sample code segment using fork() 
+		  
+		  
+		  
+		  
+(2.d) For the server, provide a timer (to be terminated after 5 minutes). 
+
+
+
+{cslinux1:~/cs3377/Week14/Lab1} vi echoServer1.c
+{cslinux1:~/cs3377/Week14/Lab1} gcc echoServer1.c -o echoServer1
+
+
+
+
+(3) For your run, first, you will have three separate SSH sessions 
+       (3.a) One SSH session to run the server in CS1
+       (3.b) Two SSH sessions to run the clients in CS2 (each session for one client). 
+        At this point, the server is serving two clients concurrently. 
+        Note1. Make sure to run UTD VPN on your laptop to get to cs1 or cs2.
+        Note2. If cs2 is down, use cs1 for each client's SSH session.
+              In this case, you should document this outage in your document (e.g., with ping).
+              (or 0 for your lab score).  
+(3.c) From the first client, send and receive 3 short messages to the server.
+         Each message for this client should begins with: client1
+         and then your name, your netid, and today's date & time. For example,
+            client1 Richard Min
+            client1 rkm010300
+            client1 March 18, 2022. 4:34pm
+			
+			
+{cslinux2:~/cs3377/Week14/Lab1} ./echoClient1 10.176.92.15 23860
+client1 Kevin B
+String received from the server: client1 Kevin B
+client1 Kevin Boudreaux
+String received from the server: client1 Kevin Boudreaux
+client1 KCB180002
+String received from the server: client1 KCB180002
+client1 march 20, 2022 1:16PM
+String received from the server: client1 march 20, 2022 1:16PM
+
+			
+			
+			
+			
+(3.d) From the first client, send and receive 3 short messages to the server.
+         Each message for this client should begins with: client2
+         For example,
+            client2 hello world
+            client2 cs3377 
+            client2 Spring 2022
+			
+			
+client2 hello world
+String received from the server: client2 hello world
+client2 cs3377
+String received from the server: client2 cs3377
+world
+client2 Spring 2022
+String received from the server: client2 Spring 2022
+			
+			
+			
+(3.e) Terminate two clients and then the server.
+(4) Use ps and netstat commands to show all the server and the clients terminated.
+
+
+{cslinux2:~/cs3377/Week14/Lab1} netstat -aont | grep "'hostname -i':23860 "
+{cslinux2:~/cs3377/Week14/Lab1}
+
+
+

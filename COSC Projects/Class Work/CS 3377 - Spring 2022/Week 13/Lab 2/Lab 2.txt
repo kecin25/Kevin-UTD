@@ -1,0 +1,122 @@
+1. Copy and paste each program and name it to be: timeServer3.c and timeClient.c
+    You continue with the programs in Lab1 if you have done it.
+         (Or you start with the base programs provided here: timeServer0.c and timeClient0.c
+               In this case, you need to hard-code IP address and port# as needed.)   
+      First, get your port# assigned to your netid for your server's port# to listen. 
+
+
+{cslinux1:~/cs3377/Week13/Lab2} gcc timeServer0.c -o timeServer3
+{cslinux1:~/cs3377/Week13/Lab2} gcc timeClient0.c -o timeClient3
+
+
+2. Modify the programs to do the following tasks
+    and Compile the programs (each executable to be): timeServer3 and timeClient3
+     (2.1) The server will have a timer with alarm set for 30 seconds.
+              If there is no activity for the server for 30 seconds, 
+                     then the server will terminate itself with output (timer out for 30 seconds).
+             Otherwise, the client gets the time of day.
+                    and both the server and the client are terminated with output (normal termination).
+					
+					
+{cslinux1:~/cs3377/Week13/Lab2} ./timeServer3 23860
+Wed Apr 13 12:19:36 CDT 2022
+./timeServer3 is terminated after 30 seconds of no activity
+{cslinux1:~/cs3377/Week13/Lab2}
+					
+					
+     (2.2) Have the following system call in the beginning and at the end of each program run
+              so that you can see when a program starts and when it ends.
+                      system("date; hostname; hostname -i; whoami; ls *");  
+
+
+{cslinux1:~/cs3377/Week13/Lab2} ./timeServer3 23860
+Wed Apr 13 12:19:36 CDT 2022
+
+
+cslinux1.utdallas.edu
+kcb180002
+Wed Apr 13 12:19:36 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+  PID TTY          TIME CMD
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+35222 pts/37   00:00:00 bash
+48353 pts/37   00:00:00 timeServer3
+48367 pts/37   00:00:00 ps
+
+ timeServer: listening at IP=127.0.0.1 Port=34567
+./timeServer3 is terminated after 30 seconds of no activity
+
+
+
+3.  Compile and Run the programs with the following steps.
+        (1) Run the server (without the client)
+               Check whether the server will be terminated after 30 seconds. 
+			   
+{cslinux1:~/cs3377/Week13/Lab2} ./timeServer3 23860
+Wed Apr 13 12:19:36 CDT 2022
+./timeServer3 is terminated after 30 seconds of no activity
+{cslinux1:~/cs3377/Week13/Lab2}
+
+
+        (2) Run the server and then run the client. 
+        (3) After all done, make sure that the server are terminated.
+              Using ps command, check whether the server is still running.
+             If still running, kill the program using kill command.
+			 
+
+{cslinux1:~/cs3377/Week13/Lab2} ./timeServer3 23860 &
+[5] 4589
+{cslinux1:~/cs3377/Week13/Lab2} Wed Apr 13 12:24:35 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+Wed Apr 13 12:24:35 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+  PID TTY          TIME CMD
+ 4291 pts/37   00:00:00 timeServer3
+ 4589 pts/37   00:00:00 timeServer3
+ 4609 pts/37   00:00:00 ps
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+35222 pts/37   00:00:00 bash
+
+ timeServer: listening at IP=127.0.0.1 Port=34567
+./timeClient3 127.0.0.1 34567
+Wed Apr 13 12:24:41 CDT 2022
+cslinux1.utdallas.edu
+kcb180002
+
+ timeClient: connecting to 127.0.0.1 Port#=34567
+
+ timeClient: connected to timeServer.
+
+ timeServer: timeClient got connected.
+
+ timeServer: successful & conglaturation
+
+ timeServer: now terminating.
+
+  PID TTY          TIME CMD
+ 4291 pts/37   00:00:00 timeServer3
+ 4589 pts/37   00:00:00 timeServer3
+ 4685 pts/37   00:00:00 timeClient3
+ 4695 pts/37   00:00:00 ps
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+35222 pts/37   00:00:00 bash
+
+
+Wed Apr 13 12:24:41 2022
+
+ timeClient: now terminated.
+{cslinux1:~/cs3377/Week13/Lab2}   PID TTY          TIME CMD
+ 4291 pts/37   00:00:00 timeServer3
+ 4589 pts/37   00:00:00 timeServer3
+ 4714 pts/37   00:00:00 ps
+21706 pts/37   00:00:00 timeServer2
+21859 pts/37   00:00:00 timeServer2
+35222 pts/37   00:00:00 bash
+
+			 

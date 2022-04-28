@@ -1,0 +1,43 @@
+Task4. Design and implement shell4.c
+(1) Initially set a signal handler for alarm & set alarm for 10 seconds. 
+(2) If user enters a command within 10 seconds, process the command and reset the alarm.
+       Print a message saying: " command processed and timer is set for 10 seconds"
+(3) If there is no activity (no command entered by user) for 10 seconds, 
+                 then your program will be terminated with a message saying:
+                  "shell4 is terminated after 10 seconds of no activity." 
+
+
+{cslinux1:~/cs3377/week10/Lab2} vi shell4.c
+{cslinux1:~/cs3377/week10/Lab2} gcc shell4.c -o shell4 -std=c99
+{cslinux1:~/cs3377/week10/Lab2} ./shell4
+$$ whoami
+kcb180002
+$$ Shell4 is terminated after 10 seconds of no activity
+{cslinux1:~/cs3377/week10/Lab2} ./shell4
+$$ whoami
+kcb180002
+$$ whoami
+kcb180002
+$$ whoamiShell4 is terminated after 10 seconds of no activity
+
+
+Task5. Design and implement shell5.c (continue from Task4)
+(1) To run the program with an argument (an integer which is a number of seconds for alarm set).
+      For example, to set your alarm for 5 seconds, 
+            ./shell5  5 
+     After no activity, your program will be terminated with a message saying:
+           "shell5 is terminated after 5 seconds of no activity."
+(2) Your program should get the name of the program (e.g., shell5) from argv array in main.
+          and set the prompt of the shell program (for example, "$$shell5>").
+		  
+
+{cslinux1:~/cs3377/week10/Lab2} vi shell5.c
+{cslinux1:~/cs3377/week10/Lab2} gcc shell5.c -o shell5 -std=c99
+{cslinux1:~/cs3377/week10/Lab2} ./shell5 5
+shell timer = 5 seconds
+$$./shell5> ./shell5 is terminating after 5 second(s) of no activity
+{cslinux1:~/cs3377/week10/Lab2} ./shell5 5
+shell timer = 5 seconds
+$$./shell5> whoami
+kcb180002
+$$./shell5> ./shell5 is terminated after 5  second(s) of no activity
