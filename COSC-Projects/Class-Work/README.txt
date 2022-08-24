@@ -1,16 +1,24 @@
 Projects & Homeworks are divided up based on class.
 
-CS 2340 - Computer Architecture 				
-(Homework in MIPS using Mars IDE)
+CS 1336 - Intro to Computer Science
 
-CS 3345 - Algorithm Analysis & Data Structures  
-(Projects in Jave using IntelliJ IDEA IDE)
+CS 1337 - Computer Science 1
 
-CS 1336 - Intro to Computer Science				
-(Homeworks in CPP but written in .txt files)
+CS 2336 - Computer Science 2
 
-CS 1337 - Computer Science 1					
-(Homeworks are C and CPP while projects are CPP using Codeblocks IDE)
+CS 2340 - Computer Architecture
 
-CS 2336 - Computer Science 2					
-(Homeworks and Projects in Java using Intellij IDEA IDE)
+CS 3345 - Algorithm Analysis & Data Structures
+
+CS 3162 - Prof. Responsibility in CS and SE
+
+CS 3354 - Software Engineering
+
+CS 3377 - C/C++ Programming in UNIX Envr.
+
+CS 4141 - Digital Systems Laboratory
+
+CS 4341 - Digital Logic and Computer Design
+
+
+CS 4348 - Operating Systems Concepts
