@@ -1,0 +1,27 @@
+# result = (var3 - var 2) + (var1 - var2)
+.data
+var1: .word 5
+var2: .word 4
+var3: .word 10
+result: .word 0
+
+.text
+main:
+
+	#load data
+	lw $t0, var1
+	lw $t1, var2
+	lw $t2, var3
+
+	#calculate expression
+	sub $t3, $t2, $t1 	# (var3-var2
+	add $t3, $t3, $t0 	# result of above + var1
+	sub $t3, $t3, $t1 	# result of above - var2
+
+	sw $t3, result
+
+
+
+
+exit: li $v0, 10
+syscall

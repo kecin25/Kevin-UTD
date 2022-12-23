@@ -1,0 +1,25 @@
+.data
+var1: .word 5
+var2: .word 4
+var3: .word 10
+result: .word 0
+
+.text
+main:
+
+	#load data
+	lw $t0, var1
+	lw $t1, var2
+	lw $t2, var3
+
+	#add data
+	add $t3, $t2, $t1
+	add $t3, $t3, $t0
+
+	sw $t3, result
+
+
+
+
+exit: li $v0, 10
+syscall

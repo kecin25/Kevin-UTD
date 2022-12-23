@@ -1,0 +1,33 @@
+# result = (var3 - var 2) + (var1 - var2)
+.data
+a: .word 5
+b: .word 6
+c: .word 1
+d: .word 1
+multiply_result: .word 0
+divide_quotient: .word 0
+divide_remainder: .word 0
+
+.text
+main:
+
+	# load data
+	lw $t1, a
+	lw $t2, b
+	lw $t3, c
+	lw $t0, 2
+	
+	# c = a + (b / 2)
+	div $t2, $t0
+	mflo $t5
+	add $t5, $t5, $t1
+	sw $t5, c
+	
+	# d = a * (b-a)
+	sub $t5, $t2, $t1
+	mul $t0, $t1, $t2
+	sw $t0, d
+
+
+exit: li $v0, 10
+syscall

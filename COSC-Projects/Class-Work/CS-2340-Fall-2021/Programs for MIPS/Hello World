@@ -1,0 +1,12 @@
+# Hello World Code
+.data
+msg: .asciiz 	"Hello World!" #stores hello world text as msg
+a: .word 0, 1, 2
+.text
+main:
+li $v0, 4
+la $a0, msg
+syscall 	# displays message
+
+li $v0,10
+syscall 	# exits program
