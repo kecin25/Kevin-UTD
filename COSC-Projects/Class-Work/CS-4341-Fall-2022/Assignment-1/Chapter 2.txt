@@ -1,0 +1,77 @@
+Exercise 2.2 Write a Boolean equation in sum-of-products canonical form for
+each of the truth tables in Figure 2.81.
+	a) Y = m1+m2+m3 = (A'B)+(AB')+(AB)
+	b) Y = m1+m2+m3+m4+m6 = (A'B'C)+(A'BC')+(A'BC)+(AB'C')+(ABC')
+	c) Y = m1+m6+m7 = (A'B'C)+(ABC')+(ABC)
+	d) Y = m0+m2+m3+m6+m7+m8+m10 = (A'B'C'D')+(A'B'CD')+(A'B'CD)+(A'BCD')+(A'BCD)+(AB'C'D')+(AB'CD)
+	e) Y = m3+m6+m7+m8+m9+m10+m11 = (A'B'CD)+(A'BCD')+(A'BCD)+(AB'C'D')+(AB'C'D)+(AB'CD')+(AB'CD)
+
+Exercise 2.6 Minimize each of the Boolean equations from Exercise 2.2.
+	a) Y = A+B
+	b) Y = AC'+A'C+A'B
+	c) Y = AB+A'B'C
+	d) Y = A'C + B'D'
+	e) Y = AB'+A'CD+A'BC
+
+Exercise 2.8 Sketch a reasonably simple combinational circuit implementing each
+of the functions from Exercise 2.6.
+	Look at files named Chapter 2 - Question 8[a-e].PNG
+
+Exercise 2.12 Repeat Exercise 2.8 using only NOT gates and NAND and NOR
+gates.
+	Look at files named Chapter 2 - Question 12[a-e].PNG
+
+Exercise 2.14 Simplify the following Boolean equations using Boolean theorems.
+Check for correctness using a truth table or K-map.
+(a) Y = A'BC+A'BC'
+	Y = A'B
+(b) Y = A'B'C' +AB'
+	Y = A' + B' + C'
+(c) Y = ABCD'+AB'C'D' +(A'+ B'+C'+D')
+	Y = AB' + AC' + +AD' + A'B'C'D'
+
+Exercise 2.16 Sketch a reasonably simple combinational circuit implementing
+each of the functions from Exercise 2.14.
+	Look at files named Chapter 2 - Question 16[a-c].PNG
+	
+Exercise 2.24 Write Boolean equations for the circuit in Figure 2.82. You need not
+minimize the equations.
+	Y = A'D + AC'D + AB'C + ABCD
+	Z = BD + AC'D
+
+Exercise 2.26 Using De Morgan equivalent gates and bubble pushing methods,
+redraw the circuit in Figure 2.83 so that you can find the Boolean equation by
+inspection. Write the Boolean equation.
+	Y = (A'+B')(C'+D')+E'
+	
+Exercise 2.28 Find a minimal Boolean equation for the function in Figure 2.85.
+Remember to take advantage of the don’t care entries.
+	AD'+AC+AB
+	
+Exercise 2.36 A priority encoder has 2N inputs. It produces an N-bit binary
+output indicating the most significant bit of the input that is TRUE, or 0 if none of
+the inputs are TRUE. It also produces an output NONE that is TRUE if none of
+the inputs are TRUE. Design an eight-input priority encoder with inputs A7:0 and
+outputs Y2.0 and NONE. For example, if the input is 00100000, the output Y
+should be 101 and NONE should be 0. Give a simplified Boolean equation for
+each output, and sketch a schematic.
+	For my output I Have Y1.4 to Y1.1 to represent each each bit of the Y1 output (ex Y1.4=0,Y1.3=1,Y1.2=1,Y1.1=1 equals 0111 or 7)
+	Y1.4 = A
+	Y1.3 = A'E+A'B'D+A'DF+A'C+A'B'D+A'BG'+A'B'H
+	Y1.2 = A'D'E'G+A'D'E'F+A'C+A'B
+	Y1.1 = A'C'E'G'H+A'C'E'F+A'C'D+A'B
+	Y2 = A'B'C'D'E'F'G'H'
+	
+Exercise 2.40 Write a minimized Boolean equation for the function performed
+by the circuit in Figure 2.88.
+	Y=B'C'D + A'B'CD
+	
+Exercise 2.42 Implement the function from Exercise 2.17(a) using
+(a) an 8:1 multiplexer
+	Look at file named Chapter 2 - Question 42a.PNG
+(b) a 4:1 multiplexer and no other gates
+	Look at file named Chapter 2 - Question 42b.PNG
+
+Exercise 2.44 Determine the propagation delay and contamination delay of the
+circuit in Figure 2.84. Use the gate delays given in Table 2.8.
+	t_pd = 1*3_in_NAND + 2*2_in_NAND + 1*2_in_NOR  = 1*30 + 2*20 + 1*30 = 100 ps

@@ -1,0 +1,2 @@
+Useing two Splitters, have one split the input into 4 seperate lines. The 2nd one will copy the 3 LSB as normal but the other 5 MSB will be coppied from the MSB of the 4 bit splitter.
+See Question 5.21.PNG for sketch.

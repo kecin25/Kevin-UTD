@@ -1,0 +1,149 @@
+3.10a)
+	Look at Chapter 3.10a.PNG
+3.10b)
+	Look at Chapter 3.10b.PNG
+3.19)
+	we need a minimum number of 5 bits in the controller.
+3.22)
+	the state machine is checking to see if both inputs (A and B) are set to True/1. If not check again
+	if they both set to 1 then Q is set to 1. 
+	Q=AB
+	State | Encoding S1:0
+	S0    | 0 0
+	S1    | 0 1
+	S2    | 1 0
+	
+	S1 | S0 | A | B | S1' | S0' | Q
+	 0 |  0 | 0 | X |  0  |  0  | 0
+	 0 |  0 | 1 | X |  0  |  1  | 0
+	 0 |  1 | X | 0 |  0  |  0  | 0
+	 0 |  1 | X | 1 |  1  |  0  | 0
+	 1 |  0 | X | X |  0  |  0  | 1
+	
+	Q=S1!S2
+	Look at Chapter 3.22.PNG for sketch
+3.24)
+	Look at Chapter 3.24a.PNG for Sketch
+	State Transition Table
+	S  | T_A T_B  C | S'
+	S0 |  0   X   X | S1
+	S0 |  1   X   X | S0
+	S1 |  X   X   X | S2
+	S2 |  X   X   0 | S2
+	S2 |  X   X   1 | S3
+	S3 |  X   0   X | S4
+	S3 |  X   1   X | S3
+	S4 |  X   X   X | S5
+	S5 |  X   X   0 | S5
+	S5 |  X   X   1 | S0	
+	
+	State Encoding
+	State | Encoding S2:0
+	S0    | 000
+	S1    | 001
+	S2    | 010
+	S3    | 011
+	S4    | 100
+	S5    | 101
+	
+	Updated State Transition Table
+	S2:0 | T_A T_B  C | S2:0'
+	000  |  0   X   X | 001
+	000  |  1   X   X | 000
+	001  |  X   X   X | 010
+	010  |  X   X   0 | 010
+	010  |  X   X   1 | 011
+	011  |  X   0   X | 100
+	011  |  X   1   X | 010
+	100  |  X   X   X | 101
+	101  |  X   X   0 | 100
+	101  |  0   X   1 | 000
+	
+	
+	Output Encoding
+	Ouptut | Encoding L1:0
+	green  | 00
+	yellow | 01
+	red    | 10
+	
+	
+	output table
+	Current State | Outputs
+	S2:0		  | LA1 LA0 LB1 LB0
+	000			  | 0	0	1	0
+	001			  | 0	1	1	0
+	010			  | 1	0	1	0
+	011			  | 1	0	0	0
+	100			  | 1	0	0	1
+	101			  | 1	0	1	0
+	
+	next state and output equations
+	S2' = S1S0!T_B + S2!S0 + S2!C
+	S1' = !S2!S1S0 + S1!S0 + S1T_B
+	S0' = !S1!S0!T_A + S1!S0C + S2!S0 + S2!C
+	
+	LA1 = S1 + S2
+	LA0 = !S2!S1S0
+	LB1 = !S2!S1 + !S2!S0 + !S1S0
+	LB0 = S2!S0
+	
+	Look at Chapter 3.24b.PNG for FSM schematic
+	(another way to have the lights be red for 5 seconds is to set the clock speed to trigger once every 5 seconds)
+3.26)
+	Look at Chapter 3.26FSM.PNG for FSM
+	and Chapter 3.26Cir.PNG for circuit
+3.27)
+	Look at Chapter 3.27FSM>PNG for FSM
+3.31)
+	State Transition Table
+	S | X | S'
+	S0| 0 | S2
+	S0| 1 | S3
+	S1| X | S2
+	S2| 0 | S0
+	S2| 1 | S1
+	S3| X | S2
+	
+	Ouptut Table
+	S  | Q
+	S0 | 0
+	S1 | 1
+	S2 | 1
+	S3 | 1
+	
+	For Sketch of state transition diagram look at Chapter 3.31.PNG
+	Description: When X is false, Q alternates between true and false but when X is true Q is true
+3.33)
+XOR prob Delay 			= t_pd	  = 100ps
+Contaimination delay    = t_cd 	  = 55ps
+flip-flop setup time 	= t_setup = 60ps
+flip-flop hold time 	= t_hold  = 20ps
+clock to Q max delay 	= t_pcq	  = 70ps
+clock to Q min delay 	= t_ccq	  = 50ps
+a)
+	frequency = 1/(t_pcq + t_setup + tpd_critical_path)
+			  = 1/(70 + 60 + 100*3)
+			  = 1/430
+b)
+	clock frequency <=1/500
+	T_C >= t_pcq + t_pd + t_setup +t_skew
+	500 >= 70 + 300 + 60 + t_skew
+	70 >= t_skew
+c)
+	t_hold <= t_ccq + t_cd - t_skew
+	20 <= 50 + 55 - t_skew
+	85 >= t_skew
+	
+d)
+	Look at Chapter 3.33d.PNG for circuit diagram
+	Max Frequeqency
+		t_c >= t_pcq + t_setup + tpd_critical_path
+			>= 70 + 60 + 100*2
+			>= 330
+	Max Frequeqency = 1/330
+	clock skew
+		T_C >= t_pcq + t_pd + t_setup + t_skew
+		330 >= 70 + 2*100 + 60 + t_skew
+	t_skew <= 0 (if at max speed there is no room for clock skew)
+	
+	

@@ -1,0 +1,127 @@
+NOTE:
+for La and Lb (the lights) the following shows what colors corospond to what numbers
+Red = "00"
+Yellow = "01"
+Green = "10"
+
+
+TestBench:
+
+
+-- Code your testbench here
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_ARITH.all;
+use IEEE.std_logic_unsigned.all;
+
+entity test_stoplight is
+end entity;
+
+architecture testbench of test_stoplight is
+Component stoplight is
+  port(
+  clk,rst: in STD_LOGIC;
+  state : inout STD_LOGIC_VECTOR(1 downto 0);
+  Ta, Tb: in STD_LOGIC;
+  La, Lb: out STD_LOGIC_VECTOR(1 downto 0);
+  );
+end component;
+
+signal clk, rst, Ta, Tb: STD_LOGIC:='1';
+signal state: STD_LOGIC_VECTOR(1 downto 0);
+
+begin
+uut: stoplight port map
+(
+clk=>clk,
+rst=>rst,
+state=>state,
+Ta => Ta,
+Tb => Tb
+);
+
+process
+	begin
+    	rst<='0';
+        clk<='0'; wait for 20ns;
+        Ta<='1';
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        Ta<='1';
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        Ta<='0';
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        Tb<='1';
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        Tb<='0';
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        clk<='1'; wait for 20ns;
+        
+        clk<='0'; wait for 20ns;
+        clk<='1'; wait for 20ns;
+        wait;
+   end process;
+end testbench;
+
+
+
+
+
+Design:
+
+
+
+-- Code your design here
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_ARITH.all;
+use IEEE.std_logic_unsigned.all;
+
+entity stoplight is
+  port(
+  clk,rst: in STD_LOGIC;
+  state : inout STD_LOGIC_VECTOR(1 downto 0);
+  Ta, Tb: in STD_LOGIC;
+  La, Lb: out STD_LOGIC_VECTOR(1 downto 0);
+  );
+end stoplight;
+
+architecture bhv of stoplight is
+  begin
+    process(clk,rst)
+      begin
+      if(rst='1') then
+          state <= "00";
+          La <= "10";
+          Lb <= "00";
+      elsif(rising_edge(clk) and state = "00" and Ta ='0') then
+            state <= "01";
+            La <= "01";
+            Lb <= "00";
+      elsif(rising_edge(clk) and state ="01") then
+            state <= "10";
+            La <= "00";
+            Lb <= "10";
+      elsif(rising_edge(clk) and state ="10" and Tb='0') then
+            state <= "11";
+            La <= "00";
+            Lb <= "01";
+      elsif(rising_edge(clk) and state = "11") then
+          	State <= "00";
+            La <= "10";
+            Lb <= "00";
+      end if;
+    end process;
+  end bhv;

@@ -1,0 +1,9 @@
+a) 
+	XOR the inputs of A and B together so that A0 XOR B0 .... A31 XOR B31. Then NOR the outputs of the XOR gates to find if the two inputs are even.
+	For sketch look at Question 5.PNG
+b)
+	Not all B inputs, then and all As with all Bs. Then or everything together to see if A>B.
+	For sketch look at Question 5.PNG
+c)
+	Not the A inputs, then And the Not As and the Bs. Or those outputs together and then Or that with the Equal ouput from part A to get Less Than or Equal.
+	For sketch look at Qution 5.PNG

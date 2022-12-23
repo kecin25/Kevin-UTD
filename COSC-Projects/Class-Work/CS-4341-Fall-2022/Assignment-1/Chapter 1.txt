@@ -1,0 +1,173 @@
+Exercise 1.12 What is the smallest (most negative) 32-bit binary number that can
+be represented with
+(a) unsigned numbers?
+	0
+(b) two’s complement numbers?
+	-2^31
+(c) sign/magnitude numbers?
+	-2^31
+	
+Exercise 1.16 Repeat Exercise 1.14, but convert to hexadecimal.
+Exercise 1.14 Convert the following unsigned binary numbers to decimal. Show
+your work.
+(c) 11010111 base(2)
+	1101 | 0111
+	13	 | 7
+	D    | 7
+	D7 
+(d) 011101010100100 base(2)
+	0011 | 1010 | 1010 | 0100
+	3	 | 10	| 10   |  4
+	3AA4
+	
+Exercise 1.18 Convert the following hexadecimal numbers to decimal. Show your
+work.
+(c) ED3A base(16)
+	16->binary->10
+	E	 D	 	3		A
+	14	 13	 	3		10
+	1110 1101	0011	1010
+	1	1	1	0	1	1	0	1	0	0	1	1	1	0	1	0
+	2^15 + 2^14 + 2^13 + 2^11 + 2^10 + 2^8 + 2^5 + 2^4 + 2^3 +2^1
+	60,730
+	
+	
+(d) 403FB001 base(16)
+	16->binary->10
+	4		0		3		F		B		0		0		1
+	0100	0000	0011	1111	1011	0000	0000	0001
+	2^30 + 2^25 + 2^24 + 2^23 + 2^22 + 2^21 + 2^20 + 2^19 + 2^17 +2^16 + 2^0 
+	1,077,915,649
+	
+Exercise 1.20 Repeat Exercise 1.18, but convert to unsigned binary.
+(d) 403FB001 base(16)
+	4		0		3		F		B		0		0		1
+	0100	0000	0011	1111	1011	0000	0000	0001
+
+Exercise 1.22 Convert the following two’s complement binary numbers to decimal.
+(c) 0100 1110  base(2)
+    0100 1110 - 0000 0001 = 0100 1101
+	undo 1's compliment = 1011 0010
+	2^1 + 2^4 + 2^5 + 2^7 
+	178
+(d) 1011 0101 base(2)
+	1011 0101 - 0000 0001 = 1011 0100
+	undo
+	1's complement =  0100 1011
+	2^0 + 2^1 + 2^3 + 2^6
+	75
+	
+Exercise 1.24 Repeat Exercise 1.22, assuming the binary numbers are in
+sign/magnitude form rather than two’s complement representation.
+(d) 1011 0101 base(2)
+	-2^7 + 2^5 + 2^4 + 2^2 + 1
+	-75
+
+Exercise 1.30 Convert the following decimal numbers to 8-bit two’s complement
+numbers or indicate that the decimal number would overflow the range.
+(c) 128 base(10)
+	Would overflow, largest number allowed is 127
+(d) −150 base(10)
+	Would overflow, largest negative number allowed is -128
+	
+(e) 127 base(10)
+	0111 1111
+
+Exercise 1.40 Convert each of the following octal numbers to binary,
+hexadecimal, and decimal.
+(d) 2560 base(8)
+	Binary:
+	2	5 	6   0
+	010 101 110 000
+	Hexadecimal:
+	0101 0111 0000
+	5	 7	  0
+	570
+	Decimal:
+	0101 0111 0000
+	2^4 + 2^5 + 2^6 + 2^8 + 2^10
+	1392
+
+Exercise 1.42 How many 7-bit two’s complement numbers are greater than 0?
+How many are less than 0? How would your answers differ for sign/magnitude
+numbers?
+	numbers>0 = 63 numbers (1 to 63)
+	numbers<0 = 64 numbers (-1 to -64)
+	They would become numbers>0 = 63 (1 to 63) and numbers<0 = 63 (-1 to -63)
+
+Exercise 1.56 Convert the following decimal numbers to 6-bit two’s complement
+binary numbers and add them. Indicate whether or not the sumoverflows a 6-bit result.
+(b) 27 + 31
+	27 =  01 1011
+	31 =  01 1111
+	--------------
+		  11 1010
+	Would overflow, 58 is larger than 31
+(d) 3 + −32
+	3 = 00 0011
+  -32 = 10 0000
+	-------------
+		10 0011
+	Would not overflow, becomes -29
+(e) −16 + −9
+	-16 = 01 0000
+	-9  = 00 1001
+	Would not overflow, becomes -25
+(f) −27 + −31
+	-27 = 01 1011
+	-31 = 01 1111
+	--------------
+		  11 1010
+	Would overflow, -58 is smaller than -32
+	
+Exercise 1.73 A majority gate produces a TRUE output if and only if more than
+half of its inputs are TRUE. Complete a truth table for the three-input majority
+gate shown in Figure 1.41.
+	A B C | Y
+	0 0 0 | 0
+	0 0 1 | 0
+	0 1 0 | 0
+	0 1 1 | 1
+	1 0 0 | 0 
+	1 0 1 | 1
+	1 1 0 | 1
+	1 1 1 | 1
+
+Exercise 1.74 A three-input AND-OR (AO) gate shown in Figure 1.42 produces a
+TRUE output if both A and B are TRUE, or if C is TRUE. Complete a truth table
+for the gate.
+	A B C | Y
+	0 0 0 | 0
+	0 0 1 | 1
+	0 1 0 | 0
+	0 1 1 | 1
+	1 0 0 | 0
+	1 0 1 | 1
+	1 1 0 | 1
+	1 1 1 | 1
+	
+Exercise 1.82 While walking down a dark alley, Ben Bitdiddle encounters a two-input
+gate with the transfer function shown in Figure 1.48. The inputs are A and B
+and the output is Y.
+(a) What kind of logic gate did he find?
+	
+(b) What are the approximate high and low logic levels?	
+	
+Exercise 1.84 Sketch a transistor-level circuit for the following CMOS gates.
+Use a minimum number of transistors.
+(a) four-input NAND gate
+(b) three-input OR-AND-INVERT gate (see Exercise 1.75)
+(c) three-input AND-OR gate (see Exercise 1.74)
+	Look at Chapter 1 - Question 84.pdf
+
+Write a truth table for the function performed by the gate in
+Figure 1.51. The truth table should have three inputs, A, B, and C.
+	A B C | Y
+	0 0 0 | 1
+	0 0 1 | 0
+	0 1 0 | 0
+	0 1 1 | 0
+	1 0 0 | 0
+	1 0 1 | 0
+	1 1 0 | 0
+	1 1 1 | 1
